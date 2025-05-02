@@ -1,0 +1,93 @@
+# .dotfiles
+here lies a list of dotfiles featuring nord colors i made in the span of two weeks. while i can't guarantee full reproducibilty of my setup, i tried to make it distribution-agnostic, hence no install script. the advised way of managing the files is via tools like `GNU Stow` or plain old symlinking. feel free to use the configs provided in the repo as you please (though your eyes will probably start to bleed after seeing my css skills).
+
+## gallery
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/85a91aba-2642-483a-9752-0966bf7190f1" alt="screenshot1">
+</p>
+
+## installation
+make backups of your `.config` directory, clone and cd into the repo, then run `stow package-name` for every folder you want symlinked, and tweak the dotfiles to your liking. for programs that need additional configuration, see the list below.
+
+### zsh
+export the `$ZDOTDIR` environment variable inside `/etc/zsh/zshenv`, then proceed like usual (mine is set to `~/.config/zsh`).
+```zsh
+export ZDOTDIR="$HOME"/.config/zsh
+```
+
+### firefox
+you can find the nord colorscheme for firefox in the built-in theme browser, but it doesn't look nice with shadows enabled. paste this inside your `userChrome.css` to disable them.
+```css
+.titlebar-buttonbox-container{ display:none }
+
+* {
+    box-shadow: none !important;
+    --panel-shadow: none !important;
+    -moz-window-shadow: none
+}
+```
+
+### tmux
+inside `tmux.conf`, you can find these lines:
+```zsh
+set -g default-terminal "tmux-256color"
+set -ga terminal-overrides ",foot*:Tc"
+set-option -a terminal-features 'foot:RGB'
+set-option -g focus-events on
+```
+if you're not using `foot`, change the argument of the expression containing `terminal-overrides` to your desired terminal emulator, or, better yet, export the `$TERM` variable inside your `.zshenv` (this needs to be set to render the termcolors correctly inside the tmux session, among other things).
+
+## list of packages
+```zsh
+# hypr* apps
+hyprland
+hyprpicker
+hyprshot
+hypridle
+hyprcursor
+
+# system
+networkmanager
+pipewire
+wireplumber
+pipewire-pulse
+pipewire-alsa
+
+# workflow 
+zsh
+foot
+nvim
+tmux
+qutebrowser
+obsidian
+
+# the eye-candy
+waybar
+wofi
+nordic-theme
+nordzy-icon-theme
+nordzy-hyprcursors
+
+# misc
+zsh-autosuggestions
+zsh-syntax-highlighting
+btop
+nwg-look
+fastfetch
+pipes.sh
+mpd
+ncmpcpp
+
+# fonts
+ttf-ubuntu-font-family
+ttf-ubuntu-mono-nerd
+ttf-hack-nerd
+```
+
+## check these out too
+[qwool 1337's rice](https://www.reddit.com/r/unixporn/comments/17appad/hyprland_dwmthemed_waybar_and_everything_w_base16/) – the guy i stole the waybar layout from</br>
+[nord colorscheme](https://www.nordtheme.com/) – the color palette that inspired me to make this rice</br>
+[nordic wallpapers](https://github.com/linuxdotexe/nordic-wallpapers) – the repo i stole the wallpaper from (can't seem to find the original author to give credit)</br>
+[fastfetch config collection](https://github.com/LierB/fastfetch) – the repo i stole the fastfetch config and ASCII art from</br>
+[nord theme for qutebrowser](https://github.com/Linuus/nord-qutebrowser) – didn't add to the repo because i made no other changes</br>
+[nord theme for firefox](https://addons.mozilla.org/en-US/firefox/addon/nord123/) – self explanatory. i also removed the shadows inside userChrome.css

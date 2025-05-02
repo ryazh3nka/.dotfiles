@@ -1,0 +1,74 @@
+@define-color bg rgba(46, 52, 64, 1); /* #2e3440 */
+@define-color accent rgba(67, 76, 94, 1); /* #434c5e */
+@define-color text rgba(216, 222, 233, 1); /* #d8dee9 */
+@define-color transparent rgba(255, 255, 255, 0); /* #ffffff */
+
+window {
+	margin: 0px;
+	background-color: @bg;
+}
+
+#input {
+	#display: none;
+	border: none;
+	margin-top: 5px;
+	margin-left: 14px;
+	margin-right: 14px;
+	margin-bottom: 5px;
+}
+
+#inner-box {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+}
+
+#outer-box {
+	margin: 10px;
+	border: none;
+}
+
+#scroll {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	scrollbar-policy: never;
+}
+
+#text {
+	margin: 5px;
+	border: none;
+	color: @text;
+}
+
+#entry:selected {
+	outline: none;
+	color: @transparent;
+}
+
+#entry:selected #text {
+	font-weight: bold;
+	background: @transparent;
+}
+
+#entry {
+  margin: 0 10px;
+  border: none;
+  outline: none;
+}
+
+#entry:selected {
+	background-color: @transparent;
+	font-weight: bold;
+}
+
+#img:selected {
+	background-color: @transparent;
+}
+
+#scroll {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+

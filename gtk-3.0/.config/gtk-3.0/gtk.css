@@ -1,0 +1,21 @@
+/* explicitly remove "scrolling possible" indicator */
+scrolledwindow undershoot.top,
+scrolledwindow undershoot.right,
+scrolledwindow undershoot.bottom,
+scrolledwindow undershoot.left { background-image: none; }
+
+/* excplicitly change the rounding factor on some UI elemets */
+.titlebar,
+.titlebar .background,
+decoration,
+window,
+window.background
+{
+    border-radius: 5;
+}
+
+/* explicitly remove csd shadows */
+decoration, decoration:backdrop
+{
+    box-shadow: none;
+}

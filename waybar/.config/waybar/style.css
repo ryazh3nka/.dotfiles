@@ -1,0 +1,79 @@
+/* waybar made to look similar to the dwm bar */
+/* documentation: man waybar-styles(5) */
+/* dotfiles repo: https://github.com/ryazh3nka/.dotfiles */
+
+@define-color accent #3b4252;
+@define-color text #d8dee9;
+@define-color inv_text #d8dee9;
+@define-color bg #2e3440;
+
+* {
+	font-family: Ubuntu;
+	font-size: 18px;
+	border-radius: 0px;
+	min-height: 0px;
+}
+
+tooltip {
+	font-family: "Ubuntu", monospace;
+	font-size: 18px;
+}
+
+window#waybar {
+	background-color: @accent;
+	color: @text;
+	opacity: 1;
+}
+
+#clock {
+	font-weight: bold;
+	/* border-bottom: 2px solid #81a1c1; */
+	border-bottom: 2px solid #bf616a;
+	margin: 0px;
+}
+
+#workspaces {
+	background-color: transparent;
+}
+
+#workspaces button {
+	padding: 0 5px;
+	color: @text;
+}
+
+#workspaces button:hover {
+	background-color: transparent;
+	color: @text;
+}
+
+#workspaces button.active {
+	background-color: @accent;
+	color: @inv_text;
+}
+
+#custom-icon {
+	background-color: transparent;
+	color: @text;
+	margin: 0px;
+}
+
+#window {
+	color: @inv_text;
+	background-color: @accent;
+	padding-left: 4px;
+}
+
+.modules-left {
+	background-color: @bg;
+	padding: 0px 0px 0px 0px;
+}
+
+.modules-right {
+	background-color: @bg;
+	padding: 0px 0px 0px 0px;
+}
+
+.modules-center {
+	background-color: @accent;
+	padding: 0px 0px 0px 0px
+}
