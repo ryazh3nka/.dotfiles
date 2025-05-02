@@ -3,7 +3,7 @@ here lies a list of dotfiles featuring nord colors i made in the span of two wee
 
 ## gallery
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/85a91aba-2642-483a-9752-0966bf7190f1" alt="screenshot1">
+  <img src="https://github.com/user-attachments/assets/2f92b88d-c88f-47e4-b404-a684a3a4c97a" alt="screenshot1">
 </p>
 
 ## installation
@@ -28,7 +28,9 @@ you can find the nord colorscheme for firefox in the built-in theme browser, but
 ```
 
 ### tmux
-inside `tmux.conf`, you can find these lines:
+i'm used to managing tmux plugins via `tpm`. install it and press `Prefix-I` to load the plugins.
+
+also, inside `tmux.conf`, you can find these lines:
 ```zsh
 set -g default-terminal "tmux-256color"
 set -ga terminal-overrides ",foot*:Tc"
@@ -36,6 +38,10 @@ set-option -a terminal-features 'foot:RGB'
 set-option -g focus-events on
 ```
 if you're not using `foot`, change the argument of the expression containing `terminal-overrides` to your desired terminal emulator, or, better yet, export the `$TERM` variable inside your `.zshenv` (this needs to be set to render the termcolors correctly inside the tmux session, among other things).
+
+
+### nvim
+install the `lazy.nvim` package manager, copy the config files, load the plugins and you should be good to go.
 
 ## list of packages
 ```zsh
