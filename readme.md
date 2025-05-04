@@ -61,11 +61,11 @@ pipewire-alsa
 
 # workflow 
 zsh
+zsh-autosuggestions
+zsh-syntax-highlighting
 foot
 nvim
 tmux
-qutebrowser
-obsidian
 
 # the eye-candy
 waybar
@@ -75,8 +75,6 @@ nordzy-icon-theme
 nordzy-hyprcursors
 
 # misc
-zsh-autosuggestions
-zsh-syntax-highlighting
 btop
 nwg-look
 fastfetch
