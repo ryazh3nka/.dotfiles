@@ -10,9 +10,13 @@ here lies a list of dotfiles featuring nord colors i made in the span of two wee
 make backups of your `.config` directory, clone and cd into the repo, then run `stow package-name` for every folder you want symlinked, and tweak the dotfiles to your liking. for programs that need additional configuration, see the list below.
 
 ### zsh
-export the `$ZDOTDIR` environment variable inside `/etc/zsh/zshenv`, then proceed like usual (mine is set to `~/.config/zsh`).
+export the `$ZDOTDIR` environment variable inside `/etc/zsh/zshenv`, then create the `~/.config/zsh` folder and continue like usual.
 ```zsh
 export ZDOTDIR="$HOME"/.config/zsh
+```
+```zsh
+mkdir -p ~/.config/zsh
+stow .dotfiles/zsh
 ```
 
 ### firefox
@@ -38,7 +42,6 @@ set-option -a terminal-features 'foot:RGB'
 set-option -g focus-events on
 ```
 if you're not using `foot`, change the argument of the expression containing `terminal-overrides` to your desired terminal emulator, or, better yet, export the `$TERM` variable inside your `.zshenv` (this needs to be set to render the termcolors correctly inside the tmux session, among other things).
-
 
 ### nvim
 install the `lazy.nvim` package manager, copy the config files, load the plugins and you should be good to go.
