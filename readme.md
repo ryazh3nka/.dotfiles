@@ -41,7 +41,7 @@ $ stow .dotfiles/tmux
 ```
 
 ### nvim
-install the `lazy.nvim` package manager, copy the config files, load the plugins and you should be good to go.
+install the `lazy.nvim` package manager, copy the config files, and load the plugins. install `clangd` and `lua-ls`, and you should be good to go.
 
 ## list of packages
 ```zsh
