@@ -4,7 +4,7 @@ scrolledwindow undershoot.right,
 scrolledwindow undershoot.bottom,
 scrolledwindow undershoot.left { background-image: none; }
 
-/* excplicitly change the rounding factor on some UI elemets */
+/* explicitly change the rounding factor on some UI elemets */
 .titlebar,
 .titlebar .background,
 decoration,

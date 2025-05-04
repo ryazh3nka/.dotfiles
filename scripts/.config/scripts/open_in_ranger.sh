@@ -9,4 +9,4 @@ if [ -f "$DIR" ]; then
 fi
 
 # launches ranger with foot opened
-foot --app-id ranger-float -T "ranger-popup" -e ranger "$DIR"
+foot --app-id ranger-float -T "ranger-float" -e ranger "$DIR"

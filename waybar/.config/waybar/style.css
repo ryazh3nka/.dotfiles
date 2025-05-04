@@ -1,7 +1,3 @@
-/* waybar made to look similar to the dwm bar */
-/* documentation: man waybar-styles(5) */
-/* dotfiles repo: https://github.com/ryazh3nka/.dotfiles */
-
 @define-color accent #3b4252;
 @define-color text #d8dee9;
 @define-color inv_text #d8dee9;

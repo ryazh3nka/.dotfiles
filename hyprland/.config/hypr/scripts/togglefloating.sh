@@ -8,7 +8,7 @@ if [[ $is_floating == "1" ]]; then
     exit 0
 fi
 
-# Convert active_class to lowercase
+# convert active_class to lowercase
 active_class_lower=$(echo "$active_class" | tr '[:upper:]' '[:lower:]')
 
 if [[ $active_class_lower == *"foot"* || $active_class_lower == *"thunar"* ]]; then
