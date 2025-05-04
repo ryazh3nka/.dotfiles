@@ -48,8 +48,6 @@ install the `lazy.nvim` package manager, copy the config files, and load the plu
 # desktop environment stuff
 hyprland && hyprpicker && hyprshot && hypridle && hyprcursor && hyprlock
 greetd && greetd-tuigreet
-
-# system
 networkmanager
 pipewire && pipewire-pulse && pipewire-alsa && wireplumber
 wl-clipboard
