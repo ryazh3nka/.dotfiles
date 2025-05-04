@@ -40,15 +40,6 @@ $ git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 $ stow .dotfiles/tmux
 ```
 
-also, inside `tmux.conf`, you can find these lines:
-```zsh
-set -g default-terminal "tmux-256color"
-set -ga terminal-overrides ",foot*:Tc"
-set-option -a terminal-features 'foot:RGB'
-set-option -g focus-events on
-```
-if you're not using `foot`, change the argument of the expression containing `terminal-overrides` to your desired terminal emulator, or, better yet, export the `$TERM` variable inside your `.zshenv` (this needs to be set to render the termcolors correctly inside the tmux session, among other things).
-
 ### nvim
 install the `lazy.nvim` package manager, copy the config files, load the plugins and you should be good to go.
 
