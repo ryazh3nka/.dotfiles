@@ -18,6 +18,9 @@ bindkey "^[[3~" delete-char
 
 PROMPT='%B%F{green}[I]%f%b %F{white}[%F{blue}%n%F{white}@%F{yellow}%m%F{white}]%F{red}[%~]%f$ '
 
+autoload -Uz compinit
+compinit -C
+
 # zsh-syntax-highlighting
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
