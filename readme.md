@@ -41,52 +41,43 @@ $ stow .dotfiles/tmux
 ```
 
 ### nvim
-install the `lazy.nvim` package manager, copy the config files, and load the plugins. install `clangd` and `lua-ls`, and you should be good to go.
+install the `lazy.nvim` package manager, copy the config files, and load the plugins. install `clang` and `lua-language-server`, and you should be good to go.
 
 ## list of packages
 ```zsh
-# hypr* apps
-hyprland
-hyprpicker
-hyprshot
-hypridle
-hyprcursor
+# desktop environment stuff
+hyprland && hyprpicker && hyprshot && hypridle && hyprcursor && hyprlock
+greetd && greetd-tuigreet
 
 # system
 networkmanager
-pipewire
-wireplumber
-pipewire-pulse
-pipewire-alsa
+pipewire && pipewire-pulse && pipewire-alsa && wireplumber
 wl-clipboard
 
 # workflow 
-zsh
-zsh-autosuggestions
-zsh-syntax-highlighting
+zsh && zsh-autosuggestions && zsh-syntax-highlighting
 foot
-nvim
+nvim && nvim-lazy
+clang && lua-language-server
 tmux
 
 # the eye-candy
 waybar
 wofi
-nordic-theme
-nordzy-icon-theme
-nordzy-hyprcursors
+nordic-theme && nordzy-icon-theme && nordzy-hyprcursors
 
 # misc
 btop
 nwg-look
 fastfetch
 pipes.sh
-mpd
-ncmpcpp
+cmatrix-git
+mpd && ncmpcpp
 
 # fonts
-ttf-ubuntu-font-family
-ttf-ubuntu-mono-nerd
+ttf-ubuntu-nerd && ttf-ubuntu-mono-nerd
 ttf-hack-nerd
+ttf-iosevka-nerd
 ```
 
 ## check these out too
