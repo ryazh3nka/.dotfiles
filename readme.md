@@ -15,8 +15,8 @@ export the `$ZDOTDIR` environment variable inside `/etc/zsh/zshenv`, then create
 export ZDOTDIR="$HOME"/.config/zsh
 ```
 ```zsh
-mkdir -p ~/.config/zsh
-stow .dotfiles/zsh
+$ mkdir -p ~/.config/zsh
+$ stow .dotfiles/zsh
 ```
 
 ### firefox
@@ -33,6 +33,12 @@ you can find the nord colorscheme for firefox in the built-in theme browser, but
 
 ### tmux
 i'm used to managing tmux plugins via `tpm`. install it and press `Prefix-I` to load the plugins.
+
+```zsh
+$ mkdir -p ~/.config/tmux/plugins/tpm
+$ git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+$ stow .dotfiles/tmux
+```
 
 also, inside `tmux.conf`, you can find these lines:
 ```zsh
