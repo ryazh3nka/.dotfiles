@@ -8,5 +8,5 @@ if [ -f "$DIR" ]; then
     DIR=$(dirname "$DIR")
 fi
 
-# launches ranger with foot opened
+# launches foot with ranger opened
 foot --app-id ranger-float -T "ranger-float" -e ranger "$DIR"
