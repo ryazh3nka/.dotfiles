@@ -58,6 +58,7 @@ pipewire
 wireplumber
 pipewire-pulse
 pipewire-alsa
+wl-clipboard
 
 # workflow 
 zsh
