@@ -31,6 +31,9 @@ you can find the nord colorscheme for firefox in the built-in theme browser, but
 }
 ```
 
+### nvim
+install the `lazy.nvim` package manager and language servers you need, and you should be good to go.
+
 ### tmux
 i'm used to managing tmux plugins via `tpm`. install it and press `Prefix-I` to load the plugins.
 
@@ -40,13 +43,11 @@ $ git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 $ stow .dotfiles/tmux
 ```
 
-### nvim
-install the `lazy.nvim` package manager, copy the config files, and load the plugins. install `clang` and `lua-language-server`, and you should be good to go.
-
 ## list of packages
 ```zsh
 # desktop environment stuff
 hyprland && hyprpicker && hyprshot && hypridle && hyprcursor && hyprlock
+xdg-desktop-portal-hyprland
 greetd && greetd-tuigreet
 networkmanager
 pipewire && pipewire-pulse && pipewire-alsa && wireplumber
