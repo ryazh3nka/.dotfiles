@@ -32,7 +32,7 @@ you can find the nord colorscheme for firefox in the built-in theme browser, but
 ```
 
 ### nvim
-install the `lazy.nvim` package manager and language servers you need, and you should be good to go.
+install the `lazy.nvim` package manager and language servers you need, symlink the config and you should be good to go.
 
 ### tmux
 i'm used to managing tmux plugins via `tpm`. install it and press `Prefix-I` to load the plugins.
@@ -51,7 +51,7 @@ xdg-desktop-portal-hyprland
 greetd && greetd-tuigreet
 networkmanager
 pipewire && pipewire-pulse && pipewire-alsa && wireplumber
-wl-clipboard
+wl-clipboard && cliphist
 
 # workflow 
 zsh && zsh-autosuggestions && zsh-syntax-highlighting
