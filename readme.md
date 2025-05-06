@@ -25,9 +25,13 @@ you can find the nord colorscheme for firefox in the built-in theme browser, but
 .titlebar-buttonbox-container{ display:none }
 
 * {
-    box-shadow: none !important;
-    --panel-shadow: none !important;
-    -moz-window-shadow: none
+	box-shadow: none !important;
+	--panel-shadow: none !important;
+	-moz-window-shadow: none
+}
+
+toolbar-menubar:-moz-window-inactive, #TabsToolbar:-moz-window-inactive { 
+	opacity: 1 !important;
 }
 ```
 
