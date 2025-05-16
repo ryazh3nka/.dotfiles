@@ -11,7 +11,7 @@ fi
 # convert active_class to lowercase
 active_class_lower=$(echo "$active_class" | tr '[:upper:]' '[:lower:]')
 
-if [[ $active_class_lower == *"foot"* || $active_class_lower == *"thunar"* ]]; then
+if [[ $active_class_lower == *"foot"* || $active_class_lower == *"qutebrowser"* ]]; then
     hyprctl dispatch togglefloating
     hyprctl dispatch resizeactive exact 50% 50%
     hyprctl dispatch centerwindow

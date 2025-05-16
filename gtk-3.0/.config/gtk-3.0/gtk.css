@@ -19,3 +19,18 @@ decoration, decoration:backdrop
 {
     box-shadow: none;
 }
+
+/* Force override of dimming in unfocused windows */
+headerbar:backdrop,
+.titlebar:backdrop,
+.window:backdrop,
+.dialog:backdrop,
+decoration:backdrop,
+*:-gtk-any(:backdrop) {
+    background-color: #2e3440 !important;  /* or whatever your normal color is */
+    color: #eceff4 !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    background-image: none !important;
+    transition: none !important;
+}

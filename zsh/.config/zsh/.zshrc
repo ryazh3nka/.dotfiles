@@ -1,4 +1,4 @@
-HISTFILE=~/.config/histfile
+HISTFILE=~/.config/zsh/histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt extendedglob
@@ -8,9 +8,7 @@ alias ls='ls --color=auto'
 alias ll='ls -lah --color=auto'
 alias tmux='tmux -2'
 alias econf='nvim ~/.config/hypr/hyprland.conf'
-alias fetch='fastfetch --colors-block-range-start 9 --colors-block-width 3'
-alias dc='cd' # skill issue
-alias sl='ls' # skill issue
+alias fetch='fastfetch'
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word

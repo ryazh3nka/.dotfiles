@@ -22,7 +22,7 @@ require("lazy").setup({
 		{ import = "plugins" },
 	},
 	install = { 
-		colorscheme = { "nord" } -- theme for the lazy.nvim interface
+		colorscheme = { "everforest" }
 	},
 	checker = {
 		enabled = true,

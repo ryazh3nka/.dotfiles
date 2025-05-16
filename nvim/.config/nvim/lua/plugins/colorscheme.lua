@@ -1,8 +1,12 @@
 return {
-	"shaunsingh/nord.nvim",
+	"neanias/everforest-nvim",
+	version = false,
+	lazy = false,
 	priority = 1000,
 	config = function()
-	vim.g.nord_bold = false
-	vim.cmd.colorscheme("nord")  -- Set colorscheme when plugin loads
+		require("everforest").setup({
+			background = "hard"
+		})
+		vim.cmd.colorscheme("everforest")
 	end
 }
