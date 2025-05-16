@@ -3,7 +3,7 @@ here lies a list of dotfiles featuring everforest colors i made in the span of o
 
 ## gallery
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/ead086bb-da7c-4a83-87bf-26ce6202ee3a" alt="screenshot1">
+  <img src="https://github.com/user-attachments/assets/b2ff1e7f-7347-402f-b810-5ac20517e301" alt="screenshot1">
 </p>
 
 ## installation
