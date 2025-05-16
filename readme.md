@@ -1,5 +1,5 @@
 # .dotfiles
-here lies a list of dotfiles featuring nord colors i made in the span of two weeks. while i can't guarantee full reproducibilty of my setup, i tried to make it distribution-agnostic, hence no install script. the advised way of managing the files is via tools like `GNU Stow` or plain old symlinking. feel free to use the configs provided in the repo as you please (though your eyes will probably start to bleed after seeing my css skills).
+here lies a list of dotfiles featuring everforest colors i made in the span of one month. while i can't guarantee full reproducibilty of my setup, i tried to make it distribution-agnostic, hence no install script. the advised way of managing the files is via tools like `GNU Stow` or plain old symlinking. feel free to use the configs provided in the repo as you please (though your eyes will probably start to bleed after seeing my css skills).
 
 ## gallery
 <p align="center">
@@ -19,18 +19,6 @@ $ mkdir -p ~/.config/zsh
 $ stow .dotfiles/zsh
 ```
 
-### firefox
-you can find the nord colorscheme for firefox in the built-in theme browser, but it doesn't look nice with shadows enabled. paste this inside your `userChrome.css` to disable them.
-```css
-.titlebar-buttonbox-container{ display:none }
-
-* {
-    box-shadow: none !important;
-    --panel-shadow: none !important;
-    -moz-window-shadow: none
-}
-```
-
 ### tmux
 i'm used to managing tmux plugins via `tpm`. install it and press `Prefix-I` to load the plugins.
 
@@ -46,7 +34,7 @@ install the `lazy.nvim` package manager, copy the config files, and load the plu
 ## list of packages
 ```zsh
 # desktop environment stuff
-hyprland && hyprpicker && hyprshot && hypridle && hyprcursor && hyprlock
+hyprland && hyprpicker && hyprshot && hypridle && hyprcursor
 greetd && greetd-tuigreet
 
 # system
@@ -56,15 +44,14 @@ wl-clipboard
 
 # workflow 
 zsh && zsh-autosuggestions && zsh-syntax-highlighting
-foot
 nvim && nvim-lazy
-clang && lua-language-server
-tmux
+ranger
+clang
+foot && tmux
 
-# the eye-candy
-waybar
-wofi
-nordic-theme && nordzy-icon-theme && nordzy-hyprcursors
+# theming
+everforest-gtk-theme-git && everforest-cursor-theme
+gowall
 
 # misc
 btop
@@ -76,14 +63,8 @@ mpd && ncmpcpp
 
 # fonts
 ttf-ubuntu-nerd && ttf-ubuntu-mono-nerd
-ttf-hack-nerd
-ttf-iosevka-nerd
+noto-fonts
 ```
 
 ## check these out too
-[qwool 1337's rice](https://www.reddit.com/r/unixporn/comments/17appad/hyprland_dwmthemed_waybar_and_everything_w_base16/) – the guy i stole the waybar layout from</br>
-[nord colorscheme](https://www.nordtheme.com/) – the color palette that inspired me to make this rice</br>
-[nordic wallpapers](https://github.com/linuxdotexe/nordic-wallpapers) – the repo i stole the wallpaper from (can't seem to find the original author to give credit)</br>
-[fastfetch config collection](https://github.com/LierB/fastfetch) – the repo i stole the fastfetch config and ASCII art from</br>
-[nord theme for qutebrowser](https://github.com/Linuus/nord-qutebrowser) – didn't add to the repo because i made no other changes</br>
-[nord theme for firefox](https://addons.mozilla.org/en-US/firefox/addon/nord123/) – self explanatory. i also removed the shadows inside userChrome.css
+[aesthetic-wallpapers](https://github.com/D3Ext/aesthetic-wallpapers) – some cool wallpapers! if you have `gowall` installed, you can even change the image color palette on the fly.
