@@ -1,5 +1,5 @@
 # .dotfiles
-here lies a list of dotfiles featuring everforest colors i made in the span of one month. while i can't guarantee full reproducibilty of my setup, i tried to make it distribution-agnostic, hence no install script. the advised way of managing the files is via tools like `GNU Stow` or plain old symlinking. feel free to use the configs provided in the repo as you please (though your eyes will probably start to bleed after seeing my css skills).
+here lies a list of dotfiles featuring the everforest colorscheme (its darkest flavour) i made in the span of one month. while i can't guarantee full reproducibilty of my setup, i tried to make it distribution-agnostic, hence no install script. the advised way of managing the files is via tools like `GNU Stow` or plain old symlinking. feel free to use the configs provided in the repo as you please (though your eyes might start to bleed after seeing my css skills).
 
 ## gallery
 <p align="center">
@@ -68,4 +68,4 @@ noto-fonts
 
 ## check these out too
 [aesthetic-wallpapers](https://github.com/D3Ext/aesthetic-wallpapers) – some cool wallpapers! if you have `gowall` installed, you can even change the colorscheme of any image on the fly.</br>
-[lanny's qutebrowser colorscheme](https://gist.github.com/Lanny/04704c7860704aef5067491f5332005d) – this script i made a few tweaks in brings everforest colors to qutebrowser.
+[lanny's qutebrowser colorscheme](https://gist.github.com/Lanny/04704c7860704aef5067491f5332005d) – the script that brings the everforest colors to qutebrowser.
