@@ -3,7 +3,7 @@ here lies a list of dotfiles featuring everforest colors i made in the span of o
 
 ## gallery
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/2f92b88d-c88f-47e4-b404-a684a3a4c97a" alt="screenshot1">
+  <img src="https://github.com/user-attachments/assets/ead086bb-da7c-4a83-87bf-26ce6202ee3a" alt="screenshot1">
 </p>
 
 ## installation
@@ -67,4 +67,4 @@ noto-fonts
 ```
 
 ## check these out too
-[aesthetic-wallpapers](https://github.com/D3Ext/aesthetic-wallpapers) – some cool wallpapers! if you have `gowall` installed, you can even change the image color palette on the fly.
+[aesthetic-wallpapers](https://github.com/D3Ext/aesthetic-wallpapers) – some cool wallpapers! if you have `gowall` installed, you can even change the colorscheme of any image on the fly.
