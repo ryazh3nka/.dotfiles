@@ -52,10 +52,10 @@ foot && tmux
 # theming
 everforest-gtk-theme-git && everforest-cursor-theme
 gowall
+nwg-look
 
 # misc
 btop
-nwg-look
 fastfetch
 pipes.sh
 cmatrix-git
@@ -68,3 +68,4 @@ noto-fonts
 
 ## check these out too
 [aesthetic-wallpapers](https://github.com/D3Ext/aesthetic-wallpapers) – some cool wallpapers! if you have `gowall` installed, you can even change the colorscheme of any image on the fly.
+[lanny's qutebrowser colorscheme](https://gist.github.com/Lanny/04704c7860704aef5067491f5332005d) – this script i made a few tweaks in brings everforest colors to qutebrowser.
