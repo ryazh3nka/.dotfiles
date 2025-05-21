@@ -3,8 +3,8 @@ here lies a list of dotfiles featuring the everforest colorscheme (its darkest f
 
 ## gallery
 <p align="center">
-  <img src="" alt="screenshot1" width="49%">
-  <img src="" alt="screenshot2" width="49%">
+  <img src="https://github.com/user-attachments/assets/5937ca79-af04-4a9f-8ec0-0e4c4db16412" alt="screenshot1" width="49%">
+  <img src="https://github.com/user-attachments/assets/8cf76210-8396-4bf9-9d57-3b06f2f019c2" alt="screenshot2" width="49%">
 </p>
 
 ## installation
@@ -45,11 +45,10 @@ wl-clipboard
 
 # workflow 
 zsh && zsh-autosuggestions && zsh-syntax-highlighting
-nvim && nvim-lazy
+nvim && nvim-lazy && clang
 ranger
-clang
+waybar && bemenu
 foot && tmux
-bemenu
 
 # theming
 everforest-gtk-theme-git && everforest-cursor-theme
