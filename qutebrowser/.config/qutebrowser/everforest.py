@@ -174,13 +174,13 @@ def set(c, scheme = 'dark', intensity = 'hard'):
     c.hints.border = '0px solid black'
 
     c.colors.statusbar.normal.fg = t['fg']
-    c.colors.statusbar.normal.bg = t['bg2']
+    c.colors.statusbar.normal.bg = t['bg0']
 
     c.colors.statusbar.insert.fg = t['bg2']
     c.colors.statusbar.insert.bg = t['statusline1']
 
     c.colors.statusbar.command.fg = t['fg']
-    c.colors.statusbar.command.bg = t['bg0']
+    c.colors.statusbar.command.bg = t['bg2']
 
     c.colors.statusbar.url.error.fg = t['orange']
     c.colors.statusbar.url.fg = t['fg']

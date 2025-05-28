@@ -8,14 +8,6 @@ border-radius=0
 border-size=1
 max-icon-size=128
 text-alignment=center
-background-color=#374145
-text-color=#d3c6aa
-
-[urgency=low]
-border-color=#d3c6aa
-
-[urgency=normal]
-border-color=#a7c080
-
-[urgency=high]
-border-color=#e67e80
+background-color=#070707
+text-color=#c1c1c1
+border-color=#2B2B2B

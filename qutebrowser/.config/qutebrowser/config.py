@@ -1,5 +1,5 @@
-import everforest
-everforest.set(c, 'dark', 'hard')
+import adwaita.draw
+adwaita.draw.render(c)
 
 config.load_autoconfig()
 config.source('everforest.py')
@@ -9,7 +9,7 @@ config.bind('td', 'config-cycle colors.webpage.darkmode.enabled true false')
 
 c.fonts.default_family = 'UbuntuMono Nerd Font'
 c.fonts.default_size = "18pt"
-c.url.start_pages = ["~/.config/qutebrowser/startpage.html"]
+#c.url.start_pages = ["~/.config/qutebrowser/startpage.html"]
 
 c.url.searchengines = {
     'DEFAULT':  'https://google.com/search?hl=en&q={}',

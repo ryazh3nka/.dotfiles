@@ -4,17 +4,13 @@ SAVEHIST=1000
 setopt extendedglob
 bindkey -e
 
-alias ls='ls --color=auto'
-alias ll='ls -lah --color=auto'
-alias tmux='tmux -2'
-alias econf='nvim ~/.config/hypr/hyprland.conf'
-alias fetch='fastfetch'
+alias ls="ls --color=auto"
+alias ll="ls -lah --color=auto --sort=extension"
+alias wget="wget --hsts-file ~/.local/share/wget/wget-hsts"
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey "^[[3~" delete-char
-
-PROMPT='%B%F{green}[I]%f%b %F{white}[%F{blue}%n%F{white}@%F{yellow}%m%F{white}]%F{red}[%~]%f$ '
 
 autoload -Uz compinit
 compinit -C
@@ -26,4 +22,8 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 # plugins
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+PROMPT="%F{yellow}%~%f "
+#PROMPT="λ "
+#PROMPT='%B%F{green}[I]%f%b %F{white}[%F{blue}%n%F{white}@%F{yellow}%m%F{white}]%F{red}[%~]%f$ '
+#sleep 0.05
