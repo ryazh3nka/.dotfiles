@@ -1,15 +1,15 @@
 return {
-	{
-		"kdheepak/monochrome.nvim",
-		priority = 1000,
-		config = function()
-			vim.cmd("colorscheme monochrome")
-			vim.cmd [[
-				highlight Normal ctermbg=none guibg=none
-				highlight NormalNC ctermbg=none guibg=none
-				highlight NormalFloat ctermbg=none guibg=none
-				highlight EndOfBuffer ctermbg=none guibg=none
-			]]
-		end,
-	},
+	"ellisonleao/gruvbox.nvim",
+	priority = 1000,
+	config = function()
+		-- Optional: Set gruvbox options here
+		require("gruvbox").setup {
+			-- Add your options here
+			contrast = "hard", -- or "soft", "medium"
+		}
+
+		-- Load the colorscheme
+		vim.cmd.colorscheme("gruvbox")
+	end,
 }
+

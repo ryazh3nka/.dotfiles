@@ -23,7 +23,4 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 # plugins
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-PROMPT="%F{yellow}%~%f "
-#PROMPT="λ "
-#PROMPT='%B%F{green}[I]%f%b %F{white}[%F{blue}%n%F{white}@%F{yellow}%m%F{white}]%F{red}[%~]%f$ '
-#sleep 0.05
+PROMPT='%B%F{green}[I]%f%b %F{white}[%F{blue}%n%F{white}@%F{yellow}%m%F{white}]%F{red}[%~]%f$ '
