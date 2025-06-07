@@ -27,7 +27,5 @@ local function toggle_diagnostic_float()
 end
 
 vim.keymap.set('n', '<C-I>', toggle_diagnostic_float, { desc = "Toggle diagnostics float" })
-
 vim.keymap.set('i', '<C-z>', '<C-x><C-o>', { noremap = true, desc = 'Trigger omnicompletion' })
-
 vim.api.nvim_set_keymap('n', 'q:', ':q<CR>', { noremap = true, silent = true })

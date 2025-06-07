@@ -1,5 +1,5 @@
 # .dotfiles
-here lies a list of dotfiles featuring the everforest colorscheme (its darkest flavour) i made in the span of one month. while i can't guarantee full reproducibilty of my setup, i tried to make it distribution-agnostic, hence no install script. the advised way of managing the files is via tools like `GNU Stow` or plain old symlinking. feel free to use the configs provided in the repo as you please (though your eyes might start to bleed after seeing my css skills).
+this is a side branch of my dotfiles repo featuring sway and the gruvbox terminal colorscheme. this setup was made for my laptop, so my primary goal was to make it as minimal as possible (still a work in progress though). the advised way of managing the files is via tools like `GNU Stow` or plain old symlinking. feel free to use the configs provided in the repo as you please (though your eyes might start to bleed after seeing my css skills).
 
 ## gallery
 <p align="center">
@@ -20,22 +20,13 @@ $ mkdir -p ~/.config/zsh
 $ stow .dotfiles/zsh
 ```
 
-### tmux
-i'm used to managing tmux plugins via `tpm`. install it and press `Prefix-I` to load the plugins.
-
-```zsh
-$ mkdir -p ~/.config/tmux/plugins/tpm
-$ git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
-$ stow .dotfiles/tmux
-```
-
 ### nvim
-install the `lazy.nvim` package manager, copy the config files, and load the plugins. install `clang` and `lua-language-server`, and you should be good to go.
+install the `lazy.nvim` package manager, copy the config files, and load the plugins. install `clang`, `lua-language-server` and `pylsp`, and you should be good to go.
 
 ## list of packages
 ```zsh
 # desktop environment stuff
-hyprland && hyprpicker && hyprshot && hypridle && hyprcursor
+sway && swaylock && swaybg && swayidle
 greetd && greetd-tuigreet
 
 # system
@@ -47,11 +38,15 @@ wl-clipboard
 zsh && zsh-autosuggestions && zsh-syntax-highlighting
 nvim && nvim-lazy && clang
 ranger
-waybar && bemenu
-foot && tmux
+bemenu
+foot
+
+# utilities
+hyprpicker
+grim && slurp
 
 # theming
-everforest-gtk-theme-git && everforest-cursor-theme
+gruvbox-gtk-theme 
 gowall
 nwg-look
 
@@ -68,6 +63,5 @@ noto-fonts
 ```
 
 ## check these out too
+[The Compiler's qutebrowser colorscheme](https://github.com/The-Compiler/dotfiles/blob/master/qutebrowser/gruvbox.py) – a script that brings the gruvbox colors to qutebrowser.</br>
 [aesthetic-wallpapers](https://github.com/D3Ext/aesthetic-wallpapers) – some cool wallpapers!</br>
-[lanny's qutebrowser colorscheme](https://gist.github.com/Lanny/04704c7860704aef5067491f5332005d) – a script that brings the everforest colors to qutebrowser.</br>
-[arkboix's waybar config](https://github.com/arkboix/sway/tree/main/files/.config/waybar) – someone's waybar dotfiles i stole and modified.

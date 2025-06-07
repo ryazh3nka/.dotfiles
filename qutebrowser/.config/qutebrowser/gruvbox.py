@@ -1,9 +1,9 @@
 # gruvbox dark hard qutebrowser theme by Florian Bruhin <me@the-compiler.org>
 #
 # Originally based on:
-#   base16-qutebrowser (https://github.com/theova/base16-qutebrowser)
-#   Base16 qutebrowser template by theova and Daniel Mulford
-#   Gruvbox dark, hard scheme by Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+# base16-qutebrowser (https://github.com/theova/base16-qutebrowser)
+# Base16 qutebrowser template by theova and Daniel Mulford
+# Gruvbox dark, hard scheme by Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
 
 bg0_hard = "#1d2021"
 bg0_soft = '#32302f'
@@ -198,16 +198,16 @@ c.colors.prompts.selected.bg = bg2
 c.colors.statusbar.normal.fg = fg2
 
 # Background color of the statusbar.
-c.colors.statusbar.normal.bg = bg0_hard
+c.colors.statusbar.normal.bg = bg0
 
 # Foreground color of the statusbar in insert mode.
-c.colors.statusbar.insert.fg = bg0_hard
+c.colors.statusbar.insert.fg = bg0
 
 # Background color of the statusbar in insert mode.
 c.colors.statusbar.insert.bg = dark_aqua
 
 # Foreground color of the statusbar in passthrough mode.
-c.colors.statusbar.passthrough.fg = bg0_hard
+c.colors.statusbar.passthrough.fg = bg0
 
 # Background color of the statusbar in passthrough mode.
 c.colors.statusbar.passthrough.bg = dark_blue
@@ -216,13 +216,13 @@ c.colors.statusbar.passthrough.bg = dark_blue
 c.colors.statusbar.private.fg = bright_purple
 
 # Background color of the statusbar in private browsing mode.
-c.colors.statusbar.private.bg = bg0_hard
+c.colors.statusbar.private.bg = bg0
 
 # Foreground color of the statusbar in command mode.
 c.colors.statusbar.command.fg = fg3
 
 # Background color of the statusbar in command mode.
-c.colors.statusbar.command.bg = bg0
+c.colors.statusbar.command.bg = bg1
 
 # Foreground color of the statusbar in private browsing + command mode.
 c.colors.statusbar.command.private.fg = c.colors.statusbar.private.fg
@@ -231,7 +231,7 @@ c.colors.statusbar.command.private.fg = c.colors.statusbar.private.fg
 c.colors.statusbar.command.private.bg = c.colors.statusbar.command.bg
 
 # Foreground color of the statusbar in caret mode.
-c.colors.statusbar.caret.fg = bg0_hard
+c.colors.statusbar.caret.fg = bg0
 
 # Background color of the statusbar in caret mode.
 c.colors.statusbar.caret.bg = dark_purple
@@ -268,7 +268,7 @@ c.colors.statusbar.url.warn.fg = bright_purple
 ### tabs
 
 # Background color of the tab bar.
-c.colors.tabs.bar.bg = bg0_hard
+c.colors.tabs.bar.bg = bg0
 
 # Color gradient start for the tab indicator.
 c.colors.tabs.indicator.start = bright_blue
@@ -283,31 +283,31 @@ c.colors.tabs.indicator.error = bright_red
 c.colors.tabs.odd.fg = fg2
 
 # Background color of unselected odd tabs.
-c.colors.tabs.odd.bg = bg1
+c.colors.tabs.odd.bg = bg2
 
 # Foreground color of unselected even tabs.
 c.colors.tabs.even.fg = c.colors.tabs.odd.fg
 
 # Background color of unselected even tabs.
-c.colors.tabs.even.bg = bg2
+c.colors.tabs.even.bg = bg3
 
 # Foreground color of selected odd tabs.
 c.colors.tabs.selected.odd.fg = fg2
 
 # Background color of selected odd tabs.
-c.colors.tabs.selected.odd.bg = bg0_hard
+c.colors.tabs.selected.odd.bg = bg0
 
 # Foreground color of selected even tabs.
 c.colors.tabs.selected.even.fg = c.colors.tabs.selected.odd.fg
 
 # Background color of selected even tabs.
-c.colors.tabs.selected.even.bg = bg0_hard
+c.colors.tabs.selected.even.bg = bg0
 
 # Background color of pinned unselected even tabs.
 c.colors.tabs.pinned.even.bg = bright_green
 
 # Foreground color of pinned unselected even tabs.
-c.colors.tabs.pinned.even.fg = bg1
+c.colors.tabs.pinned.even.fg = bg2
 
 # Background color of pinned unselected odd tabs.
 c.colors.tabs.pinned.odd.bg = bright_green
@@ -316,7 +316,7 @@ c.colors.tabs.pinned.odd.bg = bright_green
 c.colors.tabs.pinned.odd.fg = c.colors.tabs.pinned.even.fg
 
 # Background color of pinned selected even tabs.
-c.colors.tabs.pinned.selected.even.bg = bg0_hard
+c.colors.tabs.pinned.selected.even.bg = bg0
 
 # Foreground color of pinned selected even tabs.
 c.colors.tabs.pinned.selected.even.fg = c.colors.tabs.selected.odd.fg
