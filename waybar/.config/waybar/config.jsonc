@@ -27,7 +27,7 @@
 	"clock": {
 		"tooltip": false,
 		"format": "󰥔 <b>{:%H:%M}</b>",
-		"format-alt": "󰃮 <b>{:%Y-%m-%d}</b>"
+		"format-alt": "󰃮 <b>{:%d-%m-%Y}</b>"
 	},
 
 	"cpu": {
