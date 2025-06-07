@@ -4,7 +4,7 @@ this is a side branch of my dotfiles repo featuring sway and the gruvbox termina
 ## gallery
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d7f8b2a1-8d28-44b9-a140-57d34252551f" alt="screenshot1" width="49%">
-  <img src="https://github.com/user-attachments/assets/e659d672-3585-4d59-af0a-e7af34fd01c3" alt="screenshot2" width="49%">
+  <img src="https://github.com/user-attachments/assets/f39e9af4-0d91-4add-b16a-bd6b79283dbe" alt="screenshot2" width="49%">
 </p>
 
 ## installation
