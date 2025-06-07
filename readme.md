@@ -3,8 +3,8 @@ this is a side branch of my dotfiles repo featuring sway and the gruvbox termina
 
 ## gallery
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/5937ca79-af04-4a9f-8ec0-0e4c4db16412" alt="screenshot1" width="49%">
-  <img src="https://github.com/user-attachments/assets/8cf76210-8396-4bf9-9d57-3b06f2f019c2" alt="screenshot2" width="49%">
+  <img src="https://github.com/user-attachments/assets/4d57452a-d96a-46bf-ae50-894358ef10b5" alt="screenshot1" width="49%">
+  <img src="https://github.com/user-attachments/assets/e659d672-3585-4d59-af0a-e7af34fd01c3" alt="screenshot2" width="49%">
 </p>
 
 ## installation
