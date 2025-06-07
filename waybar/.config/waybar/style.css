@@ -40,51 +40,51 @@
 @define-color idle-inhibitor-active-color @red;
 
 * {
-    /* Base styling for all modules */
-    border: none;
-    border-radius: 0px;
-    font-family: "UbuntuMono Nerd Font";
-    font-size: 18px;
-    min-height: 0px;
+	/* Base styling for all modules */
+	border: none;
+	border-radius: 0px;
+	font-family: "UbuntuMono Nerd Font";
+	font-size: 18px;
+	min-height: 0px;
 }
 
 window#waybar {
-    background-color: @background;
-    color: @foreground;
+	background-color: @background;
+	color: @foreground;
 }
 
 /* Common module styling with border-bottom */
 #mode, #mpd, #custom-weather, #custom-playerctl, #clock, #cpu,
 #memory, #temperature, #battery, #network, #pulseaudio,
 #backlight, #disk, #idle_inhibitor, #tray {
-    padding: 0px 4px;
-    margin: 0px 4px;
-    border-bottom: 2px solid transparent;
-    background-color: transparent;
+	padding: 0px 4px;
+	margin: 0px 4px;
+	border-bottom: 2px solid transparent;
+	background-color: transparent;
 }
 
 /* Workspaces styling */
 #workspaces button {
-    background-color: @background;
+	background-color: @background;
 	padding: 0px 5px;
-    color: @workspaces-color;
-    margin: 0;
+	color: @workspaces-color;
+	margin: 0;
 }
 
 #workspaces button:hover {
-    background: @background;
-    box-shadow: inherit;
+	background: @background;
+	box-shadow: inherit;
 }
 
 #workspaces button.focused {
-    box-shadow: inset 0 -2px @workspaces-focused-fg;
-    color: @workspaces-focused-fg;
-    font-weight: 900;
+	box-shadow: inset 0 -2px @workspaces-focused-fg;
+	color: @workspaces-focused-fg;
+	font-weight: 900;
 }
 
 #workspaces button.urgent {
-    background-color: @workspaces-urgent-bg;
-    color: @workspaces-urgent-fg;
+	background-color: @workspaces-urgent-bg;
+	color: @workspaces-urgent-fg;
 }
 
 #workspaces button.active {
@@ -92,8 +92,8 @@ window#waybar {
 }
 
 #clock {
-    color: @clock-color;
-    border-bottom-color: @clock-color;
+	color: @clock-color;
+	border-bottom-color: @clock-color;
 }
 
 #window {
@@ -102,89 +102,89 @@ window#waybar {
 }
 
 #cpu {
-    color: @cpu-color;
-    border-bottom-color: @cpu-color;
+	color: @cpu-color;
+	border-bottom-color: @cpu-color;
 }
 
 #memory {
-    color: @memory-color;
-    border-bottom-color: @memory-color;
+	color: @memory-color;
+	border-bottom-color: @memory-color;
 }
 
 #temperature {
-    color: @temperature-color;
-    border-bottom-color: @temperature-color;
+	color: @temperature-color;
+	border-bottom-color: @temperature-color;
 }
 
 #temperature.critical {
-    color: @temperature-critical-color;
-    border-bottom-color: @temperature-critical-color;
+	color: @temperature-critical-color;
+	border-bottom-color: @temperature-critical-color;
 }
 
 #battery {
-    color: @battery-color;
-    border-bottom-color: @battery-color;
+	color: @battery-color;
+	border-bottom-color: @battery-color;
 }
 
 #battery.charging, #battery.plugged {
-    color: @battery-charging-color;
-    border-bottom-color: @battery-charging-color;
+	color: @battery-charging-color;
+	border-bottom-color: @battery-charging-color;
 }
 
 #battery.warning:not(.charging) {
-    color: @battery-warning-color;
-    border-bottom-color: @battery-warning-color;
+	color: @battery-warning-color;
+	border-bottom-color: @battery-warning-color;
 }
 
 #battery.critical:not(.charging) {
-    color: @battery-critical-color;
-    border-bottom-color: @battery-critical-color;
+	color: @battery-critical-color;
+	border-bottom-color: @battery-critical-color;
 }
 
 #network {
-    color: @network-color;
-    border-bottom-color: @network-color;
+	color: @network-color;
+	border-bottom-color: @network-color;
 }
 
 #network.disconnected {
-    color: @network-disconnected-color;
-    border-bottom-color: @network-disconnected-color;
+	color: @network-disconnected-color;
+	border-bottom-color: @network-disconnected-color;
 }
 
 #pulseaudio {
-    color: @pulseaudio-color;
-    border-bottom-color: @pulseaudio-color;
+	color: @pulseaudio-color;
+	border-bottom-color: @pulseaudio-color;
 }
 
 #pulseaudio.muted {
-    color: @pulseaudio-muted-color;
-    border-bottom-color: @pulseaudio-muted-color;
+	color: @pulseaudio-muted-color;
+	border-bottom-color: @pulseaudio-muted-color;
 }
 
 #backlight {
-    color: @backlight-color;
-    border-bottom-color: @backlight-color;
+	color: @backlight-color;
+	border-bottom-color: @backlight-color;
 }
 
 #disk {
-    color: @disk-color;
-    border-bottom-color: @disk-color;
+	color: @disk-color;
+	border-bottom-color: @disk-color;
 }
 
 #tray {
-    background-color: transparent;
-    padding: 0 4px;
-    margin: 0 4px;
+	background-color: transparent;
+	padding: 0 4px;
+	margin: 0 4px;
 }
 
 #tray > .passive {
-    -gtk-icon-effect: dim;
+	-gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    color: @red;
-    border-bottom-color: @red;
+	-gtk-icon-effect: highlight;
+	color: @red;
+	border-bottom-color: @red;
 }
 
 #custom-layout {

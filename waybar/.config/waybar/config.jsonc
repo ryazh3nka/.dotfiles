@@ -6,7 +6,7 @@
 	"modules-left": ["hyprland/workspaces", "custom/layout", "hyprland/window"],
 	"modules-center": [],
 	"modules-right": ["clock", "pulseaudio", "network", "cpu", "memory", "temperature", "disk", "backlight", "battery"],
-	
+
 	"custom/layout": {
 		"tooltip": false,
 		"exec": "~/.config/waybar/layout.sh",
@@ -111,6 +111,6 @@
 
 	"tray": {
 		"tooltip": false,
-        "icon-size": 18
-    }
+		"icon-size": 18
+	}
 }

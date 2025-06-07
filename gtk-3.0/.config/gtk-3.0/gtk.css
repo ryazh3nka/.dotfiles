@@ -11,14 +11,14 @@ decoration,
 window,
 window.background
 {
-    border-radius: 5;
+border-radius: 5;
 }
-*/
+ */
 
 /* explicitly remove csd shadows */
 decoration, decoration:backdrop
 {
-    box-shadow: none;
+	box-shadow: none;
 }
 
 /* Force override of dimming in unfocused windows */
@@ -28,10 +28,10 @@ headerbar:backdrop,
 .dialog:backdrop,
 decoration:backdrop,
 *:-gtk-any(:backdrop) {
-    background-color: #2e3440 !important;  /* or whatever your normal color is */
-    color: #eceff4 !important;
-    box-shadow: none !important;
-    opacity: 1 !important;
-    background-image: none !important;
-    transition: none !important;
+	background-color: #2e3440 !important;  /* or whatever your normal color is */
+	color: #eceff4 !important;
+	box-shadow: none !important;
+	opacity: 1 !important;
+	background-image: none !important;
+	transition: none !important;
 }
