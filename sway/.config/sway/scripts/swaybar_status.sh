@@ -70,18 +70,18 @@ while true; do
 		charging_status=$(echo "$battery_raw" | grep -o "Charging")
 
 		if [ "$charging_status" = "Charging" ]; then
-		    battery_text="Battery: charging (${battery_percent}%)"
-		    battery_color="#b8bb26" # always green while charging
+			battery_text="Battery: Charging (${battery_percent}%)"
+			battery_color="#b8bb26" # always green while charging
 		else
-		    # Not charging, apply color based on percent
-		    battery_text="Battery: ${battery_percent}%"
-		    if [ "$battery_percent" -ge 50 ]; then
-			    battery_color="#b8bb26"
-		    elif [ "$battery_percent" -ge 20 ]; then
-			    battery_color="#fabd2f"
-		    else
-			    battery_color="#fb4934"
-		    fi
+			# Not charging, apply color based on percent
+			battery_text="Battery: ${battery_percent}%"
+			if [ "$battery_percent" -ge 50 ]; then
+				battery_color="#b8bb26"
+			elif [ "$battery_percent" -ge 20 ]; then
+				battery_color="#fabd2f"
+			else
+				battery_color="#fb4934"
+			fi
 		fi
 
 		echo -n "{\"full_text\": \"$battery_text\", \"color\": \"$battery_color\"},"
