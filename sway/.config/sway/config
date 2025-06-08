@@ -72,8 +72,8 @@ bindsym $mod+m exec swaymsg exit
 # Moving around:
 #
 bindsym $mod+$left focus left
-bindsym $mod+$down exec "/home/ryazhenka/.config/sway/scripts/dynamic_focus.sh down"
-bindsym $mod+$up exec "/home/ryazhenka/.config/sway/scripts/dynamic_focus.sh up"
+bindsym $mod+$down exec "~/.config/sway/scripts/dynamic_focus.sh down"
+bindsym $mod+$up exec "~/.config/sway/scripts/dynamic_focus.sh up"
 bindsym $mod+$right focus right
 
 bindsym $mod+Left focus left
@@ -177,16 +177,17 @@ bindsym Shift+Print exec grim $(xdg-user-dir PICTURES)/$(date +'screenshot-%d_%m
 #
 bar {
 	position bottom
-		height 26
-		font UbuntuMono Nerd Font
+	height 26
+	font UbuntuMono Nerd Font
 
-		status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+	status_command while date +'%Y-%m-%d %X'; do sleep 1; done
 
-		colors {
-			statusline #ffffff
-			background #222222
-			inactive_workspace #323232 #323232 #ffffff
-		}
+	colors {
+		statusline #ffffff
+		background #222222
+		inactive_workspace #323232 #323232 #ffffff
+	}
+	status_command ~/.config/sway/scripts/swaybar_status.sh	
 }
 
 include /etc/sway/config.d/*
