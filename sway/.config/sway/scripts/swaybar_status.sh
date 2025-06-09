@@ -8,62 +8,97 @@ while true; do
 
 	## Time
 	date_str=$(date +"%a %d %b %Y %H:%M:%S")
-	echo -n "{\"full_text\": \"Time: $date_str\", \"color\": \"#b8bb26\"},"
+	echo -n "{\"full_text\": \"Time: $date_str\", \"color\": \"#ffffff\"},"
 
 	## CPU Usage
-	cpu_usage=$(grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {printf "%.1f%%", usage}')
-	echo -n "{\"full_text\": \"CPU: $cpu_usage\", \"color\": \"#83a598\"},"
+	cpu_raw=($(grep 'cpu ' /proc/stat))
+	total_before=${cpu_raw[@]:1:7}
+	sleep 0.1
+	cpu_raw_now=($(grep 'cpu ' /proc/stat))
+	total_now=${cpu_raw_now[@]:1:7}
+
+	idle_before=${cpu_raw[4]}
+	idle_now=${cpu_raw_now[4]}
+	total_diff=0
+	for i in {0..6}; do
+		((total_diff+=${cpu_raw_now[i+1]} - ${cpu_raw[i+1]}))
+	done
+	idle_diff=$((idle_now - idle_before))
+	cpu_usage_percent=$(awk "BEGIN {printf \"%.0f\", (100 - (($idle_diff * 100) / $total_diff))}")
+
+	if [ "$cpu_usage_percent" -lt 60 ]; then
+		cpu_color="#ffffff"
+	elif [ "$cpu_usage_percent" -lt 80 ]; then
+		cpu_color="#fabd2f"
+	else
+		cpu_color="#fb4934"
+	fi
+	echo -n "{\"full_text\": \"CPU: ${cpu_usage_percent}%\", \"color\": \"$cpu_color\"},"
 
 	## RAM
-	mem_info=$(free -m | awk '/Mem:/ {
-		used=$3; total=$2;
-		printf "%.1fG/%.1fG (%.0f%%)", used/1024, total/1024, used/total*100
-	}')
-	echo -n "{\"full_text\": \"RAM: $mem_info\", \"color\": \"#d3869b\"},"
+	read mem_total mem_used <<< $(free -m | awk '/Mem:/ {print $2, $3}')
+	ram_percent=$(( (mem_used * 100) / mem_total ))
+	ram_text=$(awk -v used=$mem_used -v total=$mem_total 'BEGIN {printf "%.1fG/%.1fG (%d%%)", used/1024, total/1024, (used*100)/total}')
+
+	if [ "$ram_percent" -lt 60 ]; then
+		ram_color="#ffffff"
+	elif [ "$ram_percent" -lt 80 ]; then
+		ram_color="#fabd2f"
+	else
+		ram_color="#fb4934"
+	fi
+
+	echo -n "{\"full_text\": \"RAM: $ram_text\", \"color\": \"$ram_color\"},"
 
 	## Disk
-	disk_info=$(df -BG --output=used,size,pcent / | tail -1 | awk '{
-		used=$1; total=$2; percent=$3;
-		gsub("G", "", used); gsub("G", "", total); gsub("%","",percent);
-		printf "Disk: %sG/%sG (%s%%)", used, total, percent
-	}')
-	echo -n "{\"full_text\": \"$disk_info\", \"color\": \"#fabd2f\"},"
+	disk_vals=($(df -BG --output=used,size,pcent / | tail -1))
+	used=${disk_vals[0]//G/}
+	size=${disk_vals[1]//G/}
+	pct=${disk_vals[2]//%/}
+	disk_text="Disk: ${used}G/${size}G (${pct}%)"
+
+	if [ "$pct" -lt 60 ]; then
+		disk_color="#ffffff"
+	elif [ "$pct" -lt 80 ]; then
+		disk_color="#fabd2f"
+	else
+		disk_color="#fb4934"
+	fi
+
+	echo -n "{\"full_text\": \"$disk_text\", \"color\": \"$disk_color\"},"
 
 	## Network
 	interface=$(ip route | awk '/default/ {print $5; exit}')
+	net_color="#fb4934"
 	if [ -n "$interface" ]; then
-		# Check if interface has an IP
 		ip_addr=$(ip addr show "$interface" | awk '/inet / {print $2}' | cut -d/ -f1)
 		ssid=""
 
-		# Try to get SSID if it's a Wi-Fi interface
 		if command -v iw > /dev/null && iw dev "$interface" info > /dev/null 2>&1; then
 			ssid=$(iw dev "$interface" link | awk -F': ' '/SSID/ {print $2}')
 		fi
 
 		if [ -n "$ip_addr" ]; then
-			# Connected
 			net_text="$interface"
 			[ -n "$ssid" ] && net_text="$net_text ($ssid)"
 			net_text="$net_text $ip_addr"
+			net_color="#ffffff"
 		else
-			# Disconnected
 			net_text="$interface: Disconnected"
 		fi
-
-		echo -n "{\"full_text\": \"Net: $net_text\", \"color\": \"#8ec07c\"},"
 	else
-		echo -n "{\"full_text\": \"Net: Disconnected\", \"color\": \"#8ec07c\"},"
+		net_text="Net: Disconnected"
 	fi
 
+	echo -n "{\"full_text\": \"Net: $net_text\", \"color\": \"$net_color\"},"
 
 	## Hostname
 	if [ -f /etc/hostname ]; then
 		host=$(cat /etc/hostname)
-		echo -n "{\"full_text\": \"Host: $host\", \"color\": \"#fe8019\"},"
+		echo -n "{\"full_text\": \"Host: $host\", \"color\": \"#ffffff\"},"
 	fi
 
-    ## 🔋 Battery
+	## Battery
 	if command -v acpi > /dev/null; then
 		battery_raw=$(acpi -b)
 		battery_percent=$(echo "$battery_raw" | grep -oP '[0-9]+(?=%)')
@@ -71,12 +106,11 @@ while true; do
 
 		if [ "$charging_status" = "Charging" ]; then
 			battery_text="Battery: Charging (${battery_percent}%)"
-			battery_color="#b8bb26" # always green while charging
+			battery_color="#b8bb26"
 		else
-			# Not charging, apply color based on percent
 			battery_text="Battery: ${battery_percent}%"
-			if [ "$battery_percent" -ge 50 ]; then
-				battery_color="#b8bb26"
+			if [ "$battery_percent" -ge 40 ]; then
+				battery_color="#ffffff"
 			elif [ "$battery_percent" -ge 20 ]; then
 				battery_color="#fabd2f"
 			else
