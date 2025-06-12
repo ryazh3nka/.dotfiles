@@ -87,7 +87,7 @@ while true; do
 			net_text="$interface: Disconnected"
 		fi
 	else
-		net_text="Net: Disconnected"
+		net_text="Disconnected"
 	fi
 
 	echo -n "{\"full_text\": \"Net: $net_text\", \"color\": \"$net_color\"},"

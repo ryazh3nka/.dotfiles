@@ -27,9 +27,6 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
-### Windowrules
-assign [app_id="org.telegram.desktop"] workspace number 3
-
 ### Autostart
 exec --no-startup-id autotiling -w 1 2 3
 exec --no-startup-id mako
@@ -39,7 +36,7 @@ exec_always swaymsg "workspace 1; layout tabbed"
 exec swayidle -w \
 	timeout 600 'swaylock -f -c 282828' \
 	timeout 1200 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-	before-sleep 'swaylock -f -c 282828'
+	before-sleep 'swaylock -f -c 282828'   
 
 ### Input configuration
 input "type:touchpad" {
@@ -51,7 +48,7 @@ input "type:touchpad" {
 
 input "type:keyboard" {
 	xkb_layout us,ru
-	xkb_options grp:ctrl_space_toggle
+	xkb_options "grp:ctrl_space_toggle,ctrl:nocaps"
 }
 
 ### Key bindings
