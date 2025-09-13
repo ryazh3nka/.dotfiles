@@ -21,8 +21,17 @@ $ stow .dotfiles/zsh
 ```
 
 ### nvim
-install LazyVim as per distribution instructions, copy the config files, and load the plugins. i would also recommend installing `Neovide` – it's a fast and sleek GUI client for neovim.
+install LazyVim as per distribution instructions, copy the config files, and load the plugins. i would also recommend installing Neovide – it's a fast and sleek GUI client for neovim. be wary that i did my fair share of customisation, so you might want to check out the default install of Lazy before copying my dotfiles.
 
+### emacs
+i would suggest creating the `.emacs.d` directory before symlinking anything to keep your cloned repo intact from junk that emacs likes to paste inside your config. this has one downside though: you'll need to download pdf-mode and your preferred colorscheme manually (i'm sure you'll figure that out).
+```zsh
+$ mkdir -p ~/.emacs.d
+$ stow .dotfiles/emacs
+```
+```
+
+```
 ## list of packages
 ```zsh
 # desktop environment stuff
