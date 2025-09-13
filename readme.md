@@ -32,7 +32,6 @@ $ mkdir -p ~/.emacs.d
 $ stow .dotfiles/emacs
 ```
 
-```
 ## list of packages
 ```zsh
 # desktop environment stuff
