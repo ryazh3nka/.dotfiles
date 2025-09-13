@@ -20,7 +20,7 @@ return {
         {
                 "williamboman/mason-lspconfig.nvim",
                 opts = {
-                        ensure_installed = {"clangd", "pyright"},
+                        ensure_installed = { "clangd", "pyright" },
                 },
         },
 }
