@@ -21,7 +21,7 @@ $ stow .dotfiles/zsh
 ```
 
 ### nvim
-install the lazy.nvim package manager, copy the config files, and load the plugins. don't forget to install npm for mason to load lsps and wl-clipboard for copying to work correctly.
+install LazyVim as per distribution instructions, copy the config files, and load the plugins. i would also recommend installing `Neovide` – it's a fast and sleek GUI client for neovim.
 
 ## list of packages
 ```zsh
@@ -40,7 +40,7 @@ xdg-desktop-portal-wlr
 
 # workflow 
 zsh && zsh-autosuggestions && zsh-syntax-highlighting
-nvim && nvim-lazy
+nvim && lazyvim
 ranger
 foot && tmux
 zathura && zathura-pdf-poppler
@@ -58,6 +58,7 @@ noto-fonts
 ```
 
 ## check these out too
-[The Compiler's qutebrowser colorscheme](https://github.com/The-Compiler/dotfiles/blob/master/qutebrowser/gruvbox.py) – a script that brings the gruvbox colors to qutebrowser.</br>
+[The Compiler's qutebrowser colorscheme](https://github.com/The-Compiler/dotfiles/blob/master/qutebrowser/gruvbox.py) – a script that brings the gruvbox colors to qutebrowser</br>
 [aesthetic-wallpapers](https://github.com/D3Ext/aesthetic-wallpapers) – some cool wallpapers!</br>
-[eastack's zathura theme](https://github.com/eastack/zathura-gruvbox) – a zathura theme that makes reading real cozy.
+[eastack's zathura theme](https://github.com/eastack/zathura-gruvbox) – a zathura theme that makes reading real cozy</br>
+[rexim's github](https://github.com/rexim) – a certain someone that got me inspired
