@@ -1,5 +1,5 @@
 # .dotfiles
-this is a side branch of my dotfiles repo featuring Sway and the gruvbox terminal colorscheme. this setup was made for my laptop, so my primary goal was to make it as minimal as possible (still a work in progress though). the advised way of managing the files is via tools like `GNU Stow` or plain old symlinking. feel free to use the configs provided in the repo as you please (though your eyes might start to bleed after seeing my css skills).
+this is a side branch of my dotfiles repo featuring Sway and the Gruvbox terminal colorscheme. this setup was made for my laptop, so my primary goal was to make it as minimal as possible (still a work in progress though). the advised way of managing the files is via tools like GNU Stow or plain old symlinking. feel free to use the configs provided in the repo as you please (though your eyes might start to bleed after seeing my css skills).
 
 ## gallery
 <p align="center">
@@ -9,15 +9,20 @@ this is a side branch of my dotfiles repo featuring Sway and the gruvbox termina
 
 ## installation
 make backups of your `.config` directory, clone and cd into the repo, then run `stow package-name` for every folder you want symlinked, and tweak the dotfiles to your liking. for programs that need additional configuration, see the list below.
+```zsh
+$ mkdir -p $HOME/.dotfiles
+$ git clone https://github.com/ryazh3nka/.dotfiles.git $HOME/.dotfiles
+$ cd $HOME/.dotfiles
+```
 
 ### zsh
-export the `$ZDOTDIR` environment variable inside `/etc/zsh/zshenv`, then create the `~/.config/zsh` folder and continue like usual.
+export the `$ZDOTDIR` environment variable inside `/etc/zsh/zshenv`, then create the `~/.config/zsh` folder and continue like usual. keep in mind that this applies to all users.
 ```zsh
 export ZDOTDIR="$HOME"/.config/zsh
 ```
 ```zsh
 $ mkdir -p ~/.config/zsh
-$ stow .dotfiles/zsh
+$ stow zsh
 ```
 
 ### nvim
@@ -29,7 +34,7 @@ be wary that i did my fair share of customisation, so you might want to check ou
 create the `.emacs.d` directory before symlinking anything to keep your cloned repo intact from junk that Emacs likes to paste inside your config. this has one downside though: you'll need to download pdf-mode and your preferred colorscheme manually (i'm sure you'll figure that out).
 ```zsh
 $ mkdir -p ~/.emacs.d
-$ stow .dotfiles/emacs
+$ stow emacs
 ```
 
 ## list of packages
