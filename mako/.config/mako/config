@@ -1,0 +1,14 @@
+font=Ubuntu 10
+default-timeout=5000
+layer=overlay
+anchor=top-right
+width=400
+height=300
+border-radius=0
+border-size=1
+max-icon-size=128
+text-alignment=center
+background-color=#222222
+text-color=#ebdbb2
+border-color=#d79921
+margin=0
