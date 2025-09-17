@@ -3,18 +3,23 @@ return {
                 "neovim/nvim-lspconfig",
                 opts = {
                         servers = {
-                                -- disables lua-ls
                                 lua_ls = false,
                         },
                         setup = {
                                 lua_ls = function() return true end,
                         },
+                        document_highlight = {
+                                enabled = false,
+                        },
                 },
         },
 
         {
-                "folke/neodev.nvim",
-                enabled = false,
+                "folke/lazydev.nvim",
+                opts = {
+                        library = {},
+                        lspconfig = false,
+                },
         },
 
         {

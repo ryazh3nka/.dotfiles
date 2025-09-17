@@ -10,8 +10,10 @@ vim.opt.autoindent = false
 vim.opt.tabstop = 8
 vim.opt.shiftwidth = 8
 vim.opt.softtabstop = 8
-vim.opt.autochdir = false
+vim.opt.autochdir = true
 vim.opt.expandtab = true
+
+vim.opt.shortmess:remove("I") -- displays default greeter
 
 -- neovide settings
 vim.g.neovide_floating_shadow = false
