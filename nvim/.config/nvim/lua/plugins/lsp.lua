@@ -2,15 +2,13 @@ return {
         {
                 "neovim/nvim-lspconfig",
                 opts = {
-                        servers = {
+                        servers = { 
                                 lua_ls = false,
+                                stylua = false,
                         },
-                        setup = {
-                                lua_ls = function() return true end,
-                        },
-                        document_highlight = {
-                                enabled = false,
-                        },
+                        setup = { lua_ls = function() return true end },
+                        document_highlight = { enabled = false },
+                        inlay_hints = { enabled = false }
                 },
         },
 
@@ -23,7 +21,7 @@ return {
         },
 
         {
-                "williamboman/mason-lspconfig.nvim",
+                "mason-org/mason-lspconfig.nvim",
                 opts = {
                         ensure_installed = { "clangd", "pyright" },
                 },
