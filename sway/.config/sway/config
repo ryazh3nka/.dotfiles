@@ -203,5 +203,7 @@ bar {
 ### Windowrules
 assign [app_id="org.qutebrowser.qutebrowser"] 1
 assign [app_id="emacs"] 1
+assign [app_id="neovide"] 1
+assign [class="steam"] 5
 
 include /etc/sway/config.d/*
