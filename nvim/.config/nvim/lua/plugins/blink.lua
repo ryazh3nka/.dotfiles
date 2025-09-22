@@ -1,25 +1,31 @@
 return {
         "saghen/blink.cmp",
         opts = function(_, opts)
-                vim.api.nvim_create_autocmd("BufEnter", {
-                        callback = function()
-                                vim.b.completion = false
-                        end,
-                })
+                vim.g.completion_enabled = false
 
                 Snacks.toggle({
                         name = "Completion",
                         get = function()
-                                return vim.b.completion
+                                return vim.g.completion_enabled
                         end,
                         set = function(state)
-                                vim.b.completion = state
+                                vim.g.completion_enabled = state
                         end,
                 }):map("<leader>uk")
 
-                opts.enabled = function()
-                        return vim.b.completion == true
+                local default_enabled = opts.enabled or function()
+                        return true
                 end
+
+                opts.enabled = function()
+                        if not vim.g.completion_enabled then
+                                return false
+                        end
+                        return default_enabled()
+                end
+
+                opts.cmdline = opts.cmdline or {}
+                opts.cmdline.enabled = false
 
                 return opts
         end,
