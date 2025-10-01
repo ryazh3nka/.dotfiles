@@ -28,13 +28,7 @@ $ stow zsh
 ### nvim
 my configs will only work if you have Neovim v12.0 installed (i use nightly builds personally). my setup has zero dependencies and it uses the built-in plugin manager (thanks, Vimothee!). if you want a cool GUI front-end, check out Neovide, it's cool as hell.
 
-forgot to mention that i'm kinda opinionated when it comes to my text editors, soo...
-- you don't need LSPs if you have a compiler. use :make and quicklist.
-- you don't need code completion, it's distracting and unproductive.
-- you don't need function signature helpers, just go to definition and see for yourself.
-- you don't need to use most of the plugins out there if you really know vim motions.
-- you don't need dired (and emacs by extension lol), use oil.nvim.
-- you don't need 15 nested folders to keep your config clean.
+by the way, you don't need LSPs if you have a compiler, just use :make and quicklist.
 
 ### emacs
 create the `.emacs.d` directory before symlinking anything to keep your cloned repo intact from junk that Emacs likes to paste inside your config. for the same reason you should also download your preferred colorscheme manually.

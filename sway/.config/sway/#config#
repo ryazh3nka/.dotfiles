@@ -4,7 +4,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $editor ~/.local/bin/neovide-open
+set $editor neovide --grid 100x100
 set $term foot
 set $menu bemenu-run -p dmenu -l 5 --binding vim -i -H 26 --fn "UbuntuMono Nerd Font 14" --tb "#282828" \
             --fb "#282828" --nb "#282828" --hb "#504945" --ab "#282828" --sb "#504945" --tf "#ebdbb2" \
