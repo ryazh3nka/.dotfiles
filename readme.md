@@ -1,5 +1,5 @@
 # .dotfiles
-this is a side branch of my dotfiles repo featuring Sway and the Gruvbox terminal colorscheme. this setup was made for my laptop, so my primary goal was to make it as minimal as possible (still a work in progress though). the advised way of managing the files is via tools like GNU Stow or plain old symlinking. feel free to use the configs provided in the repo as you please (though your eyes might start to bleed after seeing my css skills).
+this used to be a side branch of my dotfiles, but i grew to like it and now it's my daily driver. featuring Sway and the Gruvbox terminal colorscheme, this setup was made for my laptop, and my primary goal was to make it as minimal as possible (still a work in progress though). the advised way of managing the files is via tools like GNU Stow or plain old symlinking. feel free to use the configs provided in the repo as you please. all package names are valid entries in the Arch repos.
 
 ## gallery
 <p align="center">
@@ -26,22 +26,29 @@ $ stow zsh
 ```
 
 ### nvim
-install LazyVim as per distribution instructions, and copy the config files. i would also recommend installing Neovide – it's a fast and sleek GUI client for neovim. 
-
-be wary that i did my fair share of customisation, so you might want to check out the default install of Lazy before copying my dotfiles. the most noticeable changes in my config are to do with various plugins for autoindentation, autocompletion, etc. i also disabled the Lua integration that the default install provides (it's too heavy on RAM).
+my configs will only work if you have Neovim v12.0 installed (i use nightly builds personally). my setup has zero dependencies and it uses the built-in plugin manager (thanks, Vimothee!). if you want a cool GUI front-end, check out Neovide, it's cool as hell.
 
 ### emacs
-create the `.emacs.d` directory before symlinking anything to keep your cloned repo intact from junk that Emacs likes to paste inside your config. this has one downside though: you'll need to download pdf-mode and your preferred colorscheme manually (i'm sure you'll figure that out).
+create the `.emacs.d` directory before symlinking anything to keep your cloned repo intact from junk that Emacs likes to paste inside your config. this has one downside though: you'll need to download your preferred colorscheme manually (i'm sure you'll figure that out).
 ```zsh
 $ mkdir -p ~/.emacs.d
 $ stow emacs
 ```
 
+## scripts
+i like to keep my scripts in `~/.local/bin`, so you might want to make that folder beforehand.
+```zsh
+$ mkdir -p ~/.local/bin
+```
+
+here's the short list of them:
+- `neovide-open` is a wrapper for Neovim to launch in remote (server) mode with Neovide as its front-end. if you pass any files to the command, they would open as buffers, even if Neovide was already running. especially handy when dealing with mimetypes and desktop entries. needs the `neovim-remote` package to work.
+- `install-deps` would install every package featured here. NOT recommended as you might end up with megabytes of useless junk. just install those that you need manually. needs yay to work.
+
 ## list of packages
 ```zsh
 # desktop environment stuff
 sway && swaylock && swaybg && swayidle
-greetd && greetd-tuigreet
 i3status
 bemenu
 mako
@@ -54,7 +61,7 @@ xdg-desktop-portal-wlr
 
 # workflow 
 zsh && zsh-autosuggestions && zsh-syntax-highlighting
-nvim && neovide && lazyvim
+neovim-nightly-bin && neovim-remote && neovide
 ranger
 foot && tmux
 zathura && zathura-pdf-poppler
