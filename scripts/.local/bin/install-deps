@@ -1,3 +1,46 @@
 #!/bin/sh
 
-yay -Sy sway swaylock swaybg swayidle i3status bemenu mako networkmanager pipewire pipewire-pulse pipewire-alsa wireplumber wl-clipboard xdg-desktop-portal-wlr zsh zsh-autosuggestions zsh-syntax-highlighting neovim-nightly-bin neovim-remote neovide ranger foot tmux zathura zathura-pdf-poppler btop fastfetch pipes.sh cmatrix-git mpd ncmpcpp ttf-ubuntu-nerd ttf-ubuntu-mono-nerd noto-fonts
+if ! command -v yay >/dev/null 2>&1; then
+        echo "ERROR: yay executable not found"
+        exit 1
+fi 
+
+yay -Sy sway swaylock swaybg swayidle i3status bemenu mako \
+        networkmanager pipewire pipewire-pulse pipewire-alsa wireplumber wl-clipboard xdg-desktop-portal-wlr \
+        zsh zsh-autosuggestions zsh-syntax-highlighting neovim-nightly-bin neovim-remote neovide ranger foot tmux zathura zathura-pdf-poppler \
+        btop fastfetch pipes.sh cmatrix-git mpd ncmpcpp \
+        ttf-ubuntu-nerd ttf-ubuntu-mono-nerd noto-fonts
+
+cd "$HOME/.dotfiles" || exit 1
+
+while true; do
+        read -p "Do you wish to symlink the dotfiles? " yn
+        case $yn in
+                [Yy]* ) 
+                        if ! command -v stow >/dev/null 2>&1; then
+                                echo "ERROR: stow executable not found"; exit 1
+                        fi
+                        cd "$HOME/.dotfiles" || echo "Can't find the .dotfiles folder."; exit 1
+                        for pkg in "*/"; do
+                                [ -d "$pkg" ] || continue
+                                target_dir=""
+
+                                for d in "$pkg"/*; do
+                                        [ -d "$d" ] || continue
+                                        target_dir=$d
+                                        break
+                                done
+
+                                [ -n "$target_dir" ] || continue
+
+                                relative_target=${target_dir#"$pkg"/}
+
+                                mkdir -p "$HOME/$relative_target"
+                                echo "Stowing $pkg -> ~/$relative_target"
+                                stow "$pkg"
+                        done
+                        break;;
+                [Nn]* ) exit;;
+                * ) echo "Please answer yes or no.";;
+        esac
+done
