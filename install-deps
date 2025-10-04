@@ -21,7 +21,7 @@ while true; do
                                 echo "ERROR: stow executable not found"; exit 1
                         fi
                         cd "$HOME/.dotfiles" || echo "Can't find the .dotfiles folder."; exit 1
-                        for pkg in "*/"; do
+                        for pkg in */; do
                                 [ -d "$pkg" ] || continue
                                 target_dir=""
 
