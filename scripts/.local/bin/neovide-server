@@ -1,5 +1,10 @@
 #!/bin/bash
 
+command -v nvr >/dev/null 2>&1 || {
+        echo "'nvr' executable not found."
+        exit 1
+}
+
 NVIM_SERVER_SOCKET="${XDG_RUNTIME_DIR:-/tmp}/nvim-neovide-server"
 
 is_socket_alive() {
