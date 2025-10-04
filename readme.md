@@ -10,7 +10,6 @@ this used to be a side branch of my dotfiles, but i grew to like it and now it's
 ## installation
 make backups of your `.config` directory, clone and cd into the repo, then run `stow package-name` for every folder you want symlinked, and tweak the dotfiles to your liking. for programs that need additional configuration, see the list below.
 ```zsh
-$ mkdir -p $HOME/.dotfiles
 $ git clone https://github.com/ryazh3nka/.dotfiles.git $HOME/.dotfiles
 $ cd $HOME/.dotfiles
 ```
@@ -26,7 +25,7 @@ $ stow zsh
 ```
 
 ### nvim
-my configs will only work if you have Neovim v12.0 installed (i use nightly builds personally). my setup has zero dependencies and it uses the built-in plugin manager (thanks, Vimothee!). if you want a cool GUI front-end, check out Neovide, it's cool as hell.
+my configs will only work if you have Neovim v12.0 installed (i use nightly builds personally). my setup has zero dependencies and it uses the built-in plugin manager. if you want a cool GUI front-end, check out Neovide, it's cool as hell.
 
 by the way, you don't need LSPs if you have a compiler, just use :make and quicklist.
 
@@ -44,8 +43,8 @@ $ mkdir -p ~/.local/bin
 ```
 
 here's the short list of them:
-- `neovide-open` is a wrapper for Neovim to launch in remote (server) mode with Neovide as its front-end. if you pass any files to the command, they would open as buffers, even if Neovide was already running. especially handy when dealing with mimetypes and desktop entries. needs neovim-remote to work.
-- `install-deps` would install every package featured here. NOT recommended as you might end up with megabytes of useless junk. just install those that you need manually. needs yay to work.
+- `neovide-server` is a wrapper for Neovim to launch in remote (server) mode with Neovide as its front-end. if you pass any files to the command, they would open as buffers, even if Neovide was already running. especially handy when dealing with mimetypes and desktop entries. needs neovim-remote to work.
+- `install`/`uninstall`/`update-restow` would install/remove/update every package featured here. NOT recommended as you might end up with megabytes of useless junk. just do it manually. needs yay to work.
 
 ## list of packages
 ```zsh
@@ -54,10 +53,6 @@ sway && swaylock && swaybg && swayidle
 i3status
 bemenu
 mako
-
-# system
-networkmanager
-pipewire && pipewire-pulse && pipewire-alsa && wireplumber
 wl-clipboard
 xdg-desktop-portal-wlr
 
