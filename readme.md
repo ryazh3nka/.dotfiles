@@ -25,7 +25,7 @@ $ stow zsh
 ```
 
 ### nvim
-my configs will only work if you have Neovim v12.0 installed (i use nightly builds personally). my setup has zero dependencies and it uses the built-in plugin manager. if you want a cool GUI front-end, check out Neovide, it's cool as hell.
+my configs will only work if you have Neovim v12.0 installed (i use nightly builds personally). my setup has zero dependencies and it uses the built-in plugin manager. if you want a cool GUI front-end, check out Neovide.
 
 by the way, you don't need LSPs if you have a compiler, just use :make and quicklist.
 
