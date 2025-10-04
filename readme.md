@@ -77,7 +77,7 @@ noto-fonts
 ```
 
 ## check these out too
-[The Compiler's qutebrowser colorscheme](https://github.com/The-Compiler/dotfiles/blob/master/qutebrowser/gruvbox.py) – a script that brings the gruvbox colors to Qutebrowser</br>
-[aesthetic-wallpapers](https://github.com/D3Ext/aesthetic-wallpapers) – some cool wallpapers!</br>
-[eastack's zathura theme](https://github.com/eastack/zathura-gruvbox) – a Zathura theme that makes reading real cozy</br>
-[rexim's github](https://github.com/rexim) – a certain someone that got me inspired
+[morhetz' theme for vim](https://github.com/morhetz/gruvbox) – a beautiful color palette called Gruvbox that defines my setup</br>
+[The Compiler's theme for qutebrowser](https://github.com/The-Compiler/dotfiles/blob/master/qutebrowser/gruvbox.py) – a script that brings the same cool earthy colors to Qutebrowser</br>
+[eastack's theme for zathura](https://github.com/eastack/zathura-gruvbox) – a Zathura theme that makes reading real cozy</br>
+[rexim's github](https://github.com/rexim) – a certain someone that got me inspired</br>
