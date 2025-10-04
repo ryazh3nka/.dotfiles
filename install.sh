@@ -1,7 +1,7 @@
 #!/bin/sh
 
 command -v yay >/dev/null 2>&1 || {
-        echo "yay executable not found"
+        echo "yay executable not found."
         exit 1
 }
 
@@ -15,12 +15,12 @@ while true; do
         case $yn in
                 [Yy]* ) 
                         command -v stow >/dev/null 2>&1 || {
-                                echo "Stow executable not found"
+                                echo "Stow executable not found."
                                 exit 1
                         }
 
                         cd "$HOME/.dotfiles" || {
-                                echo "Can't find the ~/.dotfiles directory"
+                                echo "Can't find the ~/.dotfiles directory."
                                 exit 1
                         }
                         

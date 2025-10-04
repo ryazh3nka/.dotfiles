@@ -5,12 +5,12 @@ while true; do
         case $yn in
                 [Yy]* ) 
                         command -v stow >/dev/null 2>&1 || {
-                                echo "ERROR: stow executable not found"
+                                echo "ERROR: stow executable not found."
                                 exit 1
                         }
 
                         cd "$HOME/.dotfiles" || {
-                                echo "Can't find the ~/.dotfiles directory"
+                                echo "Can't find the ~/.dotfiles directory."
                                 exit 1
                         }
                         
@@ -25,7 +25,7 @@ while true; do
 done
 
 command -v yay >/dev/null 2>&1 || {
-        echo "yay executable not found"
+        echo "yay executable not found."
         exit 1
 }
 
