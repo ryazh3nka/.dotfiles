@@ -11,6 +11,7 @@ vim.opt.swapfile = false
 vim.opt.cursorline = true
 vim.opt.showmode = false
 vim.opt.autochdir = true
+vim.opt.wrap = false
 vim.g.mapleader = " "
 
 vim.pack.add({
@@ -22,8 +23,9 @@ vim.pack.add({
         { src = "https://github.com/ggandor/leap.nvim.git" },
 })
 
-require("oil").setup({})
-require("lualine").setup({})
+require("oil").setup()
+require("lualine").setup()
+require("leap").opts.safe_labels = {}
 require("fzf-lua").setup({
         files = { 
                 fd_opts = [[--type f --exclude .git --exclude '.*']],
@@ -39,7 +41,6 @@ require("fzf-lua").setup({
                 ["pointer"] = "#b16286",
         },
 })
-require('leap').opts.safe_labels = {}
 
 vim.keymap.set("i", "<A-w>", "<C-o>w")
 vim.keymap.set("i", "<A-f>", "<C-o>w")
@@ -49,6 +50,16 @@ vim.keymap.set("i", "<A-e>", "<C-o>e")
 vim.keymap.set("n", "<leader>o", "<CMD>update<CR><CMD>source<CR>", { desc = "source and update" })
 vim.keymap.set("n", "<leader>w", "<CMD>write<CR>", { desc = "write changes" })
 vim.keymap.set("n", "<leader>q", "<CMD>quit<CR>", { desc = "kill focused window" })
+vim.keymap.set("n", "<leader>ww", "<CMD>set wrap!<CR>", { desc = "toggle line wrapping" })
+
+vim.keymap.set("n", "<leader>t", "<CMD>botright split | resize 10 | terminal<CR>", { desc = "open terminal in the current directory" })
+vim.keymap.set("n", "<leader>T", function()
+        local git_dir = vim.fn.finddir(".git", ".;")
+        local root = git_dir ~= "" and vim.fn.fnamemodify(git_dir, ":h") or vim.fn.getcwd()
+
+        vim.cmd("botright split | resize 10 | terminal")
+        vim.fn.chansend(vim.b.terminal_job_id, "cd " .. root .. " && clear\n")
+end, { desc = "open terminal in the root directory" })
 
 vim.keymap.set("n", "<leader>bb", "<CMD>buffer#<CR>", { desc = "switch to previous buffer" })
 vim.keymap.set("n", "<leader>bd", "<CMD>bdelete<CR>", { desc = "kill focused buffer" })

@@ -5,8 +5,8 @@ setopt extendedglob
 bindkey -e
 
 alias ls="ls --color=auto"
-alias ll="ls -lah --color=auto --sort=extension"
 alias l="ls -lh --color=auto --sort=extension"
+alias ll="ls -lAh --color=auto --sort=extension"
 alias wget="wget --hsts-file ~/.local/share/wget/wget-hsts"
 
 bindkey "^[[1;5C" forward-word

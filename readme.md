@@ -63,7 +63,8 @@ xdg-desktop-portal-wlr
 
 # workflow 
 zsh && zsh-autosuggestions && zsh-syntax-highlighting
-neovim-nightly-bin && neovim-remote && neovide
+neovim-nightly-bin 
+neovide && neovim-remote
 ranger
 foot && tmux
 zathura && zathura-pdf-poppler
