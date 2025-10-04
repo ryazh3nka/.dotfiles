@@ -1,0 +1,31 @@
+#!/bin/sh
+
+ command -v yay >/dev/null 2>&1 || {
+        echo "yay executable not found"
+        exit 1
+}
+
+yay -Syu
+
+while true; do
+        read -p "Do you wish to restow the dotfiles? (y/n) " yn
+        case $yn in
+                [Yy]* ) 
+                        command -v stow >/dev/null 2>&1 || {
+                                echo "Stow executable not found"; exit 1
+                        }
+
+                        cd "$HOME/.dotfiles" || {
+                                echo "Can't find the ~/.dotfiles folder."
+                                exit 1 
+                        }
+                        
+                        for pkg in */; do
+                                stow --restow --verbose 1 $pkg
+                        done
+
+                        break;;
+                [Nn]* ) exit;;
+                * ) echo "Please answer yes or no.";;
+        esac
+done
