@@ -4,7 +4,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $editor ~/.local/bin/neovide-open
+set $editor ~/.local/bin/neovide-server
 set $term foot
 set $menu bemenu-run -p dmenu -l 5 --binding vim -i -H 26 --fn "UbuntuMono Nerd Font 14" --tb "#282828" \
             --fb "#282828" --nb "#282828" --hb "#504945" --ab "#282828" --sb "#504945" --tf "#ebdbb2" \
@@ -17,8 +17,12 @@ output * bg ~/.config/wallpapers/the-ninth-gruv-lowres.png fill
 ### Decorations
 smart_gaps on
 smart_borders on
-gaps inner 0
-gaps inner 0
+gaps outer 5
+gaps inner 10
+workspace 2 gaps inner 0
+workspace 2 gaps outer 0
+workspace 1 gaps inner 0
+workspace 1 gaps outer 0
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
@@ -27,6 +31,16 @@ client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
+
+### Windowrules
+assign [app_id="org.qutebrowser.qutebrowser"] 1
+assign [app_id="neovide"] 1
+assign [app_id="org.telegram.desktop"] 4
+assign [class="steam"] 5
+
+for_window [class="org-opensourcephysics-cabrillo-tracker-Tracker"] floating enable
+for_window [class="org-opensourcephysics-cabrillo-tracker-Tracker"] move position center
+for_window [workspace=2] border pixel 2
 
 ### XWayland
 xwayland enable
@@ -197,18 +211,5 @@ bar {
         }
         status_command i3status
 }
-
-### Rules
-assign [app_id="org.qutebrowser.qutebrowser"] 1
-assign [app_id="neovide"] 1
-assign [app_id="org.telegram.desktop"] 4
-assign [class="steam"] 5
-
-for_window [class="org-opensourcephysics-cabrillo-tracker-Tracker"] floating enable
-for_window [class="org-opensourcephysics-cabrillo-tracker-Tracker"] move position center
-
-for_window [workspace=2] border pixel 2
-workspace 2 gaps inner 0
-workspace 2 gaps outer 0
 
 include /etc/sway/config.d/*
