@@ -15,13 +15,9 @@ $ cd $HOME/.dotfiles
 ```
 
 ### zsh
-export the `$ZDOTDIR` environment variable inside `/etc/zsh/zshenv`, then create the `~/.config/zsh` directory and continue like usual. keep in mind that this applies to all users.
+export the `$ZDOTDIR` environment variable inside `/etc/zsh/zshenv` to declutter you home directory from *rc files. keep in mind that this applies to all users.
 ```zsh
 export ZDOTDIR="$HOME"/.config/zsh
-```
-```zsh
-$ mkdir -p ~/.config/zsh
-$ stow zsh
 ```
 
 ### nvim
@@ -77,7 +73,7 @@ noto-fonts
 ```
 
 ## check these out too
-[morhetz' theme for vim](https://github.com/morhetz/gruvbox) – a beautiful color palette called Gruvbox that defines my setup</br>
+[morhetz' theme for vim](https://github.com/morhetz/gruvbox) – a beautiful color palette that defines my setup</br>
 [The Compiler's theme for qutebrowser](https://github.com/The-Compiler/dotfiles/blob/master/qutebrowser/gruvbox.py) – a script that brings the same cool earthy colors to Qutebrowser</br>
 [eastack's theme for zathura](https://github.com/eastack/zathura-gruvbox) – a Zathura theme that makes reading real cozy</br>
 [rexim's github](https://github.com/rexim) – a certain someone that got me inspired</br>
