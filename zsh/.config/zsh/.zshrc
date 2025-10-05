@@ -8,6 +8,7 @@ alias ls="ls --color=auto"
 alias l="ls -lh --color=auto --sort=extension"
 alias ll="ls -lAh --color=auto --sort=extension"
 alias wget="wget --hsts-file ~/.local/share/wget/wget-hsts"
+alias tmux="tmux -T 256"
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word

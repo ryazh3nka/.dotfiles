@@ -17,8 +17,8 @@ output * bg ~/.config/wallpapers/the-ninth-gruv-lowres.png fill
 ### Decorations
 smart_gaps on
 smart_borders on
-gaps inner 5
-gaps inner 10
+gaps inner 0
+gaps inner 0
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
@@ -52,7 +52,7 @@ input "type:touchpad" {
 
 input "type:keyboard" {
         xkb_layout us,ru
-        xkb_options "grp:ctrl_space_toggle,ctrl:nocaps"
+        xkb_options "grp:alt_shift_toggle,ctrl:nocaps"
 }
 
 ### Key bindings
@@ -121,8 +121,8 @@ bindsym $mod+Shift+0 move container to workspace number 10
 #
 # Layout stuff:
 #
-bindsym $mod+i splith
-bindsym $mod+o splitv
+bindsym $mod+o splith
+bindsym $mod+i splitv
 
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
@@ -198,14 +198,17 @@ bar {
         status_command i3status
 }
 
-### Windowrules
+### Rules
 assign [app_id="org.qutebrowser.qutebrowser"] 1
-assign [app_id="emacs"] 1
 assign [app_id="neovide"] 1
-assign [app_id="org.telegram.desktop"] 2
+assign [app_id="org.telegram.desktop"] 4
 assign [class="steam"] 5
 
 for_window [class="org-opensourcephysics-cabrillo-tracker-Tracker"] floating enable
 for_window [class="org-opensourcephysics-cabrillo-tracker-Tracker"] move position center
+
+for_window [workspace=2] border pixel 2
+workspace 2 gaps inner 0
+workspace 2 gaps outer 0
 
 include /etc/sway/config.d/*
