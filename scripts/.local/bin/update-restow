@@ -1,18 +1,23 @@
 #!/bin/sh
 
- command -v yay >/dev/null 2>&1 || {
+command -v yay >/dev/null 2>&1 || {
         echo "'yay' executable not found."
         exit 1
 }
 
-yay -Syu
+yay -Syu || {
+        echo "Some packages couldn't be updated!"
+}
 
 while true; do
-        read -p "Do you wish to restow the dotfiles? (y/n) " yn
+        printf "Do you wish to restow the dotfiles? (y/n) "
+        IFS= read -r yn
+
         case $yn in
                 [Yy]* ) 
                         command -v stow >/dev/null 2>&1 || {
-                                echo "'stow' executable not found."; exit 1
+                                echo "'stow' executable not found."
+                                exit 1
                         }
 
                         cd "$HOME/.dotfiles" || {
