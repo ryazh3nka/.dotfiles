@@ -10,9 +10,12 @@ alias ll="ls -lAh --color=auto --sort=extension"
 alias wget="wget --hsts-file ~/.local/share/wget/wget-hsts"
 alias tmux="tmux -T 256"
 
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
-bindkey "^[[3~" delete-char
+bindkey "^[h" backward-char
+bindkey "^[j" down-history
+bindkey "^[k" up-history
+bindkey "^[l" forward-char
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line
 
 autoload -Uz compinit
 compinit -C
@@ -22,7 +25,7 @@ compinit -C
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
-PROMPT='%B%F{10}[I]%f%b %F{15}[%F{12}%n%F{15}@%F{11}%m%F{15}]%F{9}[%~]%f$ '
+PROMPT="%B%F{10}[I]%f%b %F{15}[%F{12}%n%F{15}@%F{11}%m%F{15}]%F{9}[%~]%f$ "
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
