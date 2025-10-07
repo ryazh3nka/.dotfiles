@@ -39,7 +39,7 @@ $ mkdir -p ~/.local/bin
 ```
 
 here's the short list of them:
-- `nvim-server` is a wrapper for Neovim to launch in remote (server) mode with. if you pass any files to the command, they would open as buffers, even if Neovim was already running. especially handy when dealing with mimetypes and desktop entries.
+- `nvim-server` is a wrapper for Neovim to launch in remote (server) mode. if you pass any files to the command, they would open as buffers, even if Neovim was already running. especially handy when dealing with mimetypes and desktop entries.
 - `install`/`uninstall`/`update-restow` would install/remove/update every package featured here. NOT recommended as you might end up with megabytes of useless junk. just do it manually.
 
 ## list of packages
