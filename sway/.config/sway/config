@@ -5,11 +5,11 @@ set $down j
 set $up k
 set $right l
 set $editor ~/.local/bin/neovide-server
+set $colorpicker hyprpicker -a
 set $term foot
 set $menu bemenu-run -p dmenu -l 5 --binding vim -i -H 26 --fn "UbuntuMono Nerd Font 14" --tb "#282828" \
             --fb "#282828" --nb "#282828" --hb "#504945" --ab "#282828" --sb "#504945" --tf "#ebdbb2" \
             --ff "#ebdbb2" --nf "#ebdbb2" --hf "#ebdbb2" --af "#ebdbb2" --cb "#ebdbb2" --cf "#282828"
-            set $colorpicker hyprpicker -a
 
 ### Output configuration
 output * bg ~/.config/wallpapers/the-ninth-gruv-lowres.png fill
@@ -17,12 +17,8 @@ output * bg ~/.config/wallpapers/the-ninth-gruv-lowres.png fill
 ### Decorations
 smart_gaps on
 smart_borders on
-gaps outer 5
-gaps inner 10
-workspace 2 gaps inner 0
-workspace 2 gaps outer 0
-workspace 1 gaps inner 0
-workspace 1 gaps outer 0
+gaps outer 0
+gaps inner 0
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
@@ -40,13 +36,13 @@ assign [class="steam"] 5
 
 for_window [class="org-opensourcephysics-cabrillo-tracker-Tracker"] floating enable
 for_window [class="org-opensourcephysics-cabrillo-tracker-Tracker"] move position center
-for_window [workspace=2] border pixel 2
 
 ### XWayland
 xwayland enable
 for_window [shell="xwayland"] title_format "[XWayland] %title"
 
 ### Autostart
+exec_always swaymsg workspace number 1
 exec --no-startup-id mako
 
 ### Idle configuration
@@ -189,7 +185,6 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 #
 # Utilities
 #
-
 bindsym Print exec grim -g "$(slurp -d)" - | wl-copy
 bindsym Shift+Print exec grim $(xdg-user-dir PICTURES)/$(date +'screenshot-%d_%m_%Y-%H%M%S.png')
 
