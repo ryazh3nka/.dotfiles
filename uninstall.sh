@@ -32,11 +32,10 @@ command -v yay >/dev/null 2>&1 || {
 }
 
 yay -Rns sway swaylock swaybg swayidle i3status bemenu mako wl-clipboard xdg-desktop-portal-wlr \
-        zsh zsh-autosuggestions zsh-syntax-highlighting neovim-nightly-bin neovim-remote neovide \
-        ranger foot tmux zathura zathura-pdf-poppler \
-        btop fastfetch pipes.sh cmatrix-git mpd ncmpcpp \
-        ttf-ubuntu-nerd ttf-ubuntu-mono-nerd || {
-
+                zsh zsh-autosuggestions zsh-syntax-highlighting neovim-nightly-bin neovim-remote \
+                ranger foot tmux zathura zathura-pdf-poppler \
+                btop fastfetch pipes.sh cmatrix-git mpd ncmpcpp \
+                ttf-ubuntu-nerd ttf-ubuntu-mono-nerd || {
         echo "Some packages could not be removed. Exiting..."
         exit 1
 }
