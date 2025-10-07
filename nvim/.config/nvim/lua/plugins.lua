@@ -1,7 +1,6 @@
 vim.pack.add({
         { src = "https://github.com/ellisonleao/gruvbox.nvim.git" },
         { src = "https://github.com/nvim-tree/nvim-web-devicons.git" },
-        { src = "https://github.com/christoomey/vim-tmux-navigator.git" },
         { src = "https://github.com/stevearc/oil.nvim.git" },
         { src = "https://github.com/ibhagwan/fzf-lua.git" },
         { src = "https://github.com/ggandor/leap.nvim.git" },

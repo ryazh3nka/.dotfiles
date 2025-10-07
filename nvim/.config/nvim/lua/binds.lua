@@ -57,10 +57,3 @@ end, { desc = "files from git root" })
 
 vim.keymap.set({'n', 'x', 'o'}, 's', '<Plug>(leap)', { desc = "launch Leap" })
 vim.keymap.set('n', 'S', '<Plug>(leap-from-window)', { desc = "launch Leap per window"})
-
--- tmux binds
-vim.keymap.set("n", "<C-h>", "<cmd><C-U>TmuxNavigateLeft<CR>", { silent = true })
-vim.keymap.set("n", "<C-j>", "<cmd><C-U>TmuxNavigateDown<CR>", { silent = true })
-vim.keymap.set("n", "<C-k>", "<cmd><C-U>TmuxNavigateUp<CR>", { silent = true })
-vim.keymap.set("n", "<C-l>", "<cmd><C-U>TmuxNavigateRight<CR>", { silent = true })
-vim.keymap.set("n", "<C-\\>", "<cmd><C-U>TmuxNavigatePrevious<CR>", { silent = true })
