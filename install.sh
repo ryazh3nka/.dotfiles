@@ -12,11 +12,10 @@ while true; do
                         }
 
                         yay -Sy sway swaylock swaybg swayidle i3status bemenu mako wl-clipboard xdg-desktop-portal-wlr stow \
-                                zsh zsh-autosuggestions zsh-syntax-highlighting neovim-nightly-bin neovim-remote neovide \
-                                ranger foot tmux zathura zathura-pdf-poppler \
-                                btop fastfetch pipes.sh cmatrix-git mpd ncmpcpp \
-                                ttf-ubuntu-nerd ttf-ubuntu-mono-nerd || {
-
+                                        zsh zsh-autosuggestions zsh-syntax-highlighting neovim-nightly-bin neovim-remote \
+                                        ranger foot tmux zathura zathura-pdf-poppler \
+                                        btop fastfetch pipes.sh cmatrix-git mpd ncmpcpp \
+                                        ttf-ubuntu-nerd ttf-ubuntu-mono-nerd || {
                                 echo "Some packages could not be installed!"
                         }
 

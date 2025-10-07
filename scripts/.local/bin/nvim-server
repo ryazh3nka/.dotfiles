@@ -1,0 +1,26 @@
+#!/bin/sh
+
+if ! command -v nvr >/dev/null 2>&1; then
+    echo "'nvr' executable not found." >&2
+    exit 1
+fi
+
+if ! command -v foot >/dev/null 2>&1; then
+    echo "'foot' executable not found." >&2
+    exit 1
+fi
+
+NVIM_SERVER_SOCKET="${XDG_RUNTIME_DIR:-/tmp}/nvim-foot-server"
+WINDOW_TITLE="nvim-server"
+
+is_socket_alive() {
+    nvr --servername "$NVIM_SERVER_SOCKET" --remote-expr "1" >/dev/null 2>&1
+}
+
+if [ -S "$NVIM_SERVER_SOCKET" ] && is_socket_alive; then
+    nvr --servername "$NVIM_SERVER_SOCKET" --remote "$@"
+else
+    rm -f "$NVIM_SERVER_SOCKET"
+    foot --title "$WINDOW_TITLE" nvim --listen "$NVIM_SERVER_SOCKET" "$@"
+fi
+
