@@ -34,8 +34,8 @@ vim.keymap.set("n", "<leader>T", function()
 end, { desc = "open terminal in the root directory" })
 
 
-vim.keymap.set("n", "<leader>bb", "<CMD>buffer#<CR>", { desc = "switch to previous buffer" })
-vim.keymap.set("n", "<leader>bd", "<CMD>bdelete<CR>", { desc = "kill focused buffer" })
+vim.keymap.set("n", "<leader><leader>", "<CMD>buffer#<CR>", { desc = "switch to previous buffer" })
+vim.keymap.set("n", "<leader>bd", "<CMD>bdelete!<CR>", { desc = "kill focused buffer", nowait = true })
 
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "open Oil in cwd" })
 

@@ -10,6 +10,7 @@ vim.opt.swapfile = false
 vim.opt.cursorline = true
 vim.opt.autochdir = true
 vim.opt.wrap = false
+vim.opt.timeoutlen = 200
 vim.g.mapleader = " "
 
 vim.opt.laststatus = 3
