@@ -1,6 +1,7 @@
-HISTFILE=~/.config/zsh/histfile
+HISTFILE="$HOME/.local/share/zsh_history"
 HISTSIZE=1000
 SAVEHIST=1000
+setopt share_history
 setopt extendedglob
 bindkey -e
 
