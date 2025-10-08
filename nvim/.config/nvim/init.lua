@@ -13,11 +13,10 @@ vim.opt.wrap = false
 vim.opt.timeoutlen = 200
 vim.g.mapleader = " "
 
-vim.opt.laststatus = 3
 vim.opt.cmdheight = 0
+vim.opt.laststatus = 3
 vim.opt.termguicolors = true
 vim.opt.showmode = false
-vim.opt.shortmess:append("I")
 
 -- neovide settings
 vim.g.neovide_floating_shadow = false
@@ -25,6 +24,3 @@ vim.g.neovide_floating_shadow = false
 require("plugins")
 require("autocmds")
 require("binds")
-
-vim.api.nvim_set_hl(0, "StatusLine", { fg = "#ebdbb2", bg = "#282828" })
-vim.api.nvim_set_hl(0, "StatusLineNC", { fg = "#ebdbb2", bg = "#282828" })
