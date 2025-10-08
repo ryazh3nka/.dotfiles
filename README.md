@@ -3,15 +3,15 @@ this used to be a side branch of my dotfiles, but i grew to like it and now it's
 
 ## gallery
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/3d929b02-190f-4860-92eb-2dcf07de4243" alt="screenshot1" width="49%">
-  <img src="https://github.com/user-attachments/assets/93df3c00-65bd-4d95-bb7c-ec59b10fc25c" alt="screenshot2" width="49%">
+    <img src="https://github.com/user-attachments/assets/3d929b02-190f-4860-92eb-2dcf07de4243" alt="screenshot1" width="49%">
+    <img src="https://github.com/user-attachments/assets/93df3c00-65bd-4d95-bb7c-ec59b10fc25c" alt="screenshot2" width="49%">
 </p>
 
 ## installation
 make backups of your `.config` directory, clone and cd into the repo, then run `stow package-name` for every folder you want symlinked, and tweak the dotfiles to your liking. for programs that need additional configuration, see the list below.
 ```zsh
-$ git clone https://github.com/ryazh3nka/.dotfiles.git $HOME/.dotfiles
-$ cd $HOME/.dotfiles
+$ git clone --depth 1 https://github.com/ryazh3nka/.dotfiles.git $HOME/.dotfiles
+$ yay -Sy --needed - < "$HOME/.dotfiles/PACKAGES.md"
 ```
 
 ### zsh
@@ -23,14 +23,7 @@ export ZDOTDIR="$HOME"/.config/zsh
 ### nvim
 my configs will only work if you have Neovim v12.0 installed (i use nightly builds personally). my setup has zero dependencies and it uses the built-in plugin manager. if you want a cool GUI front-end, check out Neovide.
 
-by the way, you don't need LSPs if you have a compiler, just use :make and quicklist.
-
-### emacs
-create the `.emacs.d` directory before symlinking anything to keep your cloned repo intact from junk that Emacs likes to paste inside your config. for the same reason you should also download your preferred colorscheme manually.
-```zsh
-$ mkdir -p ~/.emacs.d
-$ stow emacs
-```
+by the way, you don't need LSPs if you have a compiler, just use :make and :copen.
 
 ## scripts
 i like to keep my scripts in `~/.local/bin`, so you might want to create that directory beforehand.
@@ -38,38 +31,9 @@ i like to keep my scripts in `~/.local/bin`, so you might want to create that di
 $ mkdir -p ~/.local/bin
 ```
 
-here's the short list of them:
+here's a short list of them:
 - `nvim-server` is a wrapper for Neovim to launch in remote (server) mode. if you pass any files to the command, they would open as buffers, even if Neovim was already running. especially handy when dealing with mimetypes and desktop entries.
-- `install`/`uninstall`/`update-restow` would install/remove/update every package featured here. NOT recommended as you might end up with megabytes of useless junk. just do it manually.
-
-## list of packages
-```zsh
-# desktop environment stuff
-sway && swaylock && swaybg && swayidle
-i3status
-bemenu
-mako
-wl-clipboard
-xdg-desktop-portal-wlr
-
-# workflow 
-zsh && zsh-autosuggestions && zsh-syntax-highlighting
-neovim-nightly-bin && neovim-remote
-ranger
-foot && tmux
-zathura && zathura-pdf-poppler
-
-# misc
-btop
-fastfetch
-pipes.sh
-cmatrix-git
-mpd && ncmpcpp
-
-# fonts
-ttf-ubuntu-nerd && ttf-ubuntu-mono-nerd
-noto-fonts
-```
+- `update-restow` would prompt to update all installed packages and restow all directories in the repo
 
 ## check these out too
 [morhetz' theme for vim](https://github.com/morhetz/gruvbox) – a beautiful color palette that defines my setup</br>

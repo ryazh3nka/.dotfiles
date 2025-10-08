@@ -4,7 +4,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $editor ~/.local/bin/neovide-server
+set $editor ~/.local/bin/nvim-server
 set $colorpicker hyprpicker -a
 set $term foot
 set $menu bemenu-run -p dmenu -l 5 --binding vim -i -H 26 --fn "UbuntuMono Nerd Font 14" --tb "#282828" \
@@ -30,8 +30,9 @@ client.background       #ffffff
 
 ### Windowrules
 assign [app_id="org.qutebrowser.qutebrowser"] 1
-assign [app_id="neovide"] 1
 assign [app_id="org.telegram.desktop"] 4
+assign [app_id=".*libreoffice.*"] 3
+assign [title="nvim-server"] 1
 assign [class="steam"] 5
 
 for_window [class="org-opensourcephysics-cabrillo-tracker-Tracker"] floating enable
