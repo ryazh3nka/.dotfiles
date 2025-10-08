@@ -58,4 +58,4 @@ end, { desc = "files from git root" })
 vim.keymap.set({'n', 'x', 'o'}, 's', '<Plug>(leap)', { desc = "launch Leap" })
 vim.keymap.set('n', 'S', '<Plug>(leap-from-window)', { desc = "launch Leap per window"})
 
-vim.keymap.set('n', 'n', "<CMD>Noice<CR>", { desc = "open notification history" })
+vim.keymap.set('n', '<leader>n', "<CMD>Noice<CR>", { desc = "open notification history" })
