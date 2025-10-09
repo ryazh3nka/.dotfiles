@@ -11,7 +11,6 @@ zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
 neovim-nightly-bin
-neovim-remote
 ranger
 foot
 tmux
