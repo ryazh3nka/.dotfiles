@@ -18,9 +18,6 @@ vim.opt.laststatus = 3
 vim.opt.termguicolors = true
 vim.opt.showmode = false
 
--- neovide settings
-vim.g.neovide_floating_shadow = false
-
 require("plugins")
 require("autocmds")
 require("binds")
