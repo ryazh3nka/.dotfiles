@@ -5,14 +5,17 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
-(make-directory "~/.emacs.d/auto-save/" t)
+(make-directory (expand-file-name "auto-save/" user-emacs-directory) t)
 (setq auto-save-file-name-transforms
-      `((".*" ,(concat user-emacs-directory "auto-save/") t)))
+      `((".*" ,(concat user-emacs-directory "auto-save/") t))) 
 
 ;; window decorations
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
+
+;; pasting deletes highlighted text
+(delete-selection-mode 1)
 
 ;; numberline
 (setq display-line-numbers-type 'relative)
