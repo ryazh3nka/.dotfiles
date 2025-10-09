@@ -1,5 +1,5 @@
 # .dotfiles
-this used to be a side branch of my dotfiles, but i grew to like it and now it's my daily driver. featuring Sway and the Gruvbox terminal colorscheme, this setup was made for my laptop, and my primary goal was to make it as minimal as possible (still a work in progress though). the advised way of managing the files is via tools like GNU Stow or plain old symlinking. feel free to use the configs provided in the repo as you please. all package names are valid entries in the Arch repos.
+this setup was made for my laptop over the course of a few months. among other things, it features Sway and the Gruvbox terminal colorscheme. my goal is to make it as minimal as possible (still a work in progress though). the recommended way to manage the files is with tools like GNU Stow or plain old symlinks. feel free to use the configs provided in the repo as you please. all package names that i mention should be valid entries in the Arch repos.
 
 ## gallery
 <p align="center">
@@ -32,7 +32,6 @@ $ mkdir -p ~/.local/bin
 ```
 
 here's a short list of them:
-- `nvim-server` is a wrapper for Neovim to launch in remote (server) mode. if you pass any files to the command, they would open as buffers, even if Neovim was already running. especially handy when dealing with mimetypes and desktop entries.
 - `update-restow` would prompt to update all installed packages and restow all directories in the repo
 
 ## check these out too
