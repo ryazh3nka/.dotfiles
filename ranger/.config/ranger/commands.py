@@ -12,7 +12,7 @@ class copy_to_clipboard(Command):
         files = [f.realpath for f in self.fm.thistab.get_selection()]
         if files:
             file_paths = [f'"{file}"' for file in files]
-            cmd = f'~/.config/ranger/copy_to_clipboard.sh {" ".join(file_paths)}'
+            cmd = f'~/.config/ranger/copy_to_clipboard {" ".join(file_paths)}'
             os.system(cmd)
             self.fm.notify("Copied to clipboard")
         else:
