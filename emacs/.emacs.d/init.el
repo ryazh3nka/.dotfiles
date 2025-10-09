@@ -1,5 +1,5 @@
 ;; prevents emacs from shitting inside your config
-;; you'll need to load a colorscheme manually
+;; you'll need to load a colorscheme manually though
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 (when (file-exists-p custom-file)
@@ -34,7 +34,7 @@
                     :font "UbuntuMono Nerd Font"
                     :height 180)
 
-;; Wrap indicator
+;; wrap indicator
 (setq-default fringe-indicator-alist
               (assq-delete-all 'continuation
                                (assq-delete-all 'truncation fringe-indicator-alist)))
@@ -46,4 +46,5 @@
 (pdf-tools-install)
 
 ;; c code style
+(setq-default tab-width 8)
 (setq c-default-style "linux")
