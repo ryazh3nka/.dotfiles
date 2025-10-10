@@ -1,8 +1,3 @@
-;; melpa package repository
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
-
 ;; prevents emacs from shitting inside your config
 ;; you'll need to load a colorscheme manually though
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -26,14 +21,6 @@
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode t)
 (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1)))
-
-;; colors
-(set-face-attribute 'mode-line nil
-                    :background "#504945"
-                    :box nil)
-(set-face-attribute 'mode-line-inactive nil
-                    :background "#3c3836"
-                    :box nil)
 
 ;; greeter
 (setq inhibit-startup-screen t)
@@ -66,5 +53,23 @@
  '(line-number ((t (:background nil))))
  '(line-number-current-line ((t (:background nil)))))
 
-;; pdf-tools
+
+;; package management:
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
+(unless (package-installed-p 'pdf-tools)
+  (package-install 'pdf-tools))
 (pdf-loader-install)
+
+(unless (package-installed-p 'gruvbox-theme)
+  (package-install 'gruvbox-theme))
+(load-theme 'gruvbox)
+
+(set-face-attribute 'mode-line nil
+                    :background "#504945"
+                    :box nil)
+(set-face-attribute 'mode-line-inactive nil
+                    :background "#3c3836"
+                    :box nil)
