@@ -6,7 +6,7 @@ set $up k
 set $right l
 
 set $term foot
-set $editor emacsclient -c
+set $editor emacsclient -c -a ''
 
 set $colorpicker hyprpicker
 set $colorpicker_args -a
