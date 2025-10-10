@@ -1,3 +1,8 @@
+;; melpa package repository
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
 ;; prevents emacs from shitting inside your config
 ;; you'll need to load a colorscheme manually though
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -22,6 +27,14 @@
 (global-display-line-numbers-mode t)
 (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1)))
 
+;; colors
+(set-face-attribute 'mode-line nil
+                    :background "#504945"
+                    :box nil)
+(set-face-attribute 'mode-line-inactive nil
+                    :background "#3c3836"
+                    :box nil)
+
 ;; greeter
 (setq inhibit-startup-screen t)
 
@@ -29,10 +42,13 @@
 (setq-default tab-width 8)
 (setq-default indent-tabs-mode nil)
 
+;;
+(setq read-file-name-completion-ignore-case t)
+
 ;; font
 (set-face-attribute 'default nil
                     :font "UbuntuMono Nerd Font"
-                    :height 180)
+                    :height 220)
 
 ;; wrap indicator
 (setq-default fringe-indicator-alist
@@ -42,9 +58,13 @@
 ;; indentation
 (setq-default tab-width 8)
 
-;; pdf viewer
-(pdf-tools-install)
-
 ;; c code style
 (setq-default tab-width 8)
 (setq c-default-style "linux")
+
+(custom-set-faces
+ '(line-number ((t (:background nil))))
+ '(line-number-current-line ((t (:background nil)))))
+
+;; pdf-tools
+(pdf-loader-install)
