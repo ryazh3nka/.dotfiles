@@ -1,4 +1,4 @@
-HISTFILE="$HOME/.local/share/zsh_history"
+HISTFILE="$HOME/.local/share/zsh/histfile"
 HISTSIZE=1000
 SAVEHIST=1000
 setopt share_history
@@ -19,7 +19,7 @@ bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
 
 autoload -Uz compinit
-compinit -C
+compinit -C -d "$HOME/.local/share/zsh/zcompdump"
 
 # zsh-syntax-highlighting
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
