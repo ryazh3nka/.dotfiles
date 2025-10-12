@@ -6,7 +6,7 @@ set $up k
 set $right l
 
 set $term foot
-set $editor emacsclient -c -a ''
+set $editor emacsclient -r -a ''
 
 set $colorpicker hyprpicker
 set $colorpicker_args -a
@@ -36,8 +36,8 @@ client.background       #ffffff
 ### Windowrules
 assign [app_id=".*qutebrowser.*"] 1
 assign [app_id="emacs"] 1
-assign [app_id=".*telegram"] 2
-assign [app_id=".*libreoffice.*"] 3
+assign [app_id=".*telegram"] 3
+assign [app_id=".*libreoffice.*"] 4
 assign [class="steam"] 5
 
 for_window [class="org-opensourcephysics-cabrillo-tracker-Tracker"] floating enable
@@ -48,7 +48,7 @@ xwayland enable
 for_window [shell="xwayland"] title_format "[XWayland] %title"
 
 ### Autostart
-exec_always swaymsg workspace number 1
+exec swaymsg workspace number 1
 exec --no-startup-id mako
 
 ### Idle configuration

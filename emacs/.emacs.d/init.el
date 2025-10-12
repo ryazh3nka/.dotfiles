@@ -29,7 +29,10 @@
 (setq-default tab-width 8)
 (setq-default indent-tabs-mode nil)
 
-;;
+;; autocompletion and stuff
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
 (setq read-file-name-completion-ignore-case t)
 
 ;; font
@@ -53,6 +56,20 @@
  '(line-number ((t (:background nil))))
  '(line-number-current-line ((t (:background nil)))))
 
+;; functions!
+(defun duplicate-line ()
+  "Duplicate current line"
+  (interactive)
+  (let ((column (- (point) (point-at-bol)))
+        (line (let ((s (thing-at-point 'line t)))
+                (if s (string-remove-suffix "\n" s) ""))))
+    (move-end-of-line 1)
+    (newline)
+    (insert line)
+    (move-beginning-of-line 1)
+    (forward-char column)))
+
+(global-set-key (kbd "C-,") 'duplicate-line)
 
 ;; package management:
 (require 'package)

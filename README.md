@@ -1,5 +1,5 @@
 # .dotfiles
-this setup was made for my laptop over the course of a few months. among other things, it features Sway and the Gruvbox terminal colorscheme. my goal is to make it as minimal as possible (still a work in progress though). the recommended way to manage the files is with tools like GNU Stow or plain old symlinks. feel free to use the configs provided in the repo as you please. all package names that i mention should be valid entries in the Arch repos.
+this setup was made for my laptop over a few months. it runs Sway with the Gruvbox terminal colorscheme. my workflow is Emacs-centric, so if you’re familiar with its bindings, you’ll see the logic in using the same set of shortcuts across most of the programs i use. the recommended way to manage these files is with GNU Stow or plain old symlinks.
 
 ## gallery
 <p align="center">
@@ -15,7 +15,7 @@ $ yay -Sy --needed - < "$HOME/.dotfiles/PACKAGES.md"
 ```
 
 ### zsh
-export the `$ZDOTDIR` environment variable inside `/etc/zsh/zshenv` to declutter you home directory from *rc files. keep in mind that this applies to all users.
+export the `$ZDOTDIR` environment variable inside `/etc/zsh/zshenv` to declutter your home directory. keep in mind that this applies to all users.
 ```zsh
 export ZDOTDIR="$HOME"/.config/zsh
 ```
@@ -33,9 +33,3 @@ $ mkdir -p ~/.local/bin
 
 here's a short list of them:
 - `update-restow` would prompt to update all installed packages and restow all directories in the repo
-
-## check these out too
-[morhetz' theme for vim](https://github.com/morhetz/gruvbox) – a beautiful color palette that defines my setup</br>
-[The Compiler's theme for qutebrowser](https://github.com/The-Compiler/dotfiles/blob/master/qutebrowser/gruvbox.py) – a script that brings the same cool earthy colors to Qutebrowser</br>
-[eastack's theme for zathura](https://github.com/eastack/zathura-gruvbox) – a Zathura theme that makes reading real cozy</br>
-[rexim's github](https://github.com/rexim) – a certain someone that got me inspired</br>
