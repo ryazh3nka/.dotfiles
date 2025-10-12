@@ -12,7 +12,6 @@ zsh-autosuggestions
 zsh-syntax-highlighting
 neovim-nightly-bin
 emacs-wayland
-ranger
 foot
 tmux
 btop
