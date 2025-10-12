@@ -15,8 +15,6 @@ emacs-wayland
 ranger
 foot
 tmux
-zathura
-zathura-pdf-poppler
 btop
 fastfetch
 pipes.sh
