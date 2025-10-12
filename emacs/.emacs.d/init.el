@@ -57,6 +57,8 @@
  '(line-number-current-line ((t (:background nil)))))
 
 ;; functions!
+
+; duplicate current line
 (defun duplicate-line ()
   "Duplicate current line"
   (interactive)
@@ -70,6 +72,30 @@
     (forward-char column)))
 
 (global-set-key (kbd "C-,") 'duplicate-line)
+
+; copy files in dired
+(defun dired-copy-files-to-clipboard (&optional plain-text)
+  "Copy marked files to the clipboard.
+With a prefix arg copy plain text; otherwise copy a text/uri-list."
+  (interactive "P")
+  (let ((files (dired-get-marked-files)))
+    (unless (executable-find "wl-copy")
+      (user-error "wl-copy not found"))
+    (with-temp-buffer
+      (dolist (f files)
+        (insert (if plain-text
+                    (expand-file-name f)
+                  (concat "file://" (expand-file-name f)))
+                "\n"))
+      (call-process-region
+       (point-min) (point-max)
+       "wl-copy" nil nil nil
+       "-t" (if plain-text "text/plain" "text/uri-list")))
+    (message "Copied %s as %s"
+             (format "%d file(s)%s" (length files) (if (> (length files) 1) "s" ""))
+             (if plain-text "plain text" "URI list"))))
+
+(global-set-key (kbd "C-c w") #'dired-copy-files-to-clipboard)
 
 ;; package management:
 (require 'package)
