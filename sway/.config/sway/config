@@ -35,7 +35,6 @@ client.background       #ffffff
 
 ### Windowrules
 assign [app_id=".*qutebrowser.*"] 1
-assign [app_id="emacs"] 1
 assign [app_id=".*telegram"] 3
 assign [app_id=".*libreoffice.*"] 4
 assign [class="steam"] 5
@@ -50,6 +49,7 @@ for_window [shell="xwayland"] title_format "[XWayland] %title"
 ### Autostart
 exec swaymsg workspace number 1
 exec --no-startup-id mako
+exec --no-startup-id emacs-autostart
 
 ### Idle configuration
 exec swayidle -w \
