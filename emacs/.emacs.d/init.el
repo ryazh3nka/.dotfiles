@@ -38,7 +38,7 @@
 ;; font
 (set-face-attribute 'default nil
                     :font "UbuntuMono Nerd Font"
-                    :height 220)
+                    :height 180)
 
 ;; wrap indicator
 (setq-default fringe-indicator-alist
