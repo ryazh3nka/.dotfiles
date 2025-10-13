@@ -8,28 +8,10 @@ this setup was made for my laptop over a few months. it runs Sway with the Gruvb
 </p>
 
 ## installation
-make backups of your `.config` directory, clone and cd into the repo, then run `stow package-name` for every folder you want symlinked, and tweak the dotfiles to your liking. for programs that need additional configuration, see the list below.
+make backups of your `.config` directory, clone and cd into the repo, install the dependencies, then run `stow package-name` for every folder you want symlinked, and tweak the dotfiles to your liking. for programs that like to paste junk into your config (i'm looking at you, Emacs), make use of the `--no-folding` flag to create the target directory beforehand.
 ```zsh
 $ git clone --depth 1 https://github.com/ryazh3nka/.dotfiles.git $HOME/.dotfiles
 $ yay -Sy --needed - < "$HOME/.dotfiles/PACKAGES.md"
+$ stow -v --no-folding <package-name>
 ```
-
-### zsh
-export the `$ZDOTDIR` environment variable inside `/etc/zsh/zshenv` to declutter your home directory. keep in mind that this applies to all users.
-```zsh
-export ZDOTDIR="$HOME/.config/zsh"
-```
-
-### nvim
-my configs will only work if you have Neovim v12.0 installed (i use nightly builds personally). my setup has zero dependencies and it uses the built-in plugin manager. if you want a cool GUI front-end, check out Neovide.
-
-by the way, you don't need LSPs if you have a compiler, just use :make and :copen.
-
-## scripts
-i like to keep my scripts in `~/.local/bin`, so you might want to create that directory beforehand.
-```zsh
-$ mkdir -p ~/.local/bin
-```
-
-here's a short list of them:
-- `update-restow` would prompt to update all installed packages and restow all directories in the repo
+also, each package in this repo contains a separate readme (ignored by stow) with more thorough explanation of the install process.
