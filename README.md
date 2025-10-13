@@ -8,12 +8,13 @@ this setup was made for my laptop over a few months. it runs Sway with the Gruvb
 </p>
 
 ## installation
-make backups of your `.config` directory, clone and cd into the repo, install the dependencies, then run `stow package-name` for every folder you want symlinked, and tweak the dotfiles to your liking.
+make backups of your `.config` directory, clone and cd into the repo, then run `stow package-name` for every folder you want symlinked, and tweak the dotfiles to your liking.
 
 for programs that like to paste junk into your config (i'm looking at you, Emacs), make use of the `--no-folding` flag to create the target directory beforehand.
 ```zsh
-$ git clone --depth 1 https://github.com/ryazh3nka/.dotfiles.git $HOME/.dotfiles
+$ git clone --depth 1 https://github.com/ryazh3nka/.dotfiles.git "$HOME/.dotfiles"
 $ yay -Sy --needed - < "$HOME/.dotfiles/PACKAGES.md"
-$ stow --verbose 1 --no-folding package
+$ cd "$HOME/.dotfiles"
+$ stow --no-folding package
 ```
 also, each package in this repo contains a separate readme (ignored by stow) with more thorough explanation of the install process.
