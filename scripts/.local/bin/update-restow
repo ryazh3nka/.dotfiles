@@ -26,7 +26,7 @@ while true; do
                         }
                         
                         for pkg in */; do
-                                stow --restow --no-folding --ignore "README.md" --verbose 1 "$pkg"
+                                stow --restow --ignore "README.md" --verbose 1 "$pkg"
                         done
 
                         break;;

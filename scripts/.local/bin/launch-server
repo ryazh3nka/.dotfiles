@@ -1,0 +1,6 @@
+#!/bin/sh
+
+if ! pgrep -u "$USER" emacs >/dev/null; then
+    emacs --daemon
+fi
+
