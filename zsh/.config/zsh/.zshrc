@@ -1,9 +1,13 @@
 HISTFILE="$HOME/.local/share/zsh/histfile"
 HISTSIZE=1000
 SAVEHIST=1000
+bindkey -e
+
 setopt share_history
 setopt extendedglob
-bindkey -e
+setopt NO_CASE_GLOB
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
+        'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 alias ls="ls --color=auto"
 alias l="ls -lh --color=auto --sort=extension"
