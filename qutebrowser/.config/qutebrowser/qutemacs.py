@@ -9,14 +9,15 @@ config.unbind('<Ctrl-s>')
 config.unbind('<Ctrl-a>')
 config.unbind('<Ctrl-n>')
 config.unbind('<Ctrl-p>')
+config.unbind('<Ctrl-u>')
 
 config.bind('<Ctrl-x><Ctrl-l>', 'config-source')
 
 config.bind('<Ctrl-E>', 'edit-text', mode='insert')
-c.editor.command = ["emacsclient", "-c", "-a", "''", "{}"]
+c.editor.command = ["sh", "-c", "exec emacsclient -c -a ''", "{}"]
 
-config.bind('<Alt-Shift-,>', 'scroll-to-perc 0')
-config.bind('<Alt-Shift-.>', 'scroll-to-perc')
+config.bind('<Alt-,>', 'scroll-to-perc 0')
+config.bind('<Alt-.>', 'scroll-to-perc')
 
 config.bind('b', 'fake-key <Left>')
 config.bind('n', 'fake-key <Down>')
