@@ -6,15 +6,14 @@
 config.unbind('<Ctrl-x>')
 config.unbind('<Ctrl-f>')
 config.unbind('<Ctrl-s>')
-config.unbind('<Ctrl-a>')
 config.unbind('<Ctrl-n>')
 config.unbind('<Ctrl-p>')
 config.unbind('<Ctrl-u>')
 
 config.bind('<Ctrl-x><Ctrl-l>', 'config-source')
 
-config.bind('<Ctrl-E>', 'edit-text', mode='insert')
-c.editor.command = ["sh", "-c", "exec emacsclient -c -a ''", "{}"]
+config.bind('<Ctrl-Shift-e>', 'edit-text', mode='insert')
+c.editor.command = ['emacsclient', '-c', '-a ""', '{file}']
 
 config.bind('<Alt-,>', 'scroll-to-perc 0')
 config.bind('<Alt-.>', 'scroll-to-perc')
@@ -28,8 +27,8 @@ config.bind('<Ctrl-b>', 'scroll-px -100 0')
 config.bind('<Ctrl-n>', 'scroll-px 0 100')
 config.bind('<Ctrl-p>', 'scroll-px 0 -100')
 config.bind('<Ctrl-f>', 'scroll-px 0 100')
-config.bind('<Ctrl-a>', 'back')
-config.bind('<Ctrl-e>', 'forward')
+config.bind('<Ctrl-a>', 'back', mode='normal')
+config.bind('<Ctrl-e>', 'forward', mode='normal')
 
 config.bind('<Ctrl-u><Ctrl-x><Ctrl-f>', 'cmd-set-text -s :open -t')
 config.bind('<Ctrl-x><Ctrl-f>', 'cmd-set-text -s :open')
