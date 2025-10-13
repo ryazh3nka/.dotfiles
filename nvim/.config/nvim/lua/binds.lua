@@ -1,7 +1,8 @@
 vim.keymap.set("i", "<A-w>", "<C-o>w")
 vim.keymap.set("i", "<A-f>", "<C-o>w")
 vim.keymap.set("i", "<A-b>", "<C-o>b")
-vim.keymap.set("i", "<A-e>", "<C-o>e")
+vim.keymap.set("i", "<C-a>", "<C-o>_")
+vim.keymap.set("i", "<C-e>", "<C-o>$")
 
 vim.keymap.set("n", "<leader>u", "<CMD>update<CR><CMD>source<CR>", { desc = "source and update" })
 vim.keymap.set("n", "<leader>w", "<CMD>write<CR>", { desc = "write changes" })
