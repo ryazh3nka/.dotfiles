@@ -12,9 +12,9 @@ make backups of your `.config` directory, clone and cd into the repo, then run `
 
 for programs that like to paste junk into your config (i'm looking at you, Emacs), make use of the `--no-folding` flag to create the target directory beforehand.
 ```zsh
-$ git clone --depth 1 https://github.com/ryazh3nka/.dotfiles.git "$HOME/.dotfiles"
-$ yay -Sy --needed - < "$HOME/.dotfiles/PACKAGES.md"
-$ cd "$HOME/.dotfiles"
+$ git clone --depth 1 https://github.com/ryazh3nka/.dotfiles.git $HOME/.dotfiles
+$ cd $HOME/.dotfiles
+$ yay -Sy --needed - < PACKAGES.md
 $ stow --no-folding package
 ```
 also, each package in this repo contains a separate readme (ignored by stow) with more thorough explanation of the install process.
