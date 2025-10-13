@@ -1,5 +1,5 @@
 # .dotfiles
-this setup was made for my laptop over a few months. it runs Sway with the Gruvbox terminal colorscheme. my workflow is Emacs-centric, so if you’re familiar with its bindings, you’ll see the logic in using the same set of shortcuts across most of the programs i use. the recommended way to manage these files is with GNU Stow or plain old symlinks.
+this setup was made for my laptop over a few months. it runs Sway with the Gruvbox terminal colorscheme. my workflow is Emacs-centric, so if you’re familiar with its bindings, you’ll see the logic in using the same set of shortcuts across most of the programs. the recommended way to manage these files is with GNU Stow or plain old symlinks.
 
 ## gallery
 <p align="center">
@@ -15,6 +15,6 @@ for programs that like to paste junk into your config (i'm looking at you, Emacs
 $ git clone --depth 1 https://github.com/ryazh3nka/.dotfiles.git $HOME/.dotfiles
 $ cd $HOME/.dotfiles
 $ yay -Sy --needed - < PACKAGES.md
-$ stow --no-folding package
+$ stow package
 ```
 also, each package in this repo contains a separate readme (ignored by stow) with more thorough explanation of the install process.
