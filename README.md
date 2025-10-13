@@ -14,6 +14,6 @@ for programs that like to paste junk into your config (i'm looking at you, Emacs
 ```zsh
 $ git clone --depth 1 https://github.com/ryazh3nka/.dotfiles.git $HOME/.dotfiles
 $ yay -Sy --needed - < "$HOME/.dotfiles/PACKAGES.md"
-$ stow -v --no-folding <package-name>
+$ stow --verbose 1 --no-folding package
 ```
 also, each package in this repo contains a separate readme (ignored by stow) with more thorough explanation of the install process.
