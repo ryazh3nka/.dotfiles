@@ -17,7 +17,7 @@ $ yay -Sy --needed - < "$HOME/.dotfiles/PACKAGES.md"
 ### zsh
 export the `$ZDOTDIR` environment variable inside `/etc/zsh/zshenv` to declutter your home directory. keep in mind that this applies to all users.
 ```zsh
-export ZDOTDIR="$HOME"/.config/zsh
+export ZDOTDIR="$HOME/.config/zsh"
 ```
 
 ### nvim
