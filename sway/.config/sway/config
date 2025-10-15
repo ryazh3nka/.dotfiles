@@ -94,6 +94,8 @@ bindsym $mod+c exec pkill -x $colorpicker || exec $colorpicker $colorpicker_args
 bindsym Print exec grim -g "$(slurp -d)" - | wl-copy
 bindsym Shift+Print exec grim $(xdg-user-dir PICTURES)/$(date +'screenshot-%d_%m_%Y-%H%M%S.png')
 
+bindsym $mod+m exec sh -c "[ '$(makoctl mode)' = dnd ] && makoctl mode -r dnd || makoctl mode -s dnd"
+
 bindsym $mod+q kill
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+x exec swaylock -f -c 282828
