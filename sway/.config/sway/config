@@ -19,7 +19,7 @@ set $menu_args -p dmenu -l 5 -i -H 26 --fn "UbuntuMono Nerd Font 14" \
             --cf "#282828"
 
 ### Output configuration
-output * bg ~/.config/wallpapers/the-ninth-gruv-lowres.png fill
+output * bg ~/.config/sway/wallpapers/the-ninth-wave-lowres.png fill
 
 ### Decorations
 smart_gaps on
