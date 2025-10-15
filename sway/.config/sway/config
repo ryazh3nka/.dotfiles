@@ -86,8 +86,12 @@ input "type:keyboard" {
 floating_modifier $mod normal
 
 bindsym $mod+Return exec $term
+bindsym $mod+p exec $editor
 bindsym $mod+d exec pkill -x $menu || exec $menu $menu_args
 bindsym $mod+c exec pkill -x $colorpicker || exec $colorpicker $colorpicker_args
+
+bindsym Print exec grim -g "$(slurp -d)" - | wl-copy
+bindsym Shift+Print exec grim $(xdg-user-dir PICTURES)/$(date +'screenshot-%d_%m_%Y-%H%M%S.png')
 
 bindsym $mod+q kill
 bindsym $mod+Shift+c reload
@@ -195,14 +199,6 @@ bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ t
 
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-
-#
-# Utilities
-#
-bindsym Print exec grim -g "$(slurp -d)" - | wl-copy
-bindsym Shift+Print exec grim $(xdg-user-dir PICTURES)/$(date +'screenshot-%d_%m_%Y-%H%M%S.png')
-
-bindsym $mod+p exec $editor_client || $editor
 
 ### Status Bar:
 bar {
