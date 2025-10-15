@@ -35,11 +35,6 @@
 (ido-mode 1)
 (setq read-file-name-completion-ignore-case t)
 
-;; font
-(set-face-attribute 'default nil
-                    :font "UbuntuMono Nerd Font"
-                    :height 180)
-
 ;; wrap indicator
 (setq-default fringe-indicator-alist
               (assq-delete-all 'continuation
@@ -53,8 +48,9 @@
 (setq c-default-style "linux")
 
 (custom-set-faces
- '(line-number ((t (:background nil))))
- '(line-number-current-line ((t (:background nil)))))
+ '(line-number ((t (:inherit default :background nil :foreground "#7c6f64"))))
+ '(Line-Number-current-line ((t (:inherit line-number :background nil :foreground "#fabd2f")))))
+
 
 ;; functions!
 
@@ -116,3 +112,21 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
 (set-face-attribute 'mode-line-inactive nil
                     :background "#3c3836"
                     :box nil)
+
+(set-face-attribute 'default nil
+                    :font "UbuntuMono Nerd Font"
+                    :height 180)
+
+(defun my/set-default-font ()
+  (set-face-attribute 'default nil
+                      :font "UbuntuMono Nerd Font"
+                      :height 180))
+
+;; Run once after startup
+(add-hook 'window-setup-hook #'my/set-default-font)
+
+;; Also run for new frames (e.g., emacsclient frames)
+(add-hook 'after-make-frame-functions
+          (lambda (frame)
+            (with-selected-frame frame
+              (my/set-default-font))))
