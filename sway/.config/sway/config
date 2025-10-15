@@ -54,17 +54,16 @@ for_window [shell="xwayland"] title_format "[XWayland] %title"
 
 ### Autostart
 exec swaymsg workspace number 1
-exec --no-startup-id sh -c 'pgrep -x mako || mako'
-exec --no-startup-id sh -c 'pgrep -x foot || foot --server'
-exec --no-startup-id sh -c 'pgrep -x emacs || emacs --daemon'
-exec --no-startup-id sleep 1 && $term --title 'Scratchterm' -D $HOME/.dotfiles \
-             || $term --title 'Scratchterm'
+exec pgrep -x mako || exec mako
+exec pgrep -x foot || exec foot --server
+exec pgrep -x emacs || exec emacs --daemon
+exec sleep 1 && exec footclient --title 'Scratchterm'
 
 ### Idle configuration
 exec swayidle -w \
-             timeout 1200 'swaylock -f -c 282828' \
-             timeout 4800 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-             before-sleep 'swaylock -f -c 282828'   
+             timeout 1200 "swaylock -f -c 282828" \
+             timeout 4800 "swaymsg 'output * power off'" resume "swaymsg 'output * power on'" \
+             before-sleep "swaylock -f -c 282828"   
 
 ### Input configuration
 input "type:touchpad" {
@@ -87,8 +86,8 @@ input "type:keyboard" {
 floating_modifier $mod normal
 
 bindsym $mod+Return exec $term
-bindsym $mod+d exec sh -c 'pgrep -x $menu && pkill -x $menu || exec $menu $menu_args'
-bindsym $mod+c exec sh -c 'pgrep -x $colorpicker && pkill -x $colorpicker || exec $colorpicker $colorpicker_args'
+bindsym $mod+d exec pkill -x $menu || exec $menu $menu_args
+bindsym $mod+c exec pkill -x $colorpicker || exec $colorpicker $colorpicker_args
 
 bindsym $mod+q kill
 bindsym $mod+Shift+c reload
@@ -203,7 +202,7 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym Print exec grim -g "$(slurp -d)" - | wl-copy
 bindsym Shift+Print exec grim $(xdg-user-dir PICTURES)/$(date +'screenshot-%d_%m_%Y-%H%M%S.png')
 
-bindsym $mod+p exec $editor
+bindsym $mod+p exec $editor_client || $editor
 
 ### Status Bar:
 bar {
