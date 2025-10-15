@@ -1,5 +1,4 @@
 ;; prevents emacs from shitting inside your config
-;; you'll need to load a colorscheme manually though
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 (when (file-exists-p custom-file)
@@ -122,10 +121,8 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
                       :font "UbuntuMono Nerd Font"
                       :height 180))
 
-;; Run once after startup
 (add-hook 'window-setup-hook #'my/set-default-font)
 
-;; Also run for new frames (e.g., emacsclient frames)
 (add-hook 'after-make-frame-functions
           (lambda (frame)
             (with-selected-frame frame
