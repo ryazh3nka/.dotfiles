@@ -47,6 +47,7 @@ for_window [class="org-opensourcephysics-cabrillo-tracker-Tracker"] floating ena
 for_window [class="org-opensourcephysics-cabrillo-tracker-Tracker"] move position center
 
 for_window [title="Scratchterm"] move scratchpad
+for_window [title="Scratchterm"] move position center
 
 ### XWayland
 xwayland enable
@@ -206,15 +207,14 @@ bar {
         height 26
         font UbuntuMono Nerd Font
 
-        status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-
         colors {
-                statusline #ffffff
-                separator #ffffff
+                statusline #ebdbb2
+                separator #ebdbb2
                 background #222222
-                inactive_workspace #323232 #323232 #ffffff
+                inactive_workspace #323232 #323232 #ebdbb2
         }
-        status_command i3status
+
+	status_command i3status
 }
 
 include /etc/sway/config.d/*
