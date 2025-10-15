@@ -15,12 +15,8 @@ alias ll="ls -lAh --color=auto --sort=extension"
 alias wget="wget --hsts-file ~/.local/share/wget/wget-hsts"
 alias tmux="tmux -T 256"
 
-bindkey "^[h" backward-char
-bindkey "^[j" down-history
-bindkey "^[k" up-history
-bindkey "^[l" forward-char
-bindkey "^[a" beginning-of-line
-bindkey "^[e" end-of-line
+bindkey "^[e" down-history
+bindkey "^[a" up-history
 
 autoload -Uz compinit
 compinit -C -d "$HOME/.local/share/zsh/zcompdump"
