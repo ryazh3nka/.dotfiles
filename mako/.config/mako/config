@@ -1,4 +1,4 @@
-font=Ubuntu 10
+font=Ubuntu Nerd Font 10
 default-timeout=5000
 layer=overlay
 anchor=top-right
@@ -12,3 +12,6 @@ background-color=#222222
 text-color=#ebdbb2
 border-color=#d79921
 margin=0
+
+[mode=dnd]
+invisible=1
