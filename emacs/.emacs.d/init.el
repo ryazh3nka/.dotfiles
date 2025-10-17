@@ -50,6 +50,8 @@
  '(line-number ((t (:inherit default :background nil :foreground "#7c6f64"))))
  '(Line-Number-current-line ((t (:inherit line-number :background nil :foreground "#fabd2f")))))
 
+; follow symlinks
+(setq vc-follow-symlinks t)
 
 ;; functions!
 
