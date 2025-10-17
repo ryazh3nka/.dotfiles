@@ -100,12 +100,18 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
 (package-initialize)
 
 (unless (package-installed-p 'pdf-tools)
+  (package-refresh-contents)
   (package-install 'pdf-tools))
 (pdf-loader-install)
 
 (unless (package-installed-p 'gruvbox-theme)
+  (package-refresh-contents)
   (package-install 'gruvbox-theme))
 (load-theme 'gruvbox)
+
+(unless (package-installed-p 'magit)
+  (package-refresh-contents)
+  (package-install 'magit))
 
 (set-face-attribute 'mode-line nil
                     :background "#504945"
