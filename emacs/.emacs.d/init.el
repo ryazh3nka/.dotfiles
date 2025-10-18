@@ -20,6 +20,7 @@
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode t)
 (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1)))
+(add-hook 'image-mode-hook (lambda () (display-line-numbers-mode -1)))
 
 ;; greeter
 (setq inhibit-startup-screen t)
@@ -33,6 +34,8 @@
 (setq ido-everywhere t)
 (ido-mode 1)
 (setq read-file-name-completion-ignore-case t)
+(require 'electric)
+(electric-pair-mode 1)
 
 ;; wrap indicator
 (setq-default fringe-indicator-alist
@@ -42,7 +45,7 @@
 ;; indentation
 (setq-default tab-width 8)
 
-;; c code style
+;; cmode kernel coding style
 (setq-default tab-width 8)
 (setq c-default-style "linux")
 
@@ -54,7 +57,6 @@
 (setq vc-follow-symlinks t)
 
 ;; functions!
-
 ; duplicate current line
 (defun duplicate-line ()
   "Duplicate current line"
@@ -94,25 +96,26 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
 
 (global-set-key (kbd "C-c w") #'dired-copy-files-to-clipboard)
 
-;; package management:
+;; package management
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
+(unless package-archive-contents
+  (package-refresh-contents))
+
 (unless (package-installed-p 'pdf-tools)
-  (package-refresh-contents)
   (package-install 'pdf-tools))
 (pdf-loader-install)
 
 (unless (package-installed-p 'gruvbox-theme)
-  (package-refresh-contents)
   (package-install 'gruvbox-theme))
 (load-theme 'gruvbox)
 
 (unless (package-installed-p 'magit)
-  (package-refresh-contents)
   (package-install 'magit))
 
+;; colorscheme tweaks
 (set-face-attribute 'mode-line nil
                     :background "#504945"
                     :box nil)
