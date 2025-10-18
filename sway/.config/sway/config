@@ -58,7 +58,7 @@ exec swaymsg workspace number 1
 exec pgrep -x mako || exec mako
 exec pgrep -x foot || exec foot --server
 exec pgrep -x emacs || exec emacs --daemon
-exec sleep 1 && exec footclient --title 'Scratchterm'
+exec sleep 1 && exec footclient --title "Scratchterm"
 
 ### Idle configuration
 exec swayidle -w \
