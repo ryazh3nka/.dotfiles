@@ -3,7 +3,7 @@ this setup was made for my laptop over a few months. it runs Sway with the Gruvb
 
 ## gallery
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/67135487-a3a7-4f75-b68d-6a65912dc2e1" alt="screenshot1" width="49%">
+    <img src="https://github.com/user-attachments/assets/86630501-7018-474d-be1b-c304a6ae1510" alt="screenshot1" width="49%">
     <img src="https://github.com/user-attachments/assets/5f95a1ff-5cce-4bb4-93c8-58f5d5de574f" alt="screenshot2" width="49%">
 </p>
 
