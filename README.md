@@ -7,6 +7,9 @@ this setup was made for my laptop over a few months. it runs Sway with the Gruvb
     <img src="https://github.com/user-attachments/assets/5f95a1ff-5cce-4bb4-93c8-58f5d5de574f" alt="screenshot2" width="49%">
 </p>
 
+*wallpaper: "The Ninth Wave" by I. K. Aivazovsky*</br>
+*apps shown: emacs, qutebrowser, foot, nvim, pipes.sh, cmatrix*
+
 ## installation
 make backups of your `.config` directory, clone and cd into the repo, then run `stow package-name` for every folder you want symlinked, and tweak the dotfiles to your liking.
 
