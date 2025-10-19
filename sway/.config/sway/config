@@ -24,8 +24,8 @@ output * bg ~/.config/sway/wallpapers/the-ninth-wave-lowres.png fill
 ### Decorations
 smart_gaps on
 smart_borders on
-gaps outer 0
-gaps inner 0
+gaps outer 2
+gaps inner 4
 
 font pango:"UbuntuMono Nerd Font" 10
 
