@@ -4,7 +4,7 @@ this setup was made for my laptop over a few months. it runs Sway with the Gruvb
 ## gallery
 <p align="center">
     <img src="https://github.com/user-attachments/assets/2638b6ad-a60b-4180-b543-d724543caae8" alt="screenshot1" width="49%">
-    <img src="https://github.com/user-attachments/assets/068b9945-d670-40f9-a34e-94288bcecc1f" alt="screenshot2" width="49%">
+    <img src="https://github.com/user-attachments/assets/283cb2fa-38a6-4ab0-8725-f727a1d286fb" alt="screenshot2" width="49%">
 </p>
 
 *wallpaper: "The Ninth Wave" by I. K. Aivazovsky*</br>
