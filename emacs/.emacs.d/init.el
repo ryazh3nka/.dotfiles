@@ -21,6 +21,7 @@
 (global-display-line-numbers-mode t)
 (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1)))
 (add-hook 'image-mode-hook (lambda () (display-line-numbers-mode -1)))
+(add-hook 'Man-mode-hook (lambda () (display-line-numbers-mode -1)))
 
 ;; greeter
 (setq inhibit-startup-screen t)
@@ -126,6 +127,8 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
 (set-face-attribute 'default nil
                     :font "UbuntuMono Nerd Font"
                     :height 180)
+
+(set-face-attribute 'ido-subdir nil :foreground "#fabd2f")
 
 (defun my/set-default-font ()
   (set-face-attribute 'default nil
