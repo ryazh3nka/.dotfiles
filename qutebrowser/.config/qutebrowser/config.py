@@ -11,6 +11,9 @@ c.url.searchengines = {
     "DEFAULT":  "https://google.com/search?hl=en&q={}",
 }
 
+# this would disable the default QT titlebar
+# c.window.hide_decoration = True
+
 c.window.title_format = "qutebrowser"
 
 config.source("qutemacs.py") # keybinds

@@ -34,9 +34,8 @@ config.bind("<Ctrl-u><Ctrl-x><Ctrl-f>", "cmd-set-text -s :open -t")
 config.bind("<Ctrl-x><Ctrl-f>", "cmd-set-text -s :open")
 config.bind("<Ctrl-x>l", "reload")
 
-config.bind("<Escape>", "mode-leave", mode="insert")
-config.bind("<Ctrl-g>", "mode-leave", mode="insert")
 config.bind("<Ctrl-m>", "mode-enter insert")
+config.bind("<Ctrl-g>", "fake-key --global <Escape>")
 
 config.bind("<Ctrl-x><Ctrl-c>", "quit")
 
