@@ -31,12 +31,18 @@
 (setq-default indent-tabs-mode nil)
 
 ;; autocompletion and stuff
+(setq read-file-name-completion-ignore-case t)
+
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
-(setq read-file-name-completion-ignore-case t)
+
 (require 'electric)
 (electric-pair-mode 1)
+(global-set-key (kbd "M-\"") (lambda () (interactive) (insert "\"")))
+(global-set-key (kbd "M-'") (lambda () (interactive) (insert "'")))
+(global-set-key (kbd "M-(") (lambda () (interactive) (insert "(")))
+(global-set-key (kbd "M-)") (lambda () (interactive) (insert ")")))
 
 ;; wrap indicator
 (setq-default fringe-indicator-alist
