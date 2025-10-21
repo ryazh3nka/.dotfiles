@@ -7,28 +7,31 @@ set $right l
 
 set $term footclient
 set $menu bemenu-gruvbox
+set $picker hyprpicker -a
 set $editor emacsclient -c -a ''
-
-set $colorpicker hyprpicker
-set $colorpicker_args -a
-
 
 ### Output configuration
 output * bg ~/.config/sway/wallpapers/the-ninth-wave-lowres.png fill
 
 ### Decorations
+#
+# Basics
+#
 smart_gaps on
 smart_borders on
-gaps outer 2
-gaps inner 5
+default_border normal 1
+gaps inner 0
 
 font pango:"UbuntuMono Nerd Font" 10
 
+#
+# Colors
+#
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ebdbb2 #2e9ef4   #285577
-client.focused_inactive #504945 #323232 #ebdbb2 #484e50   #504945
+client.focused          #4c7899 #285577 #ebdbb2 #2e9ef4   #4c7899
+client.focused_inactive #7c6f64 #504945 #ebdbb2 #484e50   #7c6f64
 client.unfocused        #323232 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ebdbb2 #900000   #900000
+client.urgent           #fbd934 #cc241d #ebdbb2 #cc241d   #fb4934
 client.placeholder      #000000 #0c0c0c #ebdbb2 #000000   #0c0c0c
 client.background       #ebdbb2
 
@@ -84,7 +87,7 @@ floating_modifier $mod normal
 bindsym $mod+Return exec $term
 bindsym $mod+p exec $editor
 bindsym $mod+d exec $menu
-bindsym $mod+c exec pkill -x $colorpicker || exec $colorpicker $colorpicker_args
+bindsym $mod+c exec $picker
 
 bindsym Print exec grim -g "$(slurp -d)" - | wl-copy
 bindsym Shift+Print exec grim $(xdg-user-dir PICTURES)/$(date +'screenshot-%d_%m_%Y-%H%M%S.png')
@@ -155,6 +158,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 bindsym $mod+f fullscreen
+bindsym $mod+b border toggle
 
 bindsym $mod+Shift+tab floating toggle
 bindsym $mod+tab focus mode_toggle
