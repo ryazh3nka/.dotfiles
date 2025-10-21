@@ -6,17 +6,12 @@ set $up k
 set $right l
 
 set $term footclient
+set $menu bemenu-gruvbox
 set $editor emacsclient -c -a ''
 
 set $colorpicker hyprpicker
 set $colorpicker_args -a
 
-set $menu bemenu-run
-set $menu_args -p dmenu -l 5 -i -H 26 --fn "UbuntuMono Nerd Font 14" \
-            --tb "#282828" --fb "#282828" --nb "#282828" --hb "#504945" \
-            --ab "#282828" --sb "#504945" --tf "#ebdbb2" --ff "#ebdbb2" \
-            --nf "#ebdbb2" --hf "#ebdbb2" --af "#ebdbb2" --cb "#ebdbb2" \
-            --cf "#282828"
 
 ### Output configuration
 output * bg ~/.config/sway/wallpapers/the-ninth-wave-lowres.png fill
@@ -88,7 +83,7 @@ floating_modifier $mod normal
 
 bindsym $mod+Return exec $term
 bindsym $mod+p exec $editor
-bindsym $mod+d exec pkill -x $menu || exec $menu $menu_args
+bindsym $mod+d exec $menu
 bindsym $mod+c exec pkill -x $colorpicker || exec $colorpicker $colorpicker_args
 
 bindsym Print exec grim -g "$(slurp -d)" - | wl-copy
