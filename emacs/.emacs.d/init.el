@@ -58,7 +58,7 @@
 
 (custom-set-faces
  '(line-number ((t (:inherit default :background nil :foreground "#7c6f64"))))
- '(Line-Number-current-line ((t (:inherit line-number :background nil :foreground "#fabd2f")))))
+ '(line-number-current-line ((t (:inherit line-number :background nil :foreground "#fabd2f")))))
 
 ; follow symlinks
 (setq vc-follow-symlinks t)
@@ -126,6 +126,7 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
 (set-face-attribute 'mode-line nil
                     :background "#504945"
                     :box nil)
+
 (set-face-attribute 'mode-line-inactive nil
                     :background "#3c3836"
                     :box nil)
