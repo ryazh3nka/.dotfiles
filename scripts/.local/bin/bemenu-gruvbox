@@ -1,0 +1,11 @@
+#!/bin/sh
+
+pkill -x bemenu-run || { \
+        exec bemenu-run -p 'bemenu' --scrollbar always --list 7 \
+        --ignorecase --line-height 26 --fn "UbuntuMono Nerd Font 14" \
+        --ch 20 --cw 10 -W 0.2 -B 2 --scb "#3c3836" --scf "#fabd2f" \
+        --tb "#282828" --fb "#282828" --nb "#282828" --hb "#3c3836" \
+        --ab "#282828" --sb "#504945" --tf "#ebdbb2" --ff "#ebdbb2" \
+        --nf "#ebdbb2" --hf "#ebdbb2" --af "#ebdbb2" --cb "#282828" \
+        --cf "#ebdbb2" --bdr "#504945"
+}
