@@ -31,7 +31,7 @@ font pango:"UbuntuMono Nerd Font" 10
 client.focused          #4c7899 #285577 #ebdbb2 #2e9ef4   #4c7899
 client.focused_inactive #7c6f64 #504945 #ebdbb2 #484e50   #7c6f64
 client.unfocused        #323232 #222222 #888888 #292d2e   #222222
-client.urgent           #fbd934 #cc241d #ebdbb2 #cc241d   #fb4934
+client.urgent           #fb4934 #cc241d #ebdbb2 #cc241d   #fb4934
 client.placeholder      #000000 #0c0c0c #ebdbb2 #000000   #0c0c0c
 client.background       #ebdbb2
 
@@ -40,12 +40,6 @@ assign [app_id=".*qutebrowser.*"] 1
 assign [app_id=".*telegram.*"] 3
 assign [app_id=".*libreoffice.*"] 4
 assign [class="steam"] 5
-
-for_window [class="org-opensourcephysics-cabrillo-tracker-Tracker"] floating enable
-for_window [class="org-opensourcephysics-cabrillo-tracker-Tracker"] move position center
-
-for_window [title="Scratchterm"] move scratchpad
-for_window [title="Scratchterm"] move position center
 
 ### XWayland
 xwayland enable
@@ -56,7 +50,6 @@ exec swaymsg workspace number 1
 exec pgrep -x mako || exec mako
 exec pgrep -x foot || exec foot --server
 exec pgrep -x emacs || exec emacs --daemon
-exec sleep 1 && exec footclient --title "Scratchterm"
 
 ### Idle configuration
 exec swayidle -w \
@@ -213,6 +206,7 @@ bar {
                 separator #ebdbb2
                 background #222222
                 inactive_workspace #323232 #323232 #ebdbb2
+                urgent_workspace #fb4934 #cc231d #ebdbb2
         }
 
 	status_command i3status
