@@ -10,11 +10,12 @@ yay -Syu || {
 }
 
 while true; do
-        printf "Do you wish to restow the dotfiles? (y/n) "
+        printf "\nDo you wish to restow the dotfiles? [Y/n] "
         IFS= read -r yn
 
         case $yn in
-                [Yy]* ) 
+                [Nn]* ) exit;;
+                * ) 
                         command -v stow >/dev/null 2>&1 || {
                                 echo "'stow' executable not found."
                                 exit 1
@@ -30,7 +31,5 @@ while true; do
                         done
 
                         break;;
-                [Nn]* ) exit;;
-                * ) echo "Please answer yes or no.";;
         esac
 done
