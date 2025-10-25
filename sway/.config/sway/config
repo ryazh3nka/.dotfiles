@@ -21,17 +21,16 @@ smart_gaps on
 smart_borders on
 default_border normal 1
 gaps inner 0
-
 font pango:"UbuntuMono Nerd Font" 10
 
 #
 # Colors
 #
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ebdbb2 #2e9ef4   #4c7899
+client.focused          #4c7899 #285577 #fbf1c7 #2e9ef4   #4c7899
 client.focused_inactive #7c6f64 #504945 #ebdbb2 #484e50   #7c6f64
-client.unfocused        #323232 #222222 #888888 #292d2e   #222222
-client.urgent           #fb4934 #cc241d #ebdbb2 #cc241d   #fb4934
+client.unfocused        #3c3836 #222222 #888888 #292d2e   #222222
+client.urgent           #fb4934 #cc241d #fbf1c7 #cc241d   #fb4934
 client.placeholder      #000000 #0c0c0c #ebdbb2 #000000   #0c0c0c
 client.background       #ebdbb2
 
@@ -203,13 +202,13 @@ bar {
 
         colors {
                 statusline #ebdbb2
-                separator #ebdbb2
+                separator #fbf1c7
                 background #222222
-                inactive_workspace #323232 #323232 #ebdbb2
+                inactive_workspace #3c3836 #3c3836 #d5c4a1
                 urgent_workspace #fb4934 #cc231d #ebdbb2
         }
 
-	status_command i3status
+	Status_command i3status
 }
 
 include /etc/sway/config.d/*
