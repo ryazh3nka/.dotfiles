@@ -204,8 +204,9 @@ bar {
                 statusline #ebdbb2
                 separator #fbf1c7
                 background #222222
-                inactive_workspace #3c3836 #3c3836 #d5c4a1
-                urgent_workspace #fb4934 #cc231d #ebdbb2
+                active_workspace #4c7899 #285577 #fbf1c7
+                inactive_workspace #3c3836 #3c3836 #ebdbb2
+                urgent_workspace #fb4934 #cc231d #fbf1c7
         }
 
 	Status_command i3status
