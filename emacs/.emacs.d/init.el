@@ -135,7 +135,17 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
                     :font "UbuntuMono Nerd Font"
                     :height 180)
 
-(set-face-attribute 'ido-subdir nil :foreground "#fabd2f")
+(set-face-attribute 'ido-subdir nil
+                    :foreground "#bdae93"
+                    :weight 'bold)
+
+(set-face-attribute 'ido-first-match nil
+                    :foreground "#fabd2f"
+                    :weight 'normal)
+
+(set-face-attribute 'ido-only-match nil
+                    :foreground "#fabd2f"
+                    :weight 'normal)
 
 (defun my/set-default-font ()
   (set-face-attribute 'default nil
