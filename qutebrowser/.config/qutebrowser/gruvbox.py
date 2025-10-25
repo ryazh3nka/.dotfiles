@@ -46,10 +46,10 @@ dark_orange = "#d65d0e"
 c.colors.completion.fg = [fg1, bright_aqua, bright_yellow]
 
 # Background color of the completion widget for odd rows.
-c.colors.completion.odd.bg = bg0
+c.colors.completion.odd.bg = bg2
 
 # Background color of the completion widget for even rows.
-c.colors.completion.even.bg = c.colors.completion.odd.bg
+c.colors.completion.even.bg = bg3
 
 # Foreground color of completion widget category headers.
 c.colors.completion.category.fg = bright_blue
@@ -70,7 +70,7 @@ c.colors.completion.item.selected.fg = fg0
 c.colors.completion.item.selected.bg = bg4
 
 # Top border color of the selected completion item.
-c.colors.completion.item.selected.border.top = bg2
+c.colors.completion.item.selected.border.top = bg4
 
 # Bottom border color of the selected completion item.
 c.colors.completion.item.selected.border.bottom = c.colors.completion.item.selected.border.top
