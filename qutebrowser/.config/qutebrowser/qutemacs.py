@@ -32,27 +32,26 @@ config.bind("<Ctrl-e>", "forward", mode="normal")
 
 config.bind("<Ctrl-u><Ctrl-x><Ctrl-f>", "cmd-set-text -s :open -t")
 config.bind("<Ctrl-x><Ctrl-f>", "cmd-set-text -s :open")
+config.bind("<Ctrl-x><Ctrl-c>", "quit")
+config.bind("<Ctrl-x>z", "cmd-repeat-last")
 config.bind("<Ctrl-x>l", "reload")
 
 config.bind("<Ctrl-m>", "mode-enter insert")
 config.bind("<Ctrl-g>", "fake-key --global <Escape>")
-
-config.bind("<Ctrl-x><Ctrl-c>", "quit")
-
-config.bind("<Ctrl-x>z", "cmd-repeat-last")
+config.bind("<Ctrl-g>", "mode-leave", mode="insert")
+config.bind("<Ctrl-g>", "mode-leave", mode="caret")
+config.bind("<Ctrl-g>", "mode-leave", mode="passthrough")
 
 config.bind("<Ctrl-x>0", "tab-close")
 config.bind("<Ctrl-x>1", "tab-only")
 config.bind("<Ctrl-x>o", "tab-next")
 config.bind("<Alt-a>", "tab-prev")
-config.bind("<Ctrl-Alt-a>", "tab-move -")
 config.bind("<Alt-e>", "tab-next")
+config.bind("<Ctrl-Alt-a>", "tab-move -")
 config.bind("<Ctrl-Alt-e>", "tab-move +")
 
 config.bind("<Ctrl-s>", "cmd-set-text /", mode="normal")
 config.bind("<Ctrl-r>", "cmd-set-text ?", mode="normal")
-config.bind("s", "search-next")
-config.bind("r", "search-prev")
 config.bind("<Ctrl-s>", "search-next", mode="command")
 config.bind("<Ctrl-r>", "search-prev", mode="command")
 
