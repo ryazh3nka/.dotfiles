@@ -17,7 +17,8 @@ for programs that like to paste junk into your config (i'm looking at you, Emacs
 ```zsh
 $ git clone --depth 1 https://github.com/ryazh3nka/.dotfiles.git $HOME/.dotfiles
 $ cd $HOME/.dotfiles
-$ yay -Sy --needed - < PACKAGES.md
+$ yay -Syu
+$ yay -S --needed - < PACKAGES.md
 $ stow package
 ```
 also, each package in this repo contains a separate readme (ignored by stow) with more thorough explanation of the install process.
