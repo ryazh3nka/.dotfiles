@@ -209,7 +209,7 @@ bar {
                 urgent_workspace #fb4934 #cc231d #fbf1c7
         }
 
-	Status_command i3status
+        status_command i3status
 }
 
 include /etc/sway/config.d/*
