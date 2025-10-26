@@ -65,7 +65,7 @@
 
 ;; functions!
 ; duplicate current line
-(defun duplicate-line ()
+(defun my/duplicate-line ()
   "Duplicate current line"
   (interactive)
   (let ((column (- (point) (point-at-bol)))
@@ -77,10 +77,10 @@
     (move-beginning-of-line 1)
     (forward-char column)))
 
-(global-set-key (kbd "C-,") 'duplicate-line)
+(global-set-key (kbd "C-,") 'my/duplicate-line)
 
 ; copy files in dired
-(defun dired-copy-files-to-clipboard (&optional plain-text)
+(defun my/dired-copy-files-to-clipboard (&optional plain-text)
   "Copy marked files to the clipboard.
 With a prefix arg copy plain text; otherwise copy a text/uri-list."
   (interactive "P")
@@ -101,7 +101,7 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
              (format "%d file(s)%s" (length files) (if (> (length files) 1) "s" ""))
              (if plain-text "plain text" "URI list"))))
 
-(global-set-key (kbd "C-c w") #'dired-copy-files-to-clipboard)
+(global-set-key (kbd "C-c w") #'my/dired-copy-files-to-clipboard)
 
 ;; package management
 (require 'package)
@@ -115,6 +115,16 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
   (package-install 'pdf-tools))
 (pdf-loader-install)
 
+;; ugly hack to silence noncritical warnings like
+;; Error running timer ‘pdf-cache--prefetch-start’:
+;; (wrong-type-argument number-or-marker-p nil)
+;; TODO: figure out what the problem is
+(with-eval-after-load 'pdf-cache
+  (advice-add 'pdf-cache--prefetch-start :around
+              (lambda (orig-fun &rest args)
+                (ignore-errors
+                  (apply orig-fun args)))))
+
 (unless (package-installed-p 'gruvbox-theme)
   (package-install 'gruvbox-theme))
 (load-theme 'gruvbox)
@@ -123,18 +133,6 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
   (package-install 'magit))
 
 ;; colorscheme tweaks
-(set-face-attribute 'mode-line nil
-                    :background "#504945"
-                    :box nil)
-
-(set-face-attribute 'mode-line-inactive nil
-                    :background "#3c3836"
-                    :box nil)
-
-(set-face-attribute 'default nil
-                    :font "UbuntuMono Nerd Font"
-                    :height 180)
-
 (set-face-attribute 'ido-subdir nil
                     :foreground "#bdae93"
                     :weight 'bold)
@@ -151,8 +149,6 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
   (set-face-attribute 'default nil
                       :font "UbuntuMono Nerd Font"
                       :height 180))
-
-(add-hook 'window-setup-hook #'my/set-default-font)
 
 (add-hook 'after-make-frame-functions
           (lambda (frame)
