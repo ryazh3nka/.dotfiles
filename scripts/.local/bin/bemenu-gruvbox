@@ -1,11 +1,33 @@
 #!/bin/sh
 
+bg0="#282828"
+bg1="#3c3836"
+bg2="#504945"
+bg3="#665c54"
+bg4="#7c6f64"
+
+fg0="#fbf1c7"
+fg1="#ebdbb2"
+
+yellow="#fabd2f"
+red="#fb4934"
+
 pkill -x bemenu-run || { \
-        exec bemenu-run -p '' --scrollbar always --list 7 \
-        --ignorecase --line-height 26 --fn "UbuntuMono Nerd Font 14" \
-        --ch 20 --cw 10 -B 1 --scb "#3c3836" --scf "#fabd2f" \
-        --tb "#282828" --fb "#3c3836" --nb "#282828" --hb "#7c6f64" \
-        --ab "#282828" --sb "#504945" --tf "#ebdbb2" --ff "#ebdbb2" \
-        --nf "#ebdbb2" --af "#ebdbb2" --hf "#fbf1c7" --cb "#282828" \
-        --cf "#ebdbb2" --bdr "#665c54" --nb "#504945" --ab "#665c54"
+        exec bemenu-run -p '' \
+        --fn "UbuntuMono Nerd Font 14" \
+        --list 7 \
+        --ignorecase \
+        --line-height 26 \
+        --ch 22 --cw 10 \
+        --scrollbar always \
+        --scb $bg1 --scf $yellow \
+        --bdr $bg1 --border 1 \
+        --tb $bg0 --tf $fg1 \
+        --fb $bg1 --ff $fg1 \
+        --nb $bg0 --nf $fg1 \
+        --hb $bg4 --hf $fg0 \
+        --ab $bg3 --af $fg1 \
+        --sb $bg2 --sf $fg0 \
+        --cb $bg0 --cf $fg1 \
+        --nb $bg2 --nf $fg1
 }
