@@ -1,10 +1,11 @@
-HISTFILE="$HOME/.local/share/zsh/histfile"
-HISTSIZE=1000
-SAVEHIST=1000
-bindkey -e
+export HISTFILE="$HOME/.local/share/zsh/histfile"
+export HISTSIZE=5000
+export SAVEHIST=5000
+mkdir -p "${HISTFILE:h}" 2>/dev/null
 
 setopt share_history
 setopt extendedglob
+setopt no_extended_history
 setopt NO_CASE_GLOB
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
         'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -15,6 +16,7 @@ alias ll="ls -lAh --color=auto --sort=extension"
 alias wget="wget --hsts-file ~/.local/share/wget/wget-hsts"
 alias tmux="tmux -T 256"
 
+bindkey -e
 bindkey "^[e" down-history
 bindkey "^[a" up-history
 
