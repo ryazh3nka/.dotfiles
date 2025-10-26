@@ -12,7 +12,7 @@ fg1="#ebdbb2"
 yellow="#fabd2f"
 red="#fb4934"
 
-pkill -x bemenu-run || { \
+pkill -x bemenu-run || {
         exec bemenu-run -p '' \
         --fn "UbuntuMono Nerd Font 14" \
         --list 7 \
