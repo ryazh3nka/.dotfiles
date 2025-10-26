@@ -10,13 +10,9 @@ vim.opt.swapfile = false
 vim.opt.cursorline = true
 vim.opt.autochdir = true
 vim.opt.wrap = false
-vim.opt.timeoutlen = 1000
-vim.g.mapleader = " "
-
-vim.opt.cmdheight = 0
 vim.opt.laststatus = 3
 vim.opt.termguicolors = true
-vim.opt.showmode = false
+vim.g.mapleader = " "
 
 require("plugins")
 require("autocmds")
