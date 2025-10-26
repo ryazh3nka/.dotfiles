@@ -5,7 +5,6 @@ mkdir -p "${HISTFILE:h}" 2>/dev/null
 
 setopt share_history
 setopt extendedglob
-setopt no_extended_history
 setopt NO_CASE_GLOB
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
         'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
