@@ -329,4 +329,7 @@ c.colors.tabs.pinned.selected.odd.fg = c.colors.tabs.selected.odd.fg
 
 # Background color for webpages if unset (or empty to use the theme's
 # color).
-# c.colors.webpage.bg = bg4
+c.colors.webpage.bg = bg0
+
+# Preferred colorscheme (light/dark)
+c.colors.webpage.preferred_color_scheme = "dark"
