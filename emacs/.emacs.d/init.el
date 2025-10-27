@@ -18,10 +18,16 @@
 
 ;; numberline
 (setq display-line-numbers-type 'relative)
+(setq display-line-numbers-width-start t)
 (global-display-line-numbers-mode t)
 (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1)))
 (add-hook 'image-mode-hook (lambda () (display-line-numbers-mode -1)))
 (add-hook 'Man-mode-hook (lambda () (display-line-numbers-mode -1)))
+
+;; scrolling out of view
+(setq scroll-conservatively 101)
+(setq scroll-margin 0)
+(setq scroll-step 1)
 
 ;; greeter
 (setq inhibit-startup-screen t)
