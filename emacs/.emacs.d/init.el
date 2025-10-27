@@ -156,6 +156,8 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
                       :font "UbuntuMono Nerd Font"
                       :height 180))
 
+(add-hook 'window-setup-hook #'my/set-default-font)
+
 (add-hook 'after-make-frame-functions
           (lambda (frame)
             (with-selected-frame frame
