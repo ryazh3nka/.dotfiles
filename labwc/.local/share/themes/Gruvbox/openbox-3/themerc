@@ -6,7 +6,7 @@ window.inactive.label.text.color: #a89984
 window.active.button.unpressed.image.color: #fbf1c7
 window.inactive.button.unpressed.image.color: #a89984
 
-window.active.border.color: #7c6f64
+window.active.border.color: #665c54
 window.inactive.border.color: #3c3836
 window.button.hover.bg.color: #5a5affff
 window.button.hover.bg.colorTo: #5a5affff
