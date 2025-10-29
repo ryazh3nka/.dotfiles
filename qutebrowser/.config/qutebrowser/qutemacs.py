@@ -89,7 +89,9 @@ config.bind("<Ctrl-u><Alt-w>t", "yank title")
 config.bind("<Ctrl-x>c", "config-cycle colors.webpage.darkmode.enabled true false")
 
 config.bind("<Ctrl-x><Ctrl-q>", "download-clear")
-config.bind("<Ctrl-x><Ctrl-d>", "download-open")
+config.bind("<Ctrl-x><Ctrl-o>", "download-open")
+config.bind("<Ctrl-x><Ctrl-k>", "download-delete")
+config.bind("<Ctrl-x><Ctrl-r>", "download-remove")
 config.bind("<Ctrl-x><Ctrl-z>", "download-retry")
 
 config.bind("<Ctrl-v>", "spawn mpv {url}")
