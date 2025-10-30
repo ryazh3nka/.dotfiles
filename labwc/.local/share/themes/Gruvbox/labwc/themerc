@@ -28,4 +28,4 @@ osd.border.color: #3c3836
 osd.bg.color: #282828
 osd.window-switcher.style-thumbnail.item.active.bg.color: #3c3836
 osd.window-switcher.style-thumbnail.item.active.border.color: #fe8019
-osd.window-switcher.preview.border.color: #fe801900
+osd.window-switcher.preview.border.color: #fe8019
