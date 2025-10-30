@@ -8,9 +8,6 @@ window.inactive.button.unpressed.image.color: #a89984
 
 window.active.border.color: #665c54
 window.inactive.border.color: #3c3836
-window.button.hover.bg.color: #5a5affff
-window.button.hover.bg.colorTo: #5a5affff
-window.button.hover.bg.gradient: vertical
 
 menu.border.color: #3c3836
 menu.separator.color: #3c3836
