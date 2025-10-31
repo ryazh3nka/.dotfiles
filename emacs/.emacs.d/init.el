@@ -1,4 +1,4 @@
-;; prevents emacs from shitting inside your config
+;; prevents emacs from shitting inside this file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 (when (file-exists-p custom-file)
@@ -66,7 +66,7 @@
  '(line-number ((t (:inherit default :background nil :foreground "#7c6f64"))))
  '(line-number-current-line ((t (:inherit line-number :background nil :foreground "#fabd2f")))))
 
-; follow symlinks
+;; follow symlinks
 (setq vc-follow-symlinks t)
 
 ;; functions!
