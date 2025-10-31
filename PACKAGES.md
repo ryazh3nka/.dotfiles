@@ -6,6 +6,9 @@ i3status
 bemenu
 mako
 wl-clipboard
+grim
+slurp
+hyprpicker
 xdg-desktop-portal-wlr
 zsh
 zsh-autosuggestions
