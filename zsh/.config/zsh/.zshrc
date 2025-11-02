@@ -1,4 +1,4 @@
-export HISTFILE="$HOME/.local/share/zsh/histfile"
+export HISTFILE="$HOME/.cache/zsh/histfile"
 export HISTSIZE=5000
 export SAVEHIST=5000
 
@@ -22,7 +22,7 @@ bindkey "^[e" down-history
 bindkey "^[a" up-history
 
 autoload -Uz compinit
-compinit -C -d "$HOME/.local/share/zsh/zcompdump"
+compinit -C -d "$HOME/.cache/zsh/zcompdump"
 
 # zsh-syntax-highlighting
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
