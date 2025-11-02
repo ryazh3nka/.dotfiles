@@ -18,7 +18,7 @@ for programs that like to paste junk into your config (i'm looking at you, Emacs
 $ git clone --depth 1 https://github.com/ryazh3nka/.dotfiles.git $HOME/.dotfiles
 $ cd $HOME/.dotfiles
 $ yay -S --needed - < PACKAGES.md
-$ mkdir -p $HOME/{.config,.cache,.local}
+$ mkdir -p $HOME/{.config,.cache,.local/share,.local/bin}
 $ stow package
 ```
 even though i tried to make every package somewhat atomic, i would suggest always stowing the 'scripts' directory to have some necessary launch scripts available in your `$PATH`. 
