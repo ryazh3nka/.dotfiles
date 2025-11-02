@@ -11,14 +11,14 @@ this setup was made for my laptop over a few months. my workflow is Emacs-centri
 *apps shown: emacs, qutebrowser, foot, pipes.sh, cmatrix*
 
 ## installation
-make backups of your `.config` directory, clone and cd into the repo, then run `stow package-name` for every folder you want symlinked, and tweak the dotfiles to your liking.
+clone and cd into the repo, make sure that `.config`, `.local` and `.cache` exist in your `$HOME`, run `stow package-name` for every folder you want symlinked, and tweak the dotfiles to your liking.
 
-for programs that like to paste junk into your config (i'm looking at you, Emacs), make use of the `--no-folding` flag to create the target directory beforehand.
+for programs that like to paste junk into your config (i'm looking at you, Emacs) or more generally to prevent a package from owning the target directory, make use of the `--no-folding` flag to create it before symlinking.
 ```zsh
 $ git clone --depth 1 https://github.com/ryazh3nka/.dotfiles.git $HOME/.dotfiles
 $ cd $HOME/.dotfiles
-$ yay -Syu
 $ yay -S --needed - < PACKAGES.md
+$ mkdir -p $HOME/{.config,.cache,.local}
 $ stow package
 ```
 even though i tried to make every package somewhat atomic, i would suggest always stowing the 'scripts' directory to have some necessary launch scripts available in your `$PATH`. 
