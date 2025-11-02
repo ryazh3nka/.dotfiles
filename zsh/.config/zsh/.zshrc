@@ -1,7 +1,6 @@
 export HISTFILE="$HOME/.local/share/zsh/histfile"
 export HISTSIZE=5000
 export SAVEHIST=5000
-mkdir -p "${HISTFILE:h}" 2>/dev/null
 
 export LESS='-R --use-color -Dd+c$Du+b$'
 export MANROFFOPT="-P -c"
