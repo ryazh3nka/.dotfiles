@@ -39,6 +39,7 @@ assign [app_id=".*qutebrowser.*"] 1
 assign [app_id=".*telegram.*"] 3
 assign [app_id=".*libreoffice.*"] 4
 assign [class="steam"] 5
+for_window [title="^Scratchpad$"] move to scratchpad
 
 ### XWayland
 xwayland enable
@@ -49,6 +50,7 @@ exec swaymsg workspace number 1
 exec pgrep -x mako || exec mako >/dev/null 2>&1
 exec pgrep -x foot || exec foot --server >/dev/null 2>&1
 exec pgrep -x emacs || exec emacs --daemon >/dev/null 2>&1
+exec sleep 1 && footclient -T "Scratchpad"
 
 ### Idle configuration
 exec swayidle -w \
