@@ -8,7 +8,8 @@
 (setq auto-save-file-name-transforms
       `((".*" ,(concat user-emacs-directory "auto-save/") t))) 
 
-;; window decorations
+;;; general
+;; frame decorations
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
@@ -50,27 +51,24 @@
 (global-set-key (kbd "M-(") (lambda () (interactive) (insert "(")))
 (global-set-key (kbd "M-)") (lambda () (interactive) (insert ")")))
 
+;; manpages
+(require 'man)
+(set-face-attribute 'Man-overstrike nil :inherit font-lock-type-face :bold t)
+(set-face-attribute 'Man-underline nil :inherit font-lock-keyword-face :underline t)
+
 ;; wrap indicator
 (setq-default fringe-indicator-alist
               (assq-delete-all 'continuation
                                (assq-delete-all 'truncation fringe-indicator-alist)))
 
-;; indentation
-(setq-default tab-width 8)
-
-;; cmode kernel coding style
-(setq-default tab-width 8)
+;; c-mode
 (setq c-default-style "linux")
-
-(custom-set-faces
- '(line-number ((t (:inherit default :background nil :foreground "#7c6f64"))))
- '(line-number-current-line ((t (:inherit line-number :background nil :foreground "#fabd2f")))))
 
 ;; follow symlinks
 (setq vc-follow-symlinks t)
 
-;; functions!
-; duplicate current line
+;;; functions!
+;; duplicate current line
 (defun my/duplicate-line ()
   "Duplicate current line"
   (interactive)
@@ -85,7 +83,20 @@
 
 (global-set-key (kbd "C-,") 'my/duplicate-line)
 
-; copy files in dired
+;; setup a font
+(defun my/set-default-font ()
+  (set-face-attribute 'default nil
+                      :font "UbuntuMono Nerd Font"
+                      :height 180))
+
+(add-hook 'window-setup-hook #'my/set-default-font)
+
+(add-hook 'after-make-frame-functions
+          (lambda (frame)
+            (with-selected-frame frame
+              (my/set-default-font))))
+
+;; copy files in dired
 (defun my/dired-copy-files-to-clipboard (&optional plain-text)
   "Copy marked files to the clipboard.
 With a prefix arg copy plain text; otherwise copy a text/uri-list."
@@ -109,7 +120,7 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
 
 (global-set-key (kbd "C-c w") #'my/dired-copy-files-to-clipboard)
 
-;; package management
+;;; package management
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
@@ -138,27 +149,17 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
 (unless (package-installed-p 'magit)
   (package-install 'magit))
 
-;; colorscheme tweaks
-(set-face-attribute 'ido-subdir nil
-                    :foreground "#bdae93"
-                    :weight 'bold)
-
+;;; colorscheme tweaks
 (set-face-attribute 'ido-first-match nil
                     :foreground "#fabd2f"
                     :weight 'normal)
 
-(set-face-attribute 'ido-only-match nil
-                    :foreground "#fabd2f"
-                    :weight 'normal)
+(set-face-attribute 'line-number-current-line nil
+                    :inherit 'line-number
+                    :background nil
+                    :foreground "#fabd2f")
 
-(defun my/set-default-font ()
-  (set-face-attribute 'default nil
-                      :font "UbuntuMono Nerd Font"
-                      :height 180))
-
-(add-hook 'window-setup-hook #'my/set-default-font)
-
-(add-hook 'after-make-frame-functions
-          (lambda (frame)
-            (with-selected-frame frame
-              (my/set-default-font))))
+(set-face-attribute 'line-number nil
+                    :inherit 'default
+                    :background nil
+                    :foreground "#7c6f64")
