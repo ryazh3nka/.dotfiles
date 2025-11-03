@@ -150,10 +150,6 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
   (package-install 'magit))
 
 ;;; colorscheme tweaks
-(set-face-attribute 'ido-first-match nil
-                    :foreground "#fabd2f"
-                    :weight 'normal)
-
 (set-face-attribute 'line-number-current-line nil
                     :inherit 'line-number
                     :background nil
