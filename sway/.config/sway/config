@@ -82,7 +82,7 @@ bindsym $mod+d exec $menu
 bindsym $mod+c exec $picker
 
 bindsym Print exec grim-slurp-launcher
-bindsym Shift+Print exec grim-fscrn-launcher
+bindsym Shift+Print exec grim-launcher
 
 bindsym $mod+m exec sh -c "[ '$(makoctl mode)' = dnd ] && makoctl mode -r dnd || makoctl mode -s dnd"
 
