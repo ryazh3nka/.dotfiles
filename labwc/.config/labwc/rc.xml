@@ -56,6 +56,11 @@
                 <keybind key="W-S-7"><action name="SendToDesktop" to="7" /></keybind>
                 <keybind key="W-S-8"><action name="SendToDesktop" to="8" /></keybind>
                 <keybind key="W-S-9"><action name="SendToDesktop" to="9" /></keybind>
+
+                <keybind key="XF86AudioMute"><action name="Execute" command="pactl set-sink-mute \@DEFAULT_SINK@ toggle" /></keybind>
+                <keybind key="XF86AudioLowerVolume"><action name="Execute" command="pactl set-sink-volume \@DEFAULT_SINK@ -5%" /></keybind>
+                <keybind key="XF86AudioRaiseVolume"><action name="Execute" command="pactl set-sink-volume \@DEFAULT_SINK@ +5%" /></keybind>
+                <keybind key="XF86AudioMicMute"><action name="Execute" command="pactl set-sink-mute \@DEFAULT_SINK@ toggle" /></keybind>
         </keyboard>
 
         <libinput>
