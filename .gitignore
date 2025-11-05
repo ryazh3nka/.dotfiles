@@ -3,7 +3,6 @@
 .\#*
 *.elc
 auto-save-list/
-tramp
 __pycache__/
 *.pyc
 *.pyo
