@@ -14,7 +14,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
 alias ls="ls --color=auto"
 alias l="ls -lh --color=auto --sort=extension"
 alias ll="ls -lAh --color=auto --sort=extension"
-alias wget="wget --hsts-file $XDG_DATA_HOME/wget/wget-hsts"
+alias wget="wget --hsts-file $XDG_CACHE_HOME/wget/wget-hsts"
 alias tmux="tmux -T 256"
 
 PROMPT="%B%F{10}[I]%f%b %F{15}[%F{12}%n%F{15}@%F{11}%m%F{15}]%F{9}[%~]%f$ "
