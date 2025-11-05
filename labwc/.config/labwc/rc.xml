@@ -11,7 +11,11 @@
                 <name>Gruvbox</name>
                 <font name="Ubuntu Nerd Font" size="10" />
         </theme>
-
+        
+        <resistance>
+                <windowEdgeStrength>0</windowEdgeStrength>
+        </resistance>
+        
         <keyboard>
                 <keybind key="W-q"><action name="Close" /></keybind>
                 <keybind key="W-w"><action name="ToggleMaximize" /></keybind>
