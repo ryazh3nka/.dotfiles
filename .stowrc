@@ -2,9 +2,4 @@
 --ignore ".*~$"
 --ignore "^#.*#$"
 --ignore "^\.#.*"
---ignore ".*\.elc$"
---ignore "^auto-save-list/?$"
---ignore "^tramp/?$"
---ignore "__pycache__/?$"
---ignore ".*\.py[co]$"
 --verbose 1
