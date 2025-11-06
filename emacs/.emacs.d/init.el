@@ -17,6 +17,9 @@
 ;; pasting deletes highlighted text
 (delete-selection-mode 1)
 
+;; syntax highlighting
+(global-font-lock-mode t)
+
 ;; numberline
 (setq display-line-numbers-type 'relative)
 (setq display-line-numbers-width-start t)
@@ -132,6 +135,10 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
   (package-install 'pdf-tools))
 (pdf-loader-install)
 
+(unless (package-installed-p 'rainbow-delimiters)
+  (package-install 'rainbow-delimiters))
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
 ;; ugly hack to silence noncritical warnings like
 ;; Error running timer ‘pdf-cache--prefetch-start’:
 ;; (wrong-type-argument number-or-marker-p nil)
@@ -149,13 +156,42 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
 (unless (package-installed-p 'magit)
   (package-install 'magit))
 
+(unless (package-installed-p 'ess)
+  (package-install 'ess))
+
+(require 'ess-site)
+(add-to-list 'auto-mode-alist '("\\.R\\'" . ess-mode))
+(add-to-list 'auto-mode-alist '("\\.Rmd\\'" . poly-markdown+r-mode))
+
+;; pretty symbols for ESS
+(setq ess-R-font-lock-keywords
+      '((ess-R-fl-keyword:keywords . t)
+        (ess-R-fl-keyword:constants . t)
+        (ess-R-fl-keyword:modifiers . t)
+        (ess-R-fl-keyword:fun-defs . t)
+        (ess-R-fl-keyword:assign-ops . t)
+        (ess-R-fl-keyword:delimiters . t)
+        (ess-R-fl-keyword:operators . t)
+        (ess-R-fl-keyword:flow-control . t)
+        (ess-R-fl-keyword:numbers . t)
+        (ess-R-fl-keyword:matrix-labels . t)
+        (ess-R-fl-keyword:fun-calls . t)
+        (ess-R-fl-keyword:other-keywords . t)
+        (ess-R-fl-keyword:package-names . t)
+        (ess-R-fl-keyword:F&T . t)
+        (ess-R-fl-keyword:%op% . t)))
+
 ;;; colorscheme tweaks
 (set-face-attribute 'line-number-current-line nil
                     :inherit 'line-number
-                    :background nil
+                    :background 'unspecified'
                     :foreground "#fabd2f")
 
 (set-face-attribute 'line-number nil
                     :inherit 'default
-                    :background nil
+                    :background 'unspecified'
                     :foreground "#7c6f64")
+
+(set-face-attribute 'ido-subdir nil
+                    :inherit 'default
+                    :foreground "#fabd2f")
