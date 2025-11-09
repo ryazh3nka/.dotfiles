@@ -70,6 +70,8 @@ input "type:touchpad" {
 input "type:keyboard" {
         xkb_layout us,ru
         xkb_options "grp:win_space_toggle,ctrl:nocaps"
+        repeat_delay 400
+        repeat_rate 40
 }
 
 ### Key bindings
