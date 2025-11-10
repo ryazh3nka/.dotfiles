@@ -12,8 +12,8 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
         'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 alias ls="ls --color=auto"
-alias l="ls -lh --color=auto --sort=extension"
-alias ll="ls -lAh --color=auto --sort=extension"
+alias l="ls -lh --color=auto --sort=extension --group-directories-first"
+alias ll="ls -lAh --color=auto --sort=extension --group-directories-first"
 alias wget="wget --hsts-file $XDG_CACHE_HOME/wget/wget-hsts"
 alias tmux="tmux -T 256"
 
