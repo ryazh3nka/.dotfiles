@@ -11,7 +11,7 @@ set $picker hyprpicker -a
 set $editor emacsclient -c -a ''
 
 ### Output configuration
-output * bg ~/.config/sway/wallpapers/the-ninth-wave-lowres.png fill
+output * bg ~/pics/wallpapers/the-ninth-wave-lowres.png fill
 
 ### Decorations
 #
