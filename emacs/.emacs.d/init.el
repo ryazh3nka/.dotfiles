@@ -72,6 +72,7 @@
 
 ;; dired
 (setq dired-listing-switches "-aBhl --group-directories-first")
+(setq dired-dwim-target t)
 
 ;;; functions!
 ;; duplicate current line
@@ -159,30 +160,10 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
 (unless (package-installed-p 'magit)
   (package-install 'magit))
 
-(unless (package-installed-p 'ess)
-  (package-install 'ess))
-
-(require 'ess-site)
-(add-to-list 'auto-mode-alist '("\\.R\\'" . ess-mode))
-(add-to-list 'auto-mode-alist '("\\.Rmd\\'" . poly-markdown+r-mode))
-
-;; pretty symbols for ESS
-(setq ess-R-font-lock-keywords
-      '((ess-R-fl-keyword:keywords . t)
-        (ess-R-fl-keyword:constants . t)
-        (ess-R-fl-keyword:modifiers . t)
-        (ess-R-fl-keyword:fun-defs . t)
-        (ess-R-fl-keyword:assign-ops . t)
-        (ess-R-fl-keyword:delimiters . t)
-        (ess-R-fl-keyword:operators . t)
-        (ess-R-fl-keyword:flow-control . t)
-        (ess-R-fl-keyword:numbers . t)
-        (ess-R-fl-keyword:matrix-labels . t)
-        (ess-R-fl-keyword:fun-calls . t)
-        (ess-R-fl-keyword:other-keywords . t)
-        (ess-R-fl-keyword:package-names . t)
-        (ess-R-fl-keyword:F&T . t)
-        (ess-R-fl-keyword:%op% . t)))
+(unless (package-installed-p 'which-key)
+  (package-install 'which-key))
+(which-key-mode)
+;; (which-key-setup-side-window-bottom)
 
 ;;; colorscheme tweaks
 (set-face-attribute 'line-number-current-line nil
