@@ -70,6 +70,9 @@
 ;; follow symlinks
 (setq vc-follow-symlinks t)
 
+;; dired
+(setq dired-listing-switches "-aBhl --group-directories-first")
+
 ;;; functions!
 ;; duplicate current line
 (defun my/duplicate-line ()
