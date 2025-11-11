@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sh -c "[ '$(makoctl mode)' = dnd ] && makoctl mode -r dnd || makoctl mode -s dnd"
