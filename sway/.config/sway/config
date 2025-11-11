@@ -32,14 +32,16 @@ client.focused_inactive #7c6f64 #504945 #ebdbb2 #484e50   #7c6f64
 client.unfocused        #32302f #222222 #a89984 #292d2e   #222222
 client.urgent           #fb4934 #cc241d #fbf1c7 #cc241d   #fb4934
 client.placeholder      #000000 #0c0c0c #ebdbb2 #000000   #0c0c0c
-client.background       #ebdbb2
+client.background       #282828
 
 ### Windowrules
 assign [app_id=".*qutebrowser.*"] 1
 assign [app_id=".*telegram.*"] 3
+assign [class=".*discord*."] 3
 assign [app_id=".*libreoffice.*"] 4
 assign [app_id=".*gimp.*"] 5
-assign [class="steam"] 8
+assign [class=".*steam*."] 8
+assign [app_id=".*obsproject.*"] 9
 for_window [title="^Scratchterm$"] move to scratchpad
 
 ### XWayland
@@ -48,9 +50,9 @@ for_window [shell="xwayland"] title_format "[XWayland] %title"
 
 ### Autostart
 exec swaymsg workspace number 1
-exec pgrep -x mako || exec mako >/dev/null 2>&1
-exec pgrep -x foot || exec foot --server >/dev/null 2>&1
-exec pgrep -x emacs || exec emacs --daemon >/dev/null 2>&1
+exec mako >/dev/null 2>&1
+exec foot --server >/dev/null 2>&1
+exec emacs --daemon >/dev/null 2>&1
 exec sleep 1 && footclient -T "Scratchterm"
 
 ### Idle configuration
@@ -88,7 +90,6 @@ bindsym $mod+c exec $picker
 
 bindsym Print exec grim-slurp-launcher
 bindsym Shift+Print exec grim-launcher
-
 bindsym $mod+m exec mako-toggle-dnd
 
 bindsym $mod+q kill
@@ -173,15 +174,15 @@ bindsym $mod+minus scratchpad show
 # Resizing containers:
 #
 mode "resize" {
-        bindsym $left resize grow width 10px
+        bindsym $left resize shrink width 10px
         bindsym $down resize shrink height 10px
         bindsym $up resize grow height 10px
-        bindsym $right resize shrink width 10px
+        bindsym $right resize grow width 10px
 
-        bindsym Left resize grow width 10px
+        bindsym Left resize shrink width 10px
         bindsym Down resize shrink height 10px
         bindsym Up resize grow height 10px
-        bindsym Right resize shrink width 10px
+        bindsym Right resize grow width 10px
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
