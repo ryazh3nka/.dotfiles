@@ -71,8 +71,9 @@
 (setq vc-follow-symlinks t)
 
 ;; dired
-(setq dired-listing-switches "-aBhl --group-directories-first")
+(setq dired-listing-switches "-ABhl --sort=extension --group-directories-first")
 (setq dired-dwim-target t)
+(setq dired-kill-when-opening-new-dired-buffer t)
 
 ;;; functions!
 ;; duplicate current line
