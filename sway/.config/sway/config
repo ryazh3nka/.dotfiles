@@ -40,6 +40,7 @@ assign [app_id=".*telegram.*"] 3
 assign [class=".*discord*."] 3
 assign [app_id=".*libreoffice.*"] 4
 assign [app_id=".*gimp.*"] 5
+assign [class=".*Ardour.*"] 6
 assign [class=".*steam*."] 8
 assign [app_id=".*obsproject.*"] 9
 for_window [title="^Scratchterm$"] move to scratchpad
