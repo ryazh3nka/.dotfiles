@@ -1,1 +1,1 @@
-[ ! -s ~/.config/mpd/pid ] && mpd
+[ ! -s $XDG_RUNTIME_DIR/mpd/mpd.pid ] && mpd
