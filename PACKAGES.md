@@ -24,3 +24,5 @@ cmatrix-git
 ttf-ubuntu-nerd
 ttf-ubuntu-mono-nerd
 noto-fonts
+mpd
+mpc
