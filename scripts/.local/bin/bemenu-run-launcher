@@ -12,7 +12,7 @@ fg1="#ebdbb2"
 yellow="#fabd2f"
 red="#fb4934"
 
-bemenu-run -p '' \
+pkill -x bemenu-run || bemenu-run -p '' \
         --fn "UbuntuMono Nerd Font 14" \
         --list 7 \
         --ignorecase \
