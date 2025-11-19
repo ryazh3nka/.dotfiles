@@ -161,6 +161,11 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
 (unless (package-installed-p 'magit)
   (package-install 'magit))
 
+(unless (package-installed-p 'rust-mode)
+  (package-install 'rust-mode))
+(require 'rust-mode)
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+
 (unless (package-installed-p 'which-key)
   (package-install 'which-key))
 (which-key-mode)
