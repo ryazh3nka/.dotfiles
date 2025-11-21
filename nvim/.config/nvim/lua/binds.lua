@@ -1,7 +1,6 @@
-vim.keymap.set("i", "<A-w>", "<C-o>w")
 vim.keymap.set("i", "<A-f>", "<C-o>w")
 vim.keymap.set("i", "<A-b>", "<C-o>b")
-vim.keymap.set("i", "<C-a>", "<C-o>_")
+vim.keymap.set("i", "<C-a>", "<C-o>0")
 vim.keymap.set("i", "<C-e>", "<C-o>$")
 vim.keymap.set("i", "<C-f>", "<Right>")
 vim.keymap.set("i", "<C-b>", "<Left>")
