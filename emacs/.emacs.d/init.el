@@ -104,6 +104,18 @@
             (with-selected-frame frame
               (my/set-default-font))))
 
+;; kill unused buffers
+(defun my/close-other-buffers ()
+  "Kill all buffers except the current one and the *scratch* buffer."
+  (interactive)
+  (let ((current (current-buffer)))
+    (dolist (buf (buffer-list))
+      (unless (or (eq buf current)
+                  (string-equal (buffer-name buf) "*scratch*"))
+        (kill-buffer buf)))))
+
+(global-set-key (kbd "C-c k") #'my/close-other-buffers)
+
 ;; copy files in dired
 (defun my/dired-copy-files-to-clipboard (&optional plain-text)
   "Copy marked files to the clipboard.
