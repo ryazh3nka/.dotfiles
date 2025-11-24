@@ -8,7 +8,7 @@ this setup was made for my laptop over a few months. my workflow is Emacs-centri
 </p>
 
 *wallpaper: "The Ninth Wave" by I. K. Aivazovsky*</br>
-*apps shown: emacs, qutebrowser, foot, pipes.sh, cmatrix*
+*apps shown: emacs, qutebrowser, foot*
 
 ## installation
 clone and cd into the repo, make sure that `.config`, `.local` and `.cache` exist in your `$HOME`, run `stow package-name` for every folder you want symlinked, and tweak the dotfiles to your liking.
