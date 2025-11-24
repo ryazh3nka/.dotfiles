@@ -4,9 +4,13 @@ vim.pack.add({
         { src = "https://github.com/stevearc/oil.nvim.git" },
         { src = "https://github.com/ibhagwan/fzf-lua.git" },
         { src = "https://github.com/ggandor/leap.nvim.git" },
+        { src = "https://github.com/folke/which-key.nvim" },
 })
 
 require("oil").setup()
+require("which-key").setup({
+        delay = 500,
+})
 require("fzf-lua").setup({
         files = { 
                 fd_opts = [[--type f --exclude .git --exclude '.*']],

@@ -1,0 +1,13 @@
+{
+  "plugins": {
+    "fzf-lua": [],
+    "gruvbox.nvim": [],
+    "leap.nvim": [],
+    "nvim-web-devicons": [],
+    "oil.nvim": [],
+    "which-key.nvim": {
+      "rev": "3aab214",
+      "src": "https://github.com/folke/which-key.nvim"
+    }
+  }
+}
