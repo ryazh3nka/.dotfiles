@@ -21,8 +21,6 @@ foot
 tmux
 btop
 fastfetch
-pipes.sh
-cmatrix-git
 ttf-ubuntu-nerd
 ttf-ubuntu-mono-nerd
 noto-fonts
