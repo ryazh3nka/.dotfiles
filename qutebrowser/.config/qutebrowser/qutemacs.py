@@ -94,5 +94,5 @@ config.bind("<Ctrl-x><Ctrl-k>", "download-delete")
 config.bind("<Ctrl-x><Ctrl-r>", "download-remove")
 config.bind("<Ctrl-x><Ctrl-z>", "download-retry")
 
-config.bind("<Ctrl-v>", "spawn mpv {url}")
-config.bind("<Ctrl-Shift-v>", "hint links spawn mpv {hint-url}")
+# config.bind("<Ctrl-v>", "spawn mpv {url}")
+# config.bind("<Ctrl-Shift-v>", "hint links spawn mpv {hint-url}")
