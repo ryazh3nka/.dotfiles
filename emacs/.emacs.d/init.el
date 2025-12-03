@@ -44,6 +44,7 @@
 (setq read-file-name-completion-ignore-case t)
 
 (setq ido-enable-flex-matching t)
+(setq ido-use-virtual-buffers t)
 (setq ido-everywhere t)
 (ido-mode 1)
 
@@ -53,6 +54,12 @@
 (global-set-key (kbd "M-'") (lambda () (interactive) (insert "'")))
 (global-set-key (kbd "M-(") (lambda () (interactive) (insert "(")))
 (global-set-key (kbd "M-)") (lambda () (interactive) (insert ")")))
+
+;; recent files
+(require 'recentf)
+(recentf-mode 1)
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+(setq recentf-max-menu-items 25)
 
 ;; manpages
 (require 'man)
