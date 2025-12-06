@@ -66,6 +66,9 @@
 (set-face-attribute 'Man-overstrike nil :inherit font-lock-type-face :bold t)
 (set-face-attribute 'Man-underline nil :inherit font-lock-keyword-face :underline t)
 
+;; whitespace-mode
+(global-set-key (kbd "C-c e") 'whitespace-mode)
+
 ;; wrap indicator
 (setq-default fringe-indicator-alist
               (assq-delete-all 'continuation
