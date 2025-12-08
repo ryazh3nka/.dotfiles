@@ -9,6 +9,8 @@ config.unbind("<Ctrl-s>")
 config.unbind("<Ctrl-n>")
 config.unbind("<Ctrl-p>")
 config.unbind("<Ctrl-u>")
+config.unbind("v")
+config.unbind("<Shift-v>")
 
 config.bind("<Ctrl-x><Ctrl-l>", "config-source")
 
