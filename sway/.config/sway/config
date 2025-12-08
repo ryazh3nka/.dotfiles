@@ -50,7 +50,6 @@ xwayland enable
 for_window [shell="xwayland"] title_format "[XWayland] %title"
 
 ### Autostart
-exec swaymsg workspace number 1
 exec mako >/dev/null 2>&1
 exec foot --server >/dev/null 2>&1
 exec emacs --daemon >/dev/null 2>&1
