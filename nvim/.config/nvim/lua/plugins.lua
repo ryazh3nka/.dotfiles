@@ -9,7 +9,7 @@ vim.pack.add({
 
 require("oil").setup()
 require("which-key").setup({
-        delay = 500,
+        delay = 750,
 })
 require("fzf-lua").setup({
         files = { 
