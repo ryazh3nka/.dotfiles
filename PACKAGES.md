@@ -26,3 +26,4 @@ ttf-ubuntu-mono-nerd
 noto-fonts
 mpd
 mpc
+stow
