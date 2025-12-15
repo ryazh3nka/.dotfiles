@@ -10,6 +10,7 @@ export BROWSER="qutebrowser"
 
 export PATH="$PATH:$HOME/.local/bin"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PYTHON_HISTORY="$XDG_DATA_HOME/python/history"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export MPD_HOST="$XDG_RUNTIME_DIR/mpd/socket"
