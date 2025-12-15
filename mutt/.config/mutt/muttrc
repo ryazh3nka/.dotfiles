@@ -1,0 +1,19 @@
+set folder = "imaps://alex.shirkunoff@gmail.com@imap.gmail.com:993"
+set smtp_url = "smtp://alex.shirkunoff@gmail.com@smtp.gmail.com:587"
+set from = "alex.shirkunoff@gmail.com"
+set realname = "Aleksandr Shirkunov"
+set spoolfile = "+INBOX"
+set record = "+[Gmail]/Sent Mail"
+set trash = "+[Gmail]/Trash"
+set postponed = "+[Gmail]/Drafts"
+set smtp_pass = "`pass mutt`"
+set imap_pass = "`pass mutt`"
+
+mailboxes "+INBOX" \
+          "+[Gmail]/Sent Mail" \
+          "+[Gmail]/Drafts" \
+          "+[Gmail]/Spam" \
+          "+[Gmail]/Trash" \
+          "+[Gmail]/All Mail"
+
+source colors.muttrc

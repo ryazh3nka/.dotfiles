@@ -31,5 +31,8 @@ compinit -C -d "$XDG_CACHE_HOME/zsh/zcompdump"
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
+# fix for "inappropriate ioctl for device" with gpg
+export GPG_TTY=$(tty)
+
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
