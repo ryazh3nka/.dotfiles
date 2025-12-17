@@ -14,36 +14,9 @@ music_dir=$(xdg-user-dir MUSIC)
 music_dir_contents=$(find $music_dir -maxdepth 1 -mindepth 1 -type d | sed "s|.*/||")
 playlists=$(ls $XDG_CONFIG_HOME/mpd/playlists)
 
-spawn_decorated_menu()
+spawn_menu()
 {
-    bg0="#282828"
-    bg1="#3c3836"
-    bg2="#504945"
-    bg3="#665c54"
-    bg4="#7c6f64"
-    fg0="#fbf1c7"
-    fg1="#ebdbb2"
-    yellow="#fabd2f"
-    red="#fb4934"
-
-    printf "$1" | bemenu \
-                      --prompt "$2" \
-                      --fn "UbuntuMono Nerd Font 14" \
-                      --list 7 \
-                      --ignorecase \
-                      --line-height 26 \
-                      --ch 22 --cw 10 \
-                      --scrollbar always \
-                      --scb $bg1 --scf $yellow \
-                      --bdr $bg1 --border 1 \
-                      --tb $bg0 --tf $fg1 \
-                      --fb $bg1 --ff $fg1 \
-                      --nb $bg0 --nf $fg1 \
-                      --hb $bg4 --hf $fg0 \
-                      --ab $bg3 --af $fg1 \
-                      --sb $bg2 --sf $fg0 \
-                      --cb $bg0 --cf $fg1 \
-                      --nb $bg2 --nf $fg1
+    printf "$1" | bemenu --prompt "$2"
 }
 
 mpd_add_song()
@@ -54,12 +27,12 @@ mpd_add_song()
     # show only .flac, .wav and .mp3 files
     # sort them by number at the beginning
     
-    echo $(spawn_decorated_menu "$songs" "Choose a song:")
+    echo $(spawn_menu "$songs" "Choose a song:")
 }
 
 options="Add a song to the queue\nInsert a song to the queue\nRemove a song from the queue\nAdd an album to the queue\nClear the queue\nLoad a playlist\n"
 
-action=$(spawn_decorated_menu "$options" "Run mpc command:")
+action=$(spawn_menu "$options" "Run mpc command:")
 case $action in
     "Add a song to the queue") mpd_add_song ;;
     "Insert a song to the queue") mpd_insert_song ;;

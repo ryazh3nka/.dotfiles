@@ -14,3 +14,22 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export PYTHON_HISTORY="$XDG_CACHE_HOME/python/history"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+export BEMENU_OPTS="
+--fn \"UbuntuMono Nerd Font 14\" \
+--list 7 \
+--ignorecase \
+--line-height 26 \
+--ch 22 --cw 10 \
+--scrollbar always \
+--scb #3c3836 --scf #fabd2f \
+--bdr #3c3836 --border 1 \
+--tb #282828 --tf #ebdbb2 \
+--fb #3c3836 --ff #ebdbb2 \
+--nb #282828 --nf #ebdbb2 \
+--hb #7c6f64 --hf #fbf1c7 \
+--ab #665c54 --af #ebdbb2 \
+--sb #504945 --sf #fbf1c7 \
+--cb #282828 --cf #ebdbb2 \
+--nb #504945 --nf #ebdbb2
+"

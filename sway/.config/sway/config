@@ -6,7 +6,7 @@ set $up k
 set $right l
 
 set $term foot
-set $menu bemenu-run-launcher
+set $menu bemenu-run -p ''
 set $picker hyprpicker -a
 set $editor emacsclient -c -a ''
 
