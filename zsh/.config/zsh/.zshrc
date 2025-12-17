@@ -2,8 +2,8 @@ HISTFILE="$XDG_CACHE_HOME/zsh/histfile"
 HISTSIZE=5000
 SAVEHIST=5000
 
-LESS='-R --use-color -Dd+c$Du+b$'
-MANROFFOPT="-P -c"
+export LESS='-R --use-color -Dd+c$Du+b$'
+export MANROFFOPT="-P -c"
 
 setopt share_history
 setopt extendedglob
