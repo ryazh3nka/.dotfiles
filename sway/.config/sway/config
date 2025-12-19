@@ -88,8 +88,8 @@ bindsym $mod+p exec $editor
 bindsym $mod+d exec $menu
 bindsym $mod+c exec $picker
 
-bindsym Print exec grim-slurp-launcher
-bindsym Shift+Print exec grim-launcher
+bindsym Print exec spawn-grim-slurp
+bindsym Shift+Print exec spawn-grim
 bindsym $mod+m exec mako-toggle-dnd
 
 bindsym $mod+q kill
