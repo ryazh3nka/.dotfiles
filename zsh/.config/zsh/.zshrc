@@ -4,6 +4,7 @@ SAVEHIST=5000
 
 export LESS='-R --use-color -Dd+c$Du+b$'
 export MANROFFOPT="-P -c"
+export GPG_TTY=$(tty)
 
 setopt share_history
 setopt extendedglob
@@ -18,6 +19,7 @@ alias wget="wget --hsts-file $XDG_CACHE_HOME/wget/wget-hsts"
 alias tmux="tmux -T 256"
 
 PROMPT="%B%F{10}[I]%f%b %F{15}[%F{12}%n%F{15}@%F{11}%m%F{15}]%F{9}[%~]%f$ "
+#PROMPT="[%F{12}%n%F{15}@%F{11}%m%F{15} %F{9}%~%f]$ "
 
 bindkey -e
 bindkey "^[e" down-history
@@ -30,9 +32,6 @@ compinit -C -d "$XDG_CACHE_HOME/zsh/zcompdump"
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
-
-# fix for "inappropriate ioctl for device" with gpg
-export GPG_TTY=$(tty)
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
