@@ -1,5 +1,5 @@
 # .dotfiles
-this setup was made for my laptop over a few months. during that time, i grew very fond of Emacs, so if you’re familiar with its bindings, you’ll see the logic in using the same set of shortcuts across most of the programs. the recommended way to manage these files is with GNU Stow or plain old symlinks.
+this setup was made for my laptop over a few months. i must admit that i grew very fond of Emacs, so if you’re familiar with its bindings, you’ll see the logic in using the same set of shortcuts across most of the programs. the recommended way to manage these files is with GNU Stow or plain old symlinks.
 
 ## gallery
 <p align="center">
