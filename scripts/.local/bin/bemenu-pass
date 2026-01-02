@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# passmenu script (bundled with the 'pass' password manager)
+# with bemenu instead of dmenu
 
 shopt -s nullglob globstar
 
