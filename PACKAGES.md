@@ -11,6 +11,7 @@ wl-clipboard
 grim
 slurp
 hyprpicker
+qutebrowser
 xdg-desktop-portal-wlr
 zsh
 zsh-autosuggestions
@@ -26,4 +27,5 @@ ttf-ubuntu-mono-nerd
 noto-fonts
 mpd
 mpc
+neomutt
 stow
