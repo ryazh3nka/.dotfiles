@@ -8,28 +8,49 @@ playlists=$(ls $XDG_CONFIG_HOME/mpd/playlists)
 
 spawn_menu()
 {
-    printf "$1" | bemenu --prompt "$2"
+        printf "$1" | bemenu --prompt "$2"
 }
 
 mpd_add_song()
 {
-    album=$(spawn_menu "$music_dir_contents" "Choose an album:")
-    songs=$(find "$music_dir/$album" -maxdepth 1 -mindepth 1 -type f | sed "s|.*/||")
-    # TODO:
-    # show only .flac, .wav and .mp3 files
-    # sort them by number at the beginning
-    
-    echo $(spawn_menu "$songs" "Choose a song:")
+        album=$(spawn_menu "$music_dir_contents" "Choose an album:")
+        songs=$(find "$music_dir/$album" -maxdepth 1 -mindepth 1 -type f | sed "s|.*/||")
+        # TODO:
+        # show only .flac, .wav and .mp3 files
+        # sort them by number at the beginning
+        
+        echo $(spawn_menu "$songs" "Choose a song:")
 }
 
 options="Add a song to the queue\nInsert a song to the queue\nRemove a song from the queue\nAdd an album to the queue\nClear the queue\nLoad a playlist\n"
 
 action=$(spawn_menu "$options" "Run mpc command:")
 case $action in
-    "Add a song to the queue") mpd_add_song ;;
-    "Insert a song to the queue") mpd_insert_song ;;
-    "Remove a song from the queue") mpd_remove_song ;;
-    "Add an album to the queue") mpd_add_album ;;
-    "Clear the queue") mpd_clear ;;
-    "Load a playlist") mpd_load_playlist ;;
+        "Add a song to the queue") mpd_add_song ;;
+        "Insert a song to the queue") mpd_insert_song ;;
+        "Remove a song from the queue") mpd_remove_song ;;
+        "Add an album to the queue") mpd_add_album ;;
+        "Clear the queue") mpd_clear ;;
+        "Load a playlist") mpd_load_playlist ;;
 esac
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
