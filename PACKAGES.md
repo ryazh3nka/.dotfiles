@@ -20,7 +20,7 @@ neovim-nightly-bin
 emacs-wayland
 foot
 tmux
-btop
+conky
 fastfetch
 ttf-ubuntu-nerd
 ttf-ubuntu-mono-nerd
