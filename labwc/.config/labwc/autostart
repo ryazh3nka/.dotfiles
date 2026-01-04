@@ -1,4 +1,4 @@
-# vim: filetype=sh
+#!/bin/sh
 
 swaybg -i $(xdg-user-dir PICTURES)/wallpapers/the-ninth-wave-gruvbox.jpg >/dev/null 2>&1 &
 #foot --server >/dev/null 2>&1 &
