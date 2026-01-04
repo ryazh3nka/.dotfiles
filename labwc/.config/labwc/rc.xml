@@ -18,6 +18,9 @@
                 <keybind key="W-q"><action name="Close" /></keybind>
                 <keybind key="W-w"><action name="ToggleMaximize" /></keybind>
                 <keybind key="W-e"><action name="Iconify" /></keybind>
+
+                <keybind key="W-i"><action name="Raise" /></keybind>
+                <keybind key="W-o"><action name="Lower" /></keybind>
                 
                 <keybind key="W-Tab"><action name="NextWindow" /></keybind>
                 <keybind key="W-S-Tab"><action name="PreviousWindow" /></keybind>
@@ -62,7 +65,7 @@
                 <keybind key="XF86AudioMute"><action name="Execute" command="pactl set-sink-mute \@DEFAULT_SINK@ toggle" /></keybind>
                 <keybind key="XF86AudioLowerVolume"><action name="Execute" command="pactl set-sink-volume \@DEFAULT_SINK@ -5%" /></keybind>
                 <keybind key="XF86AudioRaiseVolume"><action name="Execute" command="pactl set-sink-volume \@DEFAULT_SINK@ +5%" /></keybind>
-                <keybind key="XF86AudioMicMute"><action name="Execute" command="pactl set-source-mute \@DEFAULT_SOURCE@ toggle" /></keybind>
+                <keybind key="XF86AudioMicMute"><actirn name="Execute" command="pactl set-source-mute \@DEFAULT_SOURCE@ toggle" /></keybind>
 
                 <keybind key="XF86MonBrightnessDown"><action name="Execute" command="brightnessctl -n -e set 10%-" /></keybind>
                 <keybind key="XF86MonBrightnessUp"><action name="Execute" command="brightnessctl -n -e set 10%+" /></keybind>
