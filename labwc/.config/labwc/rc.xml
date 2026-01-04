@@ -78,7 +78,6 @@
 
         <focus>
                 <followMouse>yes</followMouse>
-                <followMouseRequiresMovement>no</followMouseRequiresMovement>
         </focus>
 
         <libinput>
