@@ -5,17 +5,15 @@
                 <popupTime>0</popupTime>
         </desktops>
 
-        <windowSwitcher style="thumbnail" />
+        <windowSwitcher>
+                <osd style="thumbnail" />
+        </windowSwitcher>
 
         <theme>
                 <name>Gruvbox</name>
                 <font name="Ubuntu Nerd Font" size="10" />
         </theme>
-        
-        <resistance>
-                <windowEdgeStrength>0</windowEdgeStrength>
-        </resistance>
-        
+                
         <keyboard>
                 <keybind key="W-q"><action name="Close" /></keybind>
                 <keybind key="W-w"><action name="ToggleMaximize" /></keybind>
@@ -31,7 +29,7 @@
                 <keybind key="W-j"><action name="ToggleSnapToEdge" direction="down" combine="yes" /></keybind>
                 <keybind key="W-k"><action name="ToggleSnapToEdge" direction="up" combine="yes" /></keybind>
 
-                <keybind key="W-Return"><action name="Execute" command="footclient" /></keybind>
+                <keybind key="W-Return"><action name="Execute" command="foot" /></keybind>
                 <keybind key="W-["><action name="Execute" command="emacsclient -c -a ''" /></keybind>
                 <keybind key="W-c"><action name="Execute" command="hyprpicker -a ''" /></keybind>
                 <keybind key="W-d"><action name="Execute" command="bemenu-run -p ''" /></keybind>
@@ -72,6 +70,16 @@
                 <repeatDelay>400</repeatDelay>
                 <repeatRate>40</repeatRate>
         </keyboard>
+
+        <resistance>
+                <windowEdgeStrength>0</windowEdgeStrength>
+                <screenEdgeStrength>20</screenEdgeStrength>
+        </resistance>
+
+        <focus>
+                <followMouse>yes</followMouse>
+                <followMouseRequiresMovement>no</followMouseRequiresMovement>
+        </focus>
 
         <libinput>
                 <device category="default">
