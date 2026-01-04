@@ -78,6 +78,7 @@
 
         <focus>
                 <followMouse>yes</followMouse>
+                <raiseOnFocus>no</raiseOnFocus>
         </focus>
 
         <libinput>
