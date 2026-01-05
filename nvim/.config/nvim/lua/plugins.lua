@@ -4,7 +4,8 @@ vim.pack.add({
         { src = "https://github.com/stevearc/oil.nvim.git" },
         { src = "https://github.com/ibhagwan/fzf-lua.git" },
         { src = "https://github.com/ggandor/leap.nvim.git" },
-        { src = "https://github.com/folke/which-key.nvim" },
+        { src = "https://github.com/folke/which-key.nvim.git" },
+        { src = "https://github.com/NMAC427/guess-indent.nvim.git" },
 })
 
 require("oil").setup()
@@ -27,5 +28,6 @@ require("fzf-lua").setup({
         },
 })
 require("leap").opts.safe_labels = {}
+require("guess-indent").setup()
 
 vim.cmd("colorscheme gruvbox")
