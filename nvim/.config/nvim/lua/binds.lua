@@ -9,6 +9,9 @@ vim.keymap.set("i", "<C-n>", "<Down>")
 vim.keymap.set("i", "<C-p>", "<Up>")
 vim.keymap.set("i", "<C-j>", "<C-n>")
 vim.keymap.set("i", "<C-k>", "<C-p>")
+vim.keymap.set("i", "<A-BS>", "<C-w>")
+vim.keymap.set("i", "<C-BS>", "<C-u>")
+vim.keymap.set("i", "<C-h>", "<C-u>") -- <C-BS> is equivalent to <C-h> in tmux
 
 vim.keymap.set("n", "<leader>u", "<CMD>update<CR><CMD>source<CR>", { desc = "source and update" })
 vim.keymap.set("n", "<leader>w", "<CMD>write<CR>", { desc = "write changes" })
