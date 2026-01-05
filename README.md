@@ -23,4 +23,6 @@ $ stow package
 ```
 even though i tried to make every package somewhat atomic, i would suggest always stowing the 'scripts' directory to have some necessary launch scripts available in your `$PATH`. 
 
+the GTK theme is [Gruvbox](https://aur.archlinux.org/packages/gruvbox-gtk-theme-git) by Fausto-Korpsvart, and the icon pack is [Delft](https://aur.archlinux.org/packages/delft-icon-theme) by madmaxms.
+
 also, each package in this repo contains a separate readme (ignored by stow) with more thorough explanation of the install process.
