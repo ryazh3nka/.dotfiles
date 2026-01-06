@@ -48,13 +48,6 @@
 (setq ido-everywhere t)
 (ido-mode 1)
 
-(require 'electric)
-(electric-pair-mode 1)
-(global-set-key (kbd "M-\"") (lambda () (interactive) (insert "\"")))
-(global-set-key (kbd "M-'") (lambda () (interactive) (insert "'")))
-(global-set-key (kbd "M-(") (lambda () (interactive) (insert "(")))
-(global-set-key (kbd "M-)") (lambda () (interactive) (insert ")")))
-
 ;; recent files
 (require 'recentf)
 (recentf-mode 1)
@@ -87,7 +80,7 @@
 
 ;;; functions!
 ;; duplicate current line
-(defun my/duplicate-line ()
+(defun rc/duplicate-line ()
   "Duplicate current line"
   (interactive)
   (let ((column (- (point) (point-at-bol)))
@@ -99,23 +92,23 @@
     (move-beginning-of-line 1)
     (forward-char column)))
 
-(global-set-key (kbd "C-,") 'my/duplicate-line)
+(global-set-key (kbd "C-,") 'rc/duplicate-line)
 
-;; setup a font
-(defun my/set-default-font ()
+;; set a font for a new frame
+(defun rc/set-default-font ()
   (set-face-attribute 'default nil
                       :font "UbuntuMono Nerd Font"
                       :height 180))
 
-(add-hook 'window-setup-hook #'my/set-default-font)
+(add-hook 'window-setup-hook #'rc/set-default-font)
 
 (add-hook 'after-make-frame-functions
           (lambda (frame)
             (with-selected-frame frame
-              (my/set-default-font))))
+              (rc/set-default-font))))
 
 ;; kill unused buffers
-(defun my/close-other-buffers ()
+(defun rc/close-other-buffers ()
   "Kill all buffers except the current one and the *scratch* buffer."
   (interactive)
   (let ((current (current-buffer)))
@@ -124,10 +117,10 @@
                   (string-equal (buffer-name buf) "*scratch*"))
         (kill-buffer buf)))))
 
-(global-set-key (kbd "C-c k") #'my/close-other-buffers)
+(global-set-key (kbd "C-c k") #'rc/close-other-buffers)
 
 ;; copy files in dired
-(defun my/dired-copy-files-to-clipboard (&optional plain-text)
+(defun rc/dired-copy-files-to-clipboard (&optional plain-text)
   "Copy marked files to the clipboard.
 With a prefix arg copy plain text; otherwise copy a text/uri-list."
   (interactive "P")
@@ -148,7 +141,7 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
              (format "%d file(s)%s" (length files) (if (> (length files) 1) "s" ""))
              (if plain-text "plain text" "URI list"))))
 
-(global-set-key (kbd "C-c w") #'my/dired-copy-files-to-clipboard)
+(global-set-key (kbd "C-c w") #'rc/dired-copy-files-to-clipboard)
 
 ;;; package management
 (require 'package)
@@ -162,11 +155,7 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
   (package-install 'pdf-tools))
 (pdf-loader-install)
 
-(unless (package-installed-p 'rainbow-delimiters)
-  (package-install 'rainbow-delimiters))
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-
-;; ugly hack to silence noncritical warnings like
+;; ugly hack to silence noncritical errors like
 ;; Error running timer ‘pdf-cache--prefetch-start’:
 ;; (wrong-type-argument number-or-marker-p nil)
 ;; TODO: figure out what the problem is
@@ -176,6 +165,10 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
                 (ignore-errors
                   (apply orig-fun args)))))
 
+(unless (package-installed-p 'rainbow-delimiters)
+  (package-install 'rainbow-delimiters))
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
 (unless (package-installed-p 'gruvbox-theme)
   (package-install 'gruvbox-theme))
 (load-theme 'gruvbox)
@@ -183,10 +176,8 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
 (unless (package-installed-p 'magit)
   (package-install 'magit))
 
-(unless (package-installed-p 'rust-mode)
-  (package-install 'rust-mode))
-(require 'rust-mode)
-(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+(unless (package-installed-p 'haskell-mode)
+  (package-install 'haskell-mode))
 
 (unless (package-installed-p 'which-key)
   (package-install 'which-key))
