@@ -10,6 +10,9 @@ set $menu bemenu-run -p ''
 set $picker hyprpicker -a
 set $editor emacsclient -c -a ''
 
+set $sshot_select grim -g "$(slurp -d)" - | wl-copy
+set $sshot_full grim $(xdg-user-dir PICTURES)/$(date +"screenshot-%d_%m_%Y-%H:%M:%S.png")
+
 ### Output configuration
 output * bg $(xdg-user-dir PICTURES)/wallpapers/the-ninth-wave-gruvbox.jpg fill
 
@@ -37,10 +40,10 @@ client.background       #282828
 ### Windowrules
 assign [app_id=".*qutebrowser.*"] 1
 assign [app_id=".*telegram.*"] 3
-assign [class=".*discord*."] 3
-assign [app_id=".*libreoffice.*"] 4
-assign [app_id=".*gimp.*"] 5
-assign [class=".*Ardour.*"] 6
+assign [class=".*discord*."] 4
+assign [app_id=".*libreoffice.*"] 5
+assign [app_id=".*gimp.*"] 6
+assign [class=".*Ardour.*"] 7
 assign [class=".*steam*."] 8
 assign [app_id=".*obsproject.*"] 9
 for_window [title="^Scratchterm$"] move to scratchpad
@@ -57,9 +60,9 @@ exec sleep 1 && $term --title "Scratchterm"
 
 ### Idle configuration
 exec swayidle -w \
-             timeout 1200 "swaylock -f -c 282828" \
-             timeout 4800 "swaymsg 'output * power off'" resume "swaymsg 'output * power on'" \
-             before-sleep "swaylock -f -c 282828"   
+              timeout 1200 "swaylock -f -c 282828" \
+              timeout 4800 "swaymsg 'output * power off'" resume "swaymsg 'output * power on'" \
+              before-sleep "swaylock -f -c 282828"   
 
 ### Input configuration
 input "type:touchpad" {
@@ -88,8 +91,8 @@ bindsym $mod+p exec $editor
 bindsym $mod+d exec $menu
 bindsym $mod+c exec $picker
 
-bindsym Print exec spawn-grim-slurp
-bindsym Shift+Print exec spawn-grim
+bindsym Print exec $sshot_select
+bindsym Shift+Print exec $sshot_full
 bindsym $mod+m exec mako-toggle-dnd
 
 bindsym $mod+q kill
