@@ -11,7 +11,7 @@ this setup was made for my laptop over a few months. i must admit that i grew ve
 *apps shown: emacs, qutebrowser, foot*
 
 ## installation
-clone and cd into the repo, make sure that `.config`, `.local` and `.cache` exist in your `$HOME`, run `stow package-name` for every folder you want symlinked, and tweak the dotfiles to your liking.
+clone and cd into the repo, make sure that `.config`, `.local` and `.cache` exist in your `$HOME`, run `stow package-name` for every directory you want symlinked, and tweak the dotfiles to your liking.
 
 for programs that like to paste junk into your config (i'm looking at you, Emacs) or more generally to prevent a package from owning the target directory, make use of the `--no-folding` flag to create it before symlinking.
 ```zsh
