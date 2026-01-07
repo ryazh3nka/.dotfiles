@@ -21,4 +21,4 @@ $ yay -S --needed - < PACKAGES.md
 $ mkdir -p $HOME/{.config,.cache,.local/share,.local/bin}
 $ stow package
 ```
-The GTK3 theme is [Gruvbox](https://aur.archlinux.org/packages/gruvbox-gtk-theme-git), and the icon pack is [Delft](https://aur.archlinux.org/packages/delft-icon-theme). Also, each package in this repo contains a separate readme (ignored by stow) with more thorough explanation of the install process.
+The GTK3 theme is [Gruvbox](https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme), and the icon pack is [Delft](https://github.com/madmaxms/iconpack-delft). Also, each package in this repo contains a separate readme (ignored by stow) with more thorough explanation of the install process.
