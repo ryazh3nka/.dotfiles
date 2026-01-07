@@ -1,0 +1,13 @@
+pipewire
+pipewire-alsa
+pipewire-pulse
+pipewire-jack
+gruvbox-gtk-theme-git
+delft-icon-theme-git
+bluez
+bluez-utils
+bluetui
+fastfetch
+pipes.sh
+curl
+wget
