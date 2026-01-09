@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eo pipefail
+
+processes=$(ps -u $(whoami) -o pid,args | awk '{print $1, $2}' | sed 's|\([0-9]\+\) .*/|\1 |' | tail -n +2 | awk '!seen[$2]++' )
+process_chosen=$(echo "$processes" | bemenu -p 'Select a process to kill')
+process_name=$(echo "$process_chosen" | awk '{print $2}')
+killall "$process_name"
