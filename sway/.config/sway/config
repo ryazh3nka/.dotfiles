@@ -78,9 +78,9 @@ floating_modifier $mod normal
 
 bindsym $mod+Return exec foot
 bindsym $mod+p exec emacsclient -c -a ''
-bindsym $mod+d exec bemenu-run -p ''
 bindsym $mod+c exec hyprpicker -a
 bindsym $mod+n exec mako-toggle-dnd
+bindsym $mod+d exec bemenu-run -p ''
 
 bindsym Print exec grim -g "$(slurp -d)" - | wl-copy
 bindsym Shift+Print exec grim $(xdg-user-dir PICTURES)/$(date +"screenshot-%d_%m_%Y-%H:%M:%S.png")
@@ -162,9 +162,8 @@ mode "resize" {
         bindsym $up resize grow height 10px
         bindsym $right resize grow width 10px
 
-        bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym Control+g mode "default"
+        bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
 
@@ -172,12 +171,13 @@ bindsym $mod+r mode "resize"
 # Running various menu scripts:
 #
 mode "menu" {
-        bindsym d exec bemenu-run; mode "default"
-        bindsym m exec bemenu-mpd; mode "default"
+        bindsym d exec bemenu-run
+        bindsym m exec bemenu-mpd
+        bindsym k exec bemenu-killall
+        bindsym Shift+k exec bemenu-kill
 
         bindsym Escape mode "default"
-        bindsym Return mode "default"
-        bindsym Control+g mode "default"
+        bindsym $mod+m mode "default"
 }
 bindsym $mod+m mode "menu"
 
@@ -197,8 +197,7 @@ mode "exec" {
         bindsym h exec hyprpicker -a
 
         bindsym Escape mode "default"
-        bindsym Return mode "default"
-        bindsym Control+g mode "default"
+        bindsym $mod+period mode "default"
 }
 bindsym $mod+period mode "exec"
 
