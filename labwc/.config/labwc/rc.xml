@@ -40,8 +40,10 @@
     <keybind key="Print"><action name="Execute" command="grim -g '$(slurp -d)' - | wl-copy" /></keybind>
     <keybind key="S-Print"><action name="Execute" command="$(xdg-user-dir PICTURES)/$(date +'screenshot-%d_%m_%Y-%H:%M:%S.png')" /></keybind>
 
-    <keybind key="W-S-c"><action name="Reconfigure" /></keybind>
-    <keybind key="W-S-m"><action name="Exit" /></keybind>
+    <keybind key="W-S-r"><action name="Reconfigure" /></keybind>
+    <keybind key="W-S-o"><action name="Exit" /></keybind>
+    <keybind key="W-S-x"><action name="Execute" command="swaylock -f -c 282828
+" /></keybind>
 
     <keybind key="W-1"><action name="GoToDesktop" to="1" /></keybind>
     <keybind key="W-2"><action name="GoToDesktop" to="2" /></keybind>
