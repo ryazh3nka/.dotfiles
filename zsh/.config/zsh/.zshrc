@@ -2,24 +2,26 @@ HISTFILE="$XDG_CACHE_HOME/zsh/histfile"
 HISTSIZE=5000
 SAVEHIST=5000
 
-export LESS='-R --use-color -Dd+c$Du+b$'
+export LESS="-R --use-color -Dd+c$Du+b$"
 export MANROFFOPT="-P -c"
 export GPG_TTY=$(tty)
 
 setopt share_history
 setopt extendedglob
 setopt NO_CASE_GLOB
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
-        'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 alias ls="ls --color=auto"
 alias l="ls -lh --color=auto --sort=extension --group-directories-first"
 alias ll="ls -lAh --color=auto --sort=extension --group-directories-first"
+alias ec="emacsclient -nw -a ''"
 alias wget="wget --hsts-file $XDG_CACHE_HOME/wget/wget-hsts"
 alias tmux="tmux -T 256"
 
-PROMPT="%B%F{10}[I]%f%b %F{15}[%F{12}%n%F{15}@%F{11}%m%F{15}]%F{9}[%~]%f$ "
-#PROMPT="[%F{12}%n%F{15}@%F{11}%m%F{15} %F{9}%~%f]$ "
+if [ "$TERM" = "linux" ]; then
+    PROMPT="%B%F{green}[I]%f%b %F{white}[%F{blue}%n%F{white}@%F{yellow}%m%F{white}]%F{red}[%~]%f$ "
+else
+    PROMPT="%B%F{10}[I]%f%b %F{15}[%F{12}%n%F{15}@%F{11}%m%F{15}]%F{9}[%~]%f$ "
+fi
 
 bindkey -e
 bindkey "^[e" down-history
@@ -27,6 +29,8 @@ bindkey "^[a" up-history
 
 autoload -Uz compinit
 compinit -C -d "$XDG_CACHE_HOME/zsh/zcompdump"
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
+       'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # zsh-syntax-highlighting
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
