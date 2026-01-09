@@ -1,7 +1,7 @@
 #!/bin/sh
 # the script navigates your mpd music dir to search for songs in 
 # album subdirectories, up to a maximum depth of 1
-set -eo pipefail
+set -e
 
 queue=$(mpc playlist)
 music_dir=$(xdg-user-dir MUSIC)
@@ -15,13 +15,13 @@ spawn_menu()
 
 choose_album()
 {
-    album=$(spawn_menu "$music_dir_contents" 'Choose an album:') || exit 1
+    album=$(spawn_menu "$music_dir_contents" 'Choose an album:')
     echo "$album"
 }
 
 choose_song()
 {
-    album=$(choose_album) || exit 1
+    album=$(choose_album)
     songs=$(find "$music_dir/$album" -maxdepth 1 -mindepth 1 -type f -name '*.mp3' -o -name '*.flac' -o -name '*.wav' | sed 's|.*/||' | sort -V)
     song=$(spawn_menu "$songs" 'Choose a song:')
     echo "$album/$song"
@@ -29,20 +29,20 @@ choose_song()
 
 queue_choose_song()
 {
-    song=$(spawn_menu "$queue" 'Choose a song:') || exit 1
+    song=$(spawn_menu "$queue" 'Choose a song:')
     echo "$song"
 }
 
 queue_get_song_position()
 {
-    song=$(queue_choose_song) || exit 1
+    song=$(queue_choose_song)
     song_pos=$(mpc playlist | grep -n "$song" | sed 's|:.*||')
     echo "$song_pos"
 }
 
 choose_playlist()
 {
-    playlist=$(spawn_menu "$playlists" 'Choose a playlist:') || exit 1
+    playlist=$(spawn_menu "$playlists" 'Choose a playlist:')
     echo "$playlist"
 }
 
@@ -56,7 +56,7 @@ Crop the queue
 '
 
 action=$(spawn_menu "$options" 'Run mpc command:')
-case $action in
+case "$action" in
     'Add a song to the queue')
         song=$(choose_song)
         mpc add "$song" ;;

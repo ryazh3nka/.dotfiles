@@ -1,7 +1,19 @@
 #!/bin/sh
-set -eo pipefail
+set -e
 
-processes=$(ps -u $(whoami) -o pid,args | awk '{print $1, $2}' | sed 's|\([0-9]\+\) .*/|\1 |' | tail -n +2 )
-process_chosen=$(echo "$processes" | bemenu -p 'Select a process to kill')
-process_pid=$(echo "$process_chosen" | awk '{print $2}')
-kill -9 "$process_pid"
+spawn_menu()
+{
+    echo -n "$1" | bemenu --prompt "$2" --list 20
+}
+
+options='kill -9 (SIGKILL)
+kill -15 (SIGTERM)'
+action=$(spawn_menu "$options" 'How would you like to kill?')
+kill_command=$(echo "$action" | awk '{print $1,$2}')
+
+# gets all processes owned by the current user that aren't related to this script itself
+# this uses a pretty nasty hack where we omit the last 9 processes since this script spawns exactly that much
+processes=$(ps -u "$(whoami)" -o pid,args | awk '{print $1, $2}' | sed 's|\([0-9]\+\) .*/|\1 |' | tail -n +2 | tac | tail -n +10)
+process_chosen=$(spawn_menu "$processes" 'Select a process to kill:')
+process_pid=$(echo "$process_chosen" | awk '{print $1}')
+$kill_command "$process_pid"
