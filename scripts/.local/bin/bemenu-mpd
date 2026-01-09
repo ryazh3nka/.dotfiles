@@ -5,12 +5,12 @@ set -e
 
 queue=$(mpc playlist)
 music_dir=$(xdg-user-dir MUSIC)
-music_dir_contents=$(find $music_dir -maxdepth 1 -mindepth 1 -type d | sed 's|.*/||')
-playlists=$(ls $XDG_CONFIG_HOME/mpd/playlists)
+music_dir_contents=$(find "$music_dir" -maxdepth 1 -mindepth 1 -type d | sed 's|.*/||')
+playlists=$(ls "$XDG_CONFIG_HOME/mpd/playlists")
 
 spawn_menu()
 {
-    echo -n "$1" | bemenu --prompt "$2"
+    printf "$1" | bemenu --prompt "$2"
 }
 
 choose_album()

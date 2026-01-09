@@ -3,7 +3,7 @@ set -e
 
 spawn_menu()
 {
-    echo -n "$1" | bemenu --prompt "$2" --list 20
+    printf "$1" | bemenu --prompt "$2" --list 20
 }
 
 options='kill -9 (SIGKILL)
