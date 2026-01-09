@@ -6,7 +6,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export EDITOR="emacsclient -nw -a ''"
 export VISUAL="emacsclient -c -a ''"
 export PDFREADER="emacsclient -c -a ''"
-export BROWSER="qutebrowser"
+export BROWSER='qutebrowser'
 
 export PATH="$PATH:$HOME/.local/bin"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtkrc-2.0"
