@@ -2,7 +2,7 @@ HISTFILE="$XDG_CACHE_HOME/zsh/histfile"
 HISTSIZE=5000
 SAVEHIST=5000
 
-export LESS="-R --use-color -Dd+c$Du+b$"
+export LESS="-R --use-color -Dd+c\$Du+b\$"
 export MANROFFOPT="-P -c"
 export GPG_TTY=$(tty)
 
@@ -29,8 +29,8 @@ bindkey "^[a" up-history
 
 autoload -Uz compinit
 compinit -C -d "$XDG_CACHE_HOME/zsh/zcompdump"
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
-       'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ":completion:*" matcher-list "m:{a-zA-Z}={A-Za-z}" \
+       "r:|[._-]=* r:|=*" "l:|=* r:|=*"
 
 # zsh-syntax-highlighting
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
