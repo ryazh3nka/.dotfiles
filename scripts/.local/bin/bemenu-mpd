@@ -2,55 +2,75 @@
 # the script navigates your mpd music dir to search for songs in 
 # album subdirectories, up to a maximum depth of 1
 
+queue=$(mpc playlist)
 music_dir=$(xdg-user-dir MUSIC)
 music_dir_contents=$(find $music_dir -maxdepth 1 -mindepth 1 -type d | sed "s|.*/||")
 playlists=$(ls $XDG_CONFIG_HOME/mpd/playlists)
 
 spawn_menu()
 {
-    printf "$1" | bemenu --prompt "$2"
+    echo -n "$1" | bemenu --prompt "$2"
 }
 
-mpd_add_song()
+choose_album()
 {
-    album=$(spawn_menu "$music_dir_contents" "Choose an album:")
-    songs=$(find "$music_dir/$album" -maxdepth 1 -mindepth 1 -type f | sed "s|.*/||")
-    # TODO:
-    # show only .flac, .wav and .mp3 files
-    # sort them by number at the beginning
-    
-    echo $(spawn_menu "$songs" "Choose a song:")
+    album=$(spawn_menu "$music_dir_contents" "Choose an album:") || exit 1
+    echo "$album"
 }
 
-options="Add a song to the queue\nInsert a song to the queue\nRemove a song from the queue\nAdd an album to the queue\nClear the queue\nLoad a playlist\n"
+choose_song()
+{
+    album=$(choose_album) || exit 1
+    songs=$(find "$music_dir/$album" -maxdepth 1 -mindepth 1 -type f -name "*.mp3" -o -name "*.flac" -o -name "*.wav" | sed "s|.*/||" | sort -V)
+    song=$(spawn_menu "$songs" "Choose a song:")
+    echo "$album/$song"
+}
+
+queue_choose_song()
+{
+    song=$(spawn_menu "$queue" "Choose a song:") || exit 1
+    echo "$song"
+}
+
+queue_get_song_position()
+{
+    song=$(queue_choose_song) || exit 1
+    song_pos=$(mpc playlist | grep -n "$song" | sed "s|:.*||")
+    echo "$song_pos"
+}
+
+choose_playlist()
+{
+    playlist=$(spawn_menu "$playlists" "Choose a playlist:") || exit 1
+    echo "$playlist"
+}
+
+options="Add a song to the queue
+Insert a song to the queue
+Remove a song from the queue
+Add an album to the queue
+Load a playlist
+Clear the queue
+Crop the queue
+"
 
 action=$(spawn_menu "$options" "Run mpc command:")
 case $action in
-    "Add a song to the queue") mpd_add_song ;;
-    "Insert a song to the queue") mpd_insert_song ;;
-    "Remove a song from the queue") mpd_remove_song ;;
-    "Add an album to the queue") mpd_add_album ;;
-    "Clear the queue") mpd_clear ;;
-    "Load a playlist") mpd_load_playlist ;;
+    "Add a song to the queue")
+        song=$(choose_song)
+        mpc add "$song" ;;
+    "Insert a song to the queue")
+        song=$(choose_song)
+        mpc insert "$song" ;;
+    "Remove a song from the queue")
+        song_pos=$(queue_get_song_position)
+        mpc del "$song_pos" ;;
+    "Add an album to the queue")
+        album=$(choose_album)
+        mpc add "$album" ;;
+    "Load a playlist")
+        playlist=$(choose_playlist)
+        mpc load "$playlist" ;;
+    "Clear the queue") mpc clear ;;
+    "Crop the queue") mpc crop ;;
 esac
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
