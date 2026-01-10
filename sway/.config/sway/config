@@ -170,11 +170,12 @@ bindsym $mod+r mode "resize"
 #
 # Running various menu scripts:
 #
+set $menu-run bemenu-run -p 'Run an application:'
 mode "menu" {
-        bindsym d exec bemenu-run
-        bindsym m exec bemenu-mpd
-        bindsym k exec bemenu-killall
-        bindsym Shift+k exec bemenu-kill
+        bindsym d exec $menu-run
+        bindsym m exec menu-mpd
+        bindsym k exec menu-kill --all
+        bindsym Shift+k exec menu-kill
 
         bindsym Escape mode "default"
         bindsym $mod+m mode "default"
