@@ -1,4 +1,6 @@
 #!/bin/sh
+# dispensing -9 to lousy bastards in need of permanent rest since 1968
+# accepts '-a' or '--all' as an optional argument and does the job accordingly
 set -e
 
 spawn_menu()
@@ -6,23 +8,28 @@ spawn_menu()
     printf "%s" "$1" | bemenu --prompt "$2" --list 20
 }
 
-current_PGID=$(ps -p $$ -o pgid= | tr -d ' ')
-echo "$current_PGID"
+kill_command='kill'
+[ "$1" = '--all' ] || [ "$1" = '-a' ] && kill_command='killall'
+options="$kill_command -9 (SIGKILL)
+$kill_command -15 (SIGTERM)"
 
-options='kill -9 (SIGKILL)
-kill -15 (SIGTERM)'
-action=$(spawn_menu "$options" 'How would you like to kill?')
-kill_command=$(echo "$action" | awk '{print $1}')
-kill_signal=$(echo "$action" | awk '{print $2}')
+user_response=$(spawn_menu "$options" 'How would you like to kill?')
+kill_signal=$(echo "$user_response" | awk '{print $2}')
 
 # gets all processes owned by the current user
 # that aren't related to this script itself (filters by pgid)
+current_PGID=$(ps -p $$ -o pgid= | tr -d ' ')
 processes=$(ps -u "$(whoami)" -o pgid,pid,args |
                 awk -v pgid="$current_PGID" '$1 != pgid' |
                 tail -n +2 |
-                tac |
                 awk '{print $2, $3}' |
-                sed 's|\([0-9]\+\) .*/|\1 |')
+                sed 's|\([0-9]\+\) .*/|\1 |' |
+                tac)
+
+[ "$kill_command" = 'killall' ] && processes=$(echo "$processes" | awk '!seen[$2]++')
 process_chosen=$(spawn_menu "$processes" 'Select a process to kill:')
 process_pid=$(echo "$process_chosen" | awk '{print $1}')
-$kill_command "$kill_signal" "$process_pid"
+process_name=$(echo "$process_chosen" | awk '{print $2}')
+
+[ "$kill_command" = 'kill' ] && $kill_command "$kill_signal" "$process_pid"
+[ "$kill_command" = 'killall' ] && $kill_command "$kill_signal" "$process_name"
