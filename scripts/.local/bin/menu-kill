@@ -8,14 +8,6 @@ spawn_menu()
     printf "%s" "$1" | bemenu --prompt "$2" --list 20
 }
 
-kill_command='kill'
-[ "$1" = '--all' ] || [ "$1" = '-a' ] && kill_command='killall'
-options="$kill_command -9 (SIGKILL)
-$kill_command -15 (SIGTERM)"
-
-user_response=$(spawn_menu "$options" 'How would you like to kill?')
-kill_signal=$(echo "$user_response" | awk '{print $2}')
-
 # gets all processes owned by the current user
 # that aren't related to this script itself (filters by pgid)
 current_PGID=$(ps -p $$ -o pgid= | tr -d ' ')
@@ -25,6 +17,14 @@ processes=$(ps -u "$(whoami)" -o pgid,pid,args |
                 awk '{print $2, $3}' |
                 sed 's|\([0-9]\+\) .*/|\1 |' |
                 tac)
+
+kill_command='kill'
+[ "$1" = '--all' ] || [ "$1" = '-a' ] && kill_command='killall'
+options="$kill_command -9 (SIGKILL)
+$kill_command -15 (SIGTERM)"
+
+user_response=$(spawn_menu "$options" 'How would you like to kill?')
+kill_signal=$(echo "$user_response" | awk '{print $2}')
 
 [ "$kill_command" = 'killall' ] && processes=$(echo "$processes" | awk '!seen[$2]++')
 process_chosen=$(spawn_menu "$processes" 'Select a process to kill:')
