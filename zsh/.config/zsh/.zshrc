@@ -39,3 +39,7 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# ocaml package manager
+OPAM_INIT="$HOME/.opam/opam-init/init.zsh"
+[[ ! -r "$OPAM_INIT" ]] || source "$OPAM_INIT"
