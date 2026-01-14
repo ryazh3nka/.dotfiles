@@ -16,10 +16,12 @@ vim.keymap.set("i", "<C-h>", "<C-u>") -- <C-BS> is equivalent to <C-h> in tmux
 vim.keymap.set("n", "<leader>u", "<CMD>update<CR><CMD>source<CR>", { desc = "source and update" })
 vim.keymap.set("n", "<leader>w", "<CMD>write<CR>", { desc = "write changes" })
 vim.keymap.set("n", "<leader>q", "<CMD>quit<CR>", { desc = "kill focused window" })
-vim.keymap.set("n", "<leader>ww", "<CMD>set wrap!<CR>", { desc = "toggle line wrapping" })
+vim.keymap.set("n", "<leader>sw", "<CMD>set wrap!<CR>", { desc = "toggle line wrapping" })
 vim.keymap.set("n", "<leader>m", "<CMD>make -B<CR>", { desc = "build a project with make" })
 vim.keymap.set("n", "<leader>i", "<CMD>split<CR>", { desc = "split window vertically" })
 vim.keymap.set("n", "<leader>o", "<CMD>vsplit<CR>", { desc = "split window horizontally" })
+
+vim.keymap.set("n", "<leader>pu", "<CMD>lua vim.pack.update()<CR>", { desc = "update installed plugins" })
 
 -- quickfix binds
 vim.keymap.set('n', '<A-l>', function()
