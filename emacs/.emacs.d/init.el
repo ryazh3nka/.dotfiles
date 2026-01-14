@@ -184,6 +184,13 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
 (which-key-mode)
 ;; (which-key-setup-side-window-bottom)
 
+(unless (package-installed-p 'tuareg)
+  (package-install 'tuareg))
+  
+(add-to-list 'load-path
+             "/home/ryazhenka/.opam/default/share/emacs/site-lisp")
+(require 'ocp-indent)
+
 ;;; colorscheme tweaks
 (set-face-attribute 'line-number-current-line nil
                     :inherit 'line-number
