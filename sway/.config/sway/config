@@ -172,15 +172,15 @@ bindsym $mod+r mode "resize"
 #
 set $menu-run bemenu-run -p 'Run an application:'
 mode "menu" {
-        bindsym d exec $menu-run
-        bindsym m exec menu-mpd
-        bindsym k exec menu-kill --all
+        bindsym $mod+d exec $menu-run
+        bindsym $mod+m exec menu-mpd
+        bindsym $mod+k exec menu-kill --all
         bindsym Shift+k exec menu-kill
 
         bindsym Escape mode "default"
-        bindsym $mod+m mode "default"
+        bindsym $mod+bracketright mode "default"
 }
-bindsym $mod+m mode "menu"
+bindsym $mod+bracketright mode "menu"
 
 #
 # Launching stuff:
@@ -198,9 +198,9 @@ mode "exec" {
         bindsym h exec hyprpicker -a
 
         bindsym Escape mode "default"
-        bindsym $mod+period mode "default"
+        bindsym $mod+bracketleft mode "default"
 }
-bindsym $mod+period mode "exec"
+bindsym $mod+bracketleft mode "exec"
 
 #
 # Sound:
