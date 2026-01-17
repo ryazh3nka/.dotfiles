@@ -216,6 +216,7 @@ bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_SINK@ 5%+
 bindsym --locked XF86AudioPrev exec mpc prev
 bindsym --locked XF86AudioPlay exec mpc toggle
 bindsym --locked XF86AudioNext exec mpc next
+bindsym F7 exec menu-mpd 
 
 #
 # Brightness controls:
