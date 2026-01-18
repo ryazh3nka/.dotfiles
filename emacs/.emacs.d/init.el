@@ -40,6 +40,9 @@
 (setq-default tab-width 8)
 (setq-default indent-tabs-mode nil)
 
+;; compile-mode
+(global-set-key (kbd "C-c r") #'recompile)
+
 ;; autocompletion and stuff
 (setq read-file-name-completion-ignore-case t)
 
@@ -60,7 +63,7 @@
 (set-face-attribute 'Man-underline nil :inherit font-lock-keyword-face :underline t)
 
 ;; whitespace-mode
-(global-set-key (kbd "C-c e") 'whitespace-mode)
+(global-set-key (kbd "C-c w") 'whitespace-mode)
 
 ;; wrap indicator
 (setq-default fringe-indicator-alist
@@ -69,6 +72,9 @@
 
 ;; c-mode
 (setq c-default-style "linux")
+
+;; mode line
+(column-number-mode t)
 
 ;; follow symlinks
 (setq vc-follow-symlinks t)
@@ -141,7 +147,7 @@ With a prefix arg copy plain text; otherwise copy a text/uri-list."
              (format "%d file(s)%s" (length files) (if (> (length files) 1) "s" ""))
              (if plain-text "plain text" "URI list"))))
 
-(global-set-key (kbd "C-c w") #'rc/dired-copy-files-to-clipboard)
+(global-set-key (kbd "C-c c") #'rc/dired-copy-files-to-clipboard)
 
 ;;; package management
 (require 'package)
