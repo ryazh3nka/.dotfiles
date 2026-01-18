@@ -219,6 +219,11 @@ bindsym --locked XF86AudioNext exec mpc next
 bindsym F7 exec menu-mpd 
 
 #
+# Kill processes:
+#
+bindsym $mod+x exec menu-kill --all
+
+#
 # Brightness controls:
 #
 bindsym --locked XF86MonBrightnessDown exec brightnessctl -n -e set 10%-
