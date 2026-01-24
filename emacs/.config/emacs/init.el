@@ -1,12 +1,27 @@
-;; prevents emacs from shitting inside this file
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+;; prevents emacs from shitting inside ~/.config/emacs
+(setq user-emacs-directory (expand-file-name "~/.local/share/emacs"))
+(setq package-user-dir (expand-file-name "elpa" user-emacs-directory))
+(unless (file-exists-p user-emacs-directory)
+  (make-directory user-emacs-directory t))
 
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
   (load custom-file))
 
 (make-directory (expand-file-name "auto-save/" user-emacs-directory) t)
 (setq auto-save-file-name-transforms
       `((".*" ,(concat user-emacs-directory "auto-save/") t))) 
+
+(setq auto-save-list-file-prefix
+      (expand-file-name "auto-save/.saves-" user-emacs-directory))
+
+(make-directory (expand-file-name "backups/" user-emacs-directory) t)
+(setq backup-directory-alist
+      `(("." . ,(expand-file-name "backups/" user-emacs-directory))))
+
+(make-directory (expand-file-name "eln-cache/" user-emacs-directory) t)
+(setq native-comp-eln-load-path
+      (list (expand-file-name "eln-cache/" user-emacs-directory)))
 
 ;;; general
 ;; frame decorations
