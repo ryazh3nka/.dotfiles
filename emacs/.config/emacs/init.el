@@ -10,8 +10,7 @@
 
 (make-directory (expand-file-name "auto-save/" user-emacs-directory) t)
 (setq auto-save-file-name-transforms
-      `((".*" ,(concat user-emacs-directory "auto-save/") t))) 
-
+      `((".*" ,(expand-file-name "auto-save/" user-emacs-directory) t))) 
 (setq auto-save-list-file-prefix
       (expand-file-name "auto-save/.saves-" user-emacs-directory))
 
