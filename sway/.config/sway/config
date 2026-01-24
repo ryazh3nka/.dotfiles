@@ -174,7 +174,7 @@ set $menu-run bemenu-run -p 'Run an application:'
 mode "menu" {
         bindsym $mod+d exec $menu-run
         bindsym $mod+m exec menu-mpd
-        bindsym $mod+k exec menu-kill --all
+        bindsym $mod+k exec menu-kill -a
         bindsym Shift+k exec menu-kill
 
         bindsym Escape mode "default"
@@ -221,7 +221,7 @@ bindsym F7 exec menu-mpd
 #
 # Kill processes:
 #
-bindsym $mod+x exec menu-kill --all
+bindsym $mod+x exec menu-kill -a -s 15
 
 #
 # Brightness controls:
