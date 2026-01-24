@@ -37,7 +37,7 @@
 (setq inhibit-startup-screen t)
 
 ;; tabwidth
-(setq-default tab-width 8)
+;; (setq-default tab-width 8)
 (setq-default indent-tabs-mode nil)
 
 ;; compile-mode
@@ -63,6 +63,7 @@
 (set-face-attribute 'Man-underline nil :inherit font-lock-keyword-face :underline t)
 
 ;; whitespace-mode
+(setq whitespace-line-column 100)
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 
 ;; wrap indicator
@@ -71,7 +72,7 @@
                                (assq-delete-all 'truncation fringe-indicator-alist)))
 
 ;; c-mode
-(setq c-default-style "linux")
+(setq c-default-style "k&r")
 
 ;; mode line
 (column-number-mode t)
