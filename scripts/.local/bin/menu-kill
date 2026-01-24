@@ -1,6 +1,7 @@
 #!/bin/sh
 # dispensing -9 to lousy bastards in need of permanent rest since 1968
-# accepts '-a' or '--all' as an optional argument and does the job accordingly
+# accepts '-a' as an optional argument to run 'killall' instead of 'kill'
+# accepts '-s VALUE' to send a specific signal
 set -e
 
 spawn_menu()
@@ -19,17 +20,25 @@ processes=$(ps -u "$(whoami)" -o pgid,pid,args |
                 tac)
 
 kill_command='kill'
-[ "$1" = '--all' ] || [ "$1" = '-a' ] && kill_command='killall'
-options="$kill_command -9 (SIGKILL)
-$kill_command -15 (SIGTERM)"
+kill_signal=''
+while getopts "as:" opt; do
+    case "$opt" in 
+        a) kill_command='killall' ;;
+        s) kill_signal="$OPTARG" ;;
+    esac
+done
 
-user_response=$(spawn_menu "$options" 'How would you like to kill?')
-kill_signal=$(echo "$user_response" | awk '{print $2}')
+if [ -z "$kill_signal" ]; then
+    options=$(printf "%s -9 (SIGKILL)\n%s -15 (SIGTERM)" "$kill_command" "$kill_command")
+    user_response=$(spawn_menu "$options" 'How would you like to kill?')
+    kill_signal=$(echo "$user_response" | awk '{print $2}')
+    kill_signal="${kill_signal#?}"
+fi
 
 [ "$kill_command" = 'killall' ] && processes=$(echo "$processes" | awk '!seen[$2]++')
-process_chosen=$(spawn_menu "$processes" 'Select a process to kill:')
+process_chosen=$(spawn_menu "$processes" "Select a process to kill (-$kill_signal):")
 process_pid=$(echo "$process_chosen" | awk '{print $1}')
 process_name=$(echo "$process_chosen" | awk '{print $2}')
 
-[ "$kill_command" = 'kill' ] && $kill_command "$kill_signal" "$process_pid"
-[ "$kill_command" = 'killall' ] && $kill_command "$kill_signal" "$process_name"
+[ "$kill_command" = 'kill' ] && $kill_command "-$kill_signal" "$process_pid"
+[ "$kill_command" = 'killall' ] && $kill_command "-$kill_signal" "$process_name"
