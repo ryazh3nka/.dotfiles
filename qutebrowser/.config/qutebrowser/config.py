@@ -3,6 +3,7 @@ config.load_autoconfig()
 c.fonts.default_family = "UbuntuMono Nerd Font"
 c.fonts.default_size = "18pt"
 
+c.url.default_page = "~/.config/qutebrowser/startpage.html"
 c.url.start_pages = ["~/.config/qutebrowser/startpage.html"]
 c.url.searchengines = {
     "DEFAULT":  "https://google.com/search?hl=en&q={}",
