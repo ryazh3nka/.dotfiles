@@ -43,3 +43,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # ocaml package manager
 OPAM_INIT="$HOME/.opam/opam-init/init.zsh"
 [[ ! -r "$OPAM_INIT" ]] || source "$OPAM_INIT"
+
+# haskell installer
+GHCUP_ENV="$XDG_DATA_DIR/ghcup/env"
+[ -f "$GHCUP_ENV" ] && . "$GHCUP_ENV" # ghcup-env
