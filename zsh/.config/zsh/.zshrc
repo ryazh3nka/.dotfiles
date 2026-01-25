@@ -46,4 +46,4 @@ OPAM_INIT="$HOME/.opam/opam-init/init.zsh"
 
 # haskell installer
 GHCUP_ENV="$XDG_DATA_DIR/ghcup/env"
-[ -f "$GHCUP_ENV" ] && . "$GHCUP_ENV" # ghcup-env
+[[ -f "$GHCUP_ENV" ]] && source "$GHCUP_ENV"
