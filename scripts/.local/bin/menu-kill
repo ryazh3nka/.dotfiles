@@ -22,9 +22,10 @@ processes=$(ps -u "$(whoami)" -o pgid,pid,args |
 kill_command='kill'
 kill_signal=''
 while getopts "as:" opt; do
-    case "$opt" in 
+    case "$opt" in
         a) kill_command='killall' ;;
         s) kill_signal="$OPTARG" ;;
+        *) ;;
     esac
 done
 
