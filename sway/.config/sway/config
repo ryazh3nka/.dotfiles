@@ -10,7 +10,7 @@ output * bg $(xdg-user-dir PICTURES)/wallpapers/the-ninth-wave-gruvbox.jpg fill
 
 ### Decorations
 #
-# Basics
+# Basics:
 #
 smart_gaps on
 smart_borders on
@@ -18,7 +18,7 @@ default_border normal 1
 font pango:"UbuntuMono Nerd Font" 10
 
 #
-# Colors
+# Colors:
 #
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #fbf1c7 #2e9ef4   #4c7899
@@ -46,6 +46,7 @@ for_window [shell="xwayland"] title_format "[XWayland] %title"
 ### Autostart
 exec mako >/dev/null 2>&1
 exec emacs --daemon >/dev/null 2>&1
+exec wl-paste --watch cliphist store
 exec sleep 1 && foot --title "Scratchterm"
 
 ### Idle configuration
@@ -72,23 +73,28 @@ input "type:keyboard" {
 
 ### Key bindings
 #
-# Basics
+# Basics:
 #
 floating_modifier $mod normal
-
-bindsym $mod+Return exec foot
-bindsym $mod+p exec emacsclient -c -a ''
-bindsym $mod+c exec hyprpicker -a
-bindsym $mod+n exec mako-toggle-dnd
-bindsym $mod+d exec bemenu-run -p ''
-
-bindsym Print exec grim -g "$(slurp -d)" - | wl-copy
-bindsym Shift+Print exec grim $(xdg-user-dir PICTURES)/$(date +"screenshot-%d_%m_%Y-%H:%M:%S.png")
 
 bindsym $mod+q kill
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+x exec swaylock -f -c 282828
 bindsym $mod+Shift+m exec swaymsg exit
+
+#
+# Launchers:
+#
+bindsym $mod+Return exec foot
+bindsym $mod+p exec emacsclient -c -a ''
+bindsym $mod+c exec cliphist list | bemenu -p 'Clipboard:' | cliphist decode | wl-copy
+bindsym $mod+grave exec hyprpicker -a ''
+bindsym $mod+n exec mako-toggle-dnd
+bindsym $mod+d exec bemenu-run -p ''
+bindsym $mod+x exec menu-kill -a -s 15
+
+bindsym Print exec grim -g "$(slurp -d)" - | wl-copy
+bindsym Shift+Print exec grim $(xdg-user-dir PICTURES)/$(date +"screenshot-%d_%m_%Y-%H:%M:%S.png")
 
 #
 # Moving around:
@@ -139,7 +145,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 bindsym $mod+f fullscreen
-bindsym $mod+b border toggle
+bindsym $mod+Shift+b border toggle
 
 bindsym $mod+Shift+tab floating toggle
 bindsym $mod+tab focus mode_toggle
@@ -183,7 +189,7 @@ mode "menu" {
 bindsym $mod+bracketright mode "menu"
 
 #
-# Launching stuff:
+# Launching stuff quickly:
 #
 mode "exec" {
         bindsym q exec qutebrowser
@@ -217,11 +223,6 @@ bindsym --locked XF86AudioPrev exec mpc prev
 bindsym --locked XF86AudioPlay exec mpc toggle
 bindsym --locked XF86AudioNext exec mpc next
 bindsym F7 exec menu-mpd 
-
-#
-# Kill processes:
-#
-bindsym $mod+x exec menu-kill -a -s 15
 
 #
 # Brightness controls:

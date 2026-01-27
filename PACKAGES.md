@@ -8,6 +8,7 @@ i3blocks
 bemenu
 mako
 wl-clipboard
+cliphist
 grim
 slurp
 hyprpicker
