@@ -78,23 +78,25 @@ input "type:keyboard" {
 floating_modifier $mod normal
 
 bindsym $mod+q kill
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+x exec swaylock -f -c 282828
-bindsym $mod+Shift+m exec swaymsg exit
+bindsym $mod+Shift+r reload
+bindsym $mod+Shift+e exec swaymsg exit
+bindsym $mod+Shift+u exec swaylock -f -c 282828
 
 #
 # Launchers:
 #
-bindsym $mod+Return exec foot
-bindsym $mod+p exec emacsclient -c -a ''
-bindsym $mod+c exec cliphist list | bemenu -p 'Clipboard:' | cliphist decode | wl-copy
+bindsym $mod+bracketleft exec emacsclient -c -a ''
 bindsym $mod+grave exec hyprpicker -a ''
+bindsym $mod+Return exec foot
 bindsym $mod+n exec mako-toggle-dnd
-bindsym $mod+d exec bemenu-run -p ''
+bindsym $mod+d exec bemenu-run -p 'Run a program:'
 bindsym $mod+x exec menu-kill -a -s 15
+bindsym $mod+Shift+x exec menu-kill -a
+bindsym $mod+c exec menu-clip
+bindsym $mod+v exec menu-mpd 
 
-bindsym Print exec grim -g "$(slurp -d)" - | wl-copy
-bindsym Shift+Print exec grim $(xdg-user-dir PICTURES)/$(date +"screenshot-%d_%m_%Y-%H:%M:%S.png")
+bindsym Print exec screenshot-section
+bindsym Shift+Print exec screenshot-full
 
 #
 # Moving around:
@@ -174,21 +176,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #
-# Running various menu scripts:
-#
-set $menu-run bemenu-run -p 'Run an application:'
-mode "menu" {
-        bindsym $mod+d exec $menu-run
-        bindsym $mod+m exec menu-mpd
-        bindsym $mod+k exec menu-kill -a
-        bindsym Shift+k exec menu-kill
-
-        bindsym Escape mode "default"
-        bindsym $mod+bracketright mode "default"
-}
-bindsym $mod+bracketright mode "menu"
-
-#
 # Launching stuff quickly:
 #
 mode "exec" {
@@ -204,9 +191,9 @@ mode "exec" {
         bindsym h exec hyprpicker -a
 
         bindsym Escape mode "default"
-        bindsym $mod+bracketleft mode "default"
+        bindsym $mod+bracketright mode "default"
 }
-bindsym $mod+bracketleft mode "exec"
+bindsym $mod+bracketright mode "exec"
 
 #
 # Sound:
@@ -217,12 +204,11 @@ bindsym --locked XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_SINK@ 5%-
 bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_SINK@ 5%+
 
 #
-# MPD controls:
+# MPD playback controls:
 #
 bindsym --locked XF86AudioPrev exec mpc prev
 bindsym --locked XF86AudioPlay exec mpc toggle
 bindsym --locked XF86AudioNext exec mpc next
-bindsym F7 exec menu-mpd 
 
 #
 # Brightness controls:
