@@ -28,4 +28,5 @@ noto-fonts
 mpd
 mpc
 neomutt
+pass
 stow
