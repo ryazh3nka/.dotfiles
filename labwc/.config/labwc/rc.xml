@@ -76,6 +76,10 @@
     <keybind key="XF86MonBrightnessDown"><action name="Execute" command="brightnessctl -n -e set 10%-" /></keybind>
     <keybind key="XF86MonBrightnessUp"><action name="Execute" command="brightnessctl -n -e set 10%+" /></keybind>
 
+    <keybind key="XF86AudioPrev"><action name="Execute" command="mpc prev" /></keybind>
+    <keybind key="XF86AudioPlay"><action name="Execute" command="mpc toggle" /></keybind>
+    <keybind key="XF86AudioNext"><action name="Execute" command="mpc next" /></keybind>
+
     <repeatDelay>400</repeatDelay>
     <repeatRate>40</repeatRate>
   </keyboard>
