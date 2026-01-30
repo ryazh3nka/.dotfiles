@@ -88,8 +88,12 @@
     <context name="All">
       <mousebind direction="W-Up" action="Scroll"><action name="GoToDesktop" to="right" /></mousebind>
       <mousebind direction="W-Down" action="Scroll"><action name="GoToDesktop" to="left" /></mousebind>
-      <mousebind direction="W-C-Up" action="Scroll"><action name="ZoomIn"/></mousebind>
-      <mousebind direction="W-C-Down" action="Scroll"><action name="ZoomOut"/></mousebind>
+      <mousebind direction="W-C-Up" action="Scroll"><action name="ZoomIn" /></mousebind>
+      <mousebind direction="W-C-Down" action="Scroll"><action name="ZoomOut" /></mousebind>
+    </context>
+
+    <context name="Root">
+      <mousebind button="Right" action="Press"><action name="ShowMenu" menu="root-menu" /></mousebind>
     </context>
   </mouse>
 
