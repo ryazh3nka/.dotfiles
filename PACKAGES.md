@@ -9,6 +9,8 @@ bemenu
 mako
 wl-clipboard
 cliphist
+ydotool
+pass
 grim
 slurp
 hyprpicker
@@ -28,5 +30,4 @@ noto-fonts
 mpd
 mpc
 neomutt
-pass
 stow
