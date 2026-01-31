@@ -11,7 +11,7 @@ if [[ $1 == "--type" ]]; then
 fi
 
 if [[ -n $WAYLAND_DISPLAY ]]; then
-    dmenu=bemenu
+    dmenu=bemenu -p "Choose a password:"
     xdotool="ydotool type -d 1 --file -"
 elif [[ -n $DISPLAY ]]; then
     dmenu=dmenu
