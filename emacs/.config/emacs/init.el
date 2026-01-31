@@ -86,7 +86,7 @@
                                (assq-delete-all 'truncation fringe-indicator-alist)))
 
 ;; c-mode
-(setq c-default-style "k&r")
+(setq c-default-style "gnu")
 
 ;; mode line
 (column-number-mode t)
