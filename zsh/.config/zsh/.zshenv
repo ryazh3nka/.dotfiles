@@ -13,6 +13,7 @@ export PATH="$PATH:$XDG_BIN_HOME"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtkrc-2.0"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+export PASSWORD_STORE_CLIP_TIME=5
 export PYTHON_HISTORY="$XDG_CACHE_HOME/.python_history"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export GHCUP_USE_XDG_DIRS=1
