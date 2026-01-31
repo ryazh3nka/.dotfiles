@@ -95,9 +95,9 @@ bindsym $mod+x exec menu-kill -a -s 15
 bindsym $mod+Shift+x exec menu-kill -a
 bindsym $mod+c exec menu-clip
 bindsym $mod+Shift+c exec cliphist wipe
-bindsym $mod+v exec menu-mpd 
-bindsym $mod+b exec menu-pass --type
-bindsym $mod+Shift+b exec menu-pass
+bindsym $mod+v exec menu-pass --type
+bindsym $mod+Shift+v exec menu-pass
+bindsym $mod+m exec menu-mpd 
 
 bindsym Print exec screenshot-section
 bindsym Shift+Print exec screenshot-full
