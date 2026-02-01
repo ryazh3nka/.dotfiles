@@ -11,7 +11,7 @@ This setup was made for my laptop over a few months. I must admit that I grew ve
 *apps shown: emacs, qutebrowser, foot*
 
 ## Installation
-Clone and cd into the repo, make sure that `.config`, `.local` and `.cache` exist in your `$HOME`, run `stow package-name` for every directory you want symlinked, and tweak the dotfiles to your liking.
+Clone and cd into the repo, make sure that `.config`, `.local` and `.cache` exist in your `$HOME`, run `stow package-name` for every directory you want symlinked (or run `stow */` to link every package), and tweak the dotfiles to your liking.
 ```zsh
 $ git clone --depth 1 https://github.com/ryazh3nka/.dotfiles.git $HOME/.dotfiles
 $ cd $HOME/.dotfiles
