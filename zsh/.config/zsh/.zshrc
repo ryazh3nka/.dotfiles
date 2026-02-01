@@ -16,6 +16,7 @@ alias ll='ls -lAh --color=auto --sort=extension --group-directories-first'
 alias ec="emacsclient -nw -a ''"
 alias wget="wget --hsts-file $XDG_CACHE_HOME/.wget_hosts"
 alias tmux='tmux -T 256'
+alias rocaml='rlwrap ocaml'
 
 if [ "$TERM" = "linux" ]; then
     PROMPT="%B%F{green}[I]%f%b %F{white}[%F{blue}%n%F{white}@%F{yellow}%m%F{white}]%F{red}[%~]%f$ "
