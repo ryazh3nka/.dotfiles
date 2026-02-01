@@ -100,7 +100,7 @@
   </mouse>
 
   <resistance>
-    <windowEdgeStrength>0</windowEdgeStrength>
+    <windowEdgeStrength>10</windowEdgeStrength>
     <screenEdgeStrength>20</screenEdgeStrength>
   </resistance>
 
