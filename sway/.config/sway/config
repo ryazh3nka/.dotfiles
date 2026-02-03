@@ -47,7 +47,7 @@ for_window [shell="xwayland"] title_format "[XWayland] %title"
 exec mako >/dev/null 2>&1
 exec emacs --daemon >/dev/null 2>&1
 exec wl-paste --watch cliphist store
-exec ydotool >/dev/null 2>&1
+exec ydotoold >/dev/null 2>&1
 exec sleep 1 && foot --title "Scratchterm"
 
 ### Idle configuration
