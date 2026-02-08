@@ -1,11 +1,11 @@
 {
   "plugins": {
     "fzf-lua": {
-      "rev": "b8d1356b7120f5cf111709cb2fa504096248fb26",
+      "rev": "d2fa4fcebe47c49f0393363c7bb2968ba5516cef",
       "src": "https://github.com/ibhagwan/fzf-lua.git"
     },
     "gruvbox.nvim": {
-      "rev": "5e0a460d8e0f7f669c158dedd5f9ae2bcac31437",
+      "rev": "a472496e1a4465a2dd574389dcf6cdb29af9bf1b",
       "src": "https://github.com/ellisonleao/gruvbox.nvim.git"
     },
     "guess-indent.nvim": {
@@ -13,15 +13,15 @@
       "src": "https://github.com/NMAC427/guess-indent.nvim.git"
     },
     "leap.nvim": {
-      "rev": "f19d43590c4b6d31188ee1ea2954d2b7558a9e11",
-      "src": "https://github.com/ggandor/leap.nvim.git"
+      "rev": "d7316deae68dc93d6957020cdda6d7bb399218fb",
+      "src": "https://codeberg.org/andyg/leap.nvim"
     },
     "nvim-web-devicons": {
-      "rev": "6788013bb9cb784e606ada44206b0e755e4323d7",
+      "rev": "746ffbb17975ebd6c40142362eee1b0249969c5c",
       "src": "https://github.com/nvim-tree/nvim-web-devicons.git"
     },
     "oil.nvim": {
-      "rev": "81b8a91735ad5cd24a6b3137f14a89f19176364f",
+      "rev": "f55b25e493a7df76371cfadd0ded5004cb9cd48a",
       "src": "https://github.com/stevearc/oil.nvim.git"
     },
     "which-key.nvim": {

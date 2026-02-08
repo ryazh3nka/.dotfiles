@@ -3,7 +3,7 @@ vim.pack.add({
         { src = "https://github.com/nvim-tree/nvim-web-devicons.git" },
         { src = "https://github.com/stevearc/oil.nvim.git" },
         { src = "https://github.com/ibhagwan/fzf-lua.git" },
-        { src = "https://github.com/ggandor/leap.nvim.git" },
+        { src = "https://codeberg.org/andyg/leap.nvim" },
         { src = "https://github.com/folke/which-key.nvim.git" },
         { src = "https://github.com/NMAC427/guess-indent.nvim.git" },
 })
