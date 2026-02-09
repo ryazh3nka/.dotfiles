@@ -7,7 +7,7 @@
 (delete-selection-mode 1)
 
 ;;; Syntax highlighting
-(global-font-lock-mode t)
+(global-font-lock-mode 1)
 
 ;;; Lockfiles
 (setq create-lockfiles nil)
@@ -56,6 +56,9 @@
 (setq whitespace-line-column 100)
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 
+;;; Pixel-precise scrolling
+(pixel-scroll-precision-mode 1)
+
 ;;; Wrap indicator
 (setq-default fringe-indicator-alist
               (assq-delete-all 'continuation
@@ -65,7 +68,7 @@
 (setq c-default-style "gnu")            ; blasphemy!
 
 ;;; Mode line
-(column-number-mode t)
+(column-number-mode 1)
 
 ;;; Follow symlinks
 (setq vc-follow-symlinks t)
