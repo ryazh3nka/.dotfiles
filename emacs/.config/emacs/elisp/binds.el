@@ -1,4 +1,6 @@
-;;; Duplicate current line
+;;; binds.el -- custom keybindings
+
+;; Duplicate current line
 (defun rc/duplicate-line ()
   "Duplicate current line"
   (interactive)
@@ -12,7 +14,7 @@
     (forward-char column)))
 (global-set-key (kbd "C-,") 'rc/duplicate-line)
 
-;;; Kill unused buffers
+;; Kill unused buffers
 (defun rc/close-other-buffers ()
   "Kill all buffers except the current one and the *scratch* buffer."
   (interactive)
@@ -23,7 +25,7 @@
         (kill-buffer buf)))))
 (global-set-key (kbd "C-c k") 'rc/close-other-buffers)
 
-;;; Copy files as text/uri-list in dired
+;; Copy files as text/uri-list in dired
 (defun rc/dired-copy-files-to-clipboard (&optional plain-text)
   "Copy marked files to the clipboard. With a prefix arg copy plain text; otherwise copy a text/uri-list."
   (interactive "P")

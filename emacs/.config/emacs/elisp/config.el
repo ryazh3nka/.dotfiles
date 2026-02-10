@@ -1,3 +1,6 @@
+;;; config.el -- general configuration for built-in modes
+;; For external packages, see packages.el
+
 ;;; Frame decorations
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -13,7 +16,7 @@
 (setq create-lockfiles nil)
 
 ;;; Which-key
-(which-key-mode)
+(which-key-mode 1)
 
 ;;; Scrolling
 (setq scroll-conservatively 101)
@@ -23,8 +26,7 @@
 ;;; Eshell
 (setq eshell-prefer-to-shell-process t)
 (setq eshell-directory-name 
-      (expand-file-name "eshell/" (or (getenv "XDG_CONFIG_HOME") 
-                                     "~/.config")))
+      (expand-file-name "eshell/" (or (getenv "XDG_CONFIG_HOME") "~/.config")))
 
 ;;; Greeter
 (setq inhibit-startup-screen t)

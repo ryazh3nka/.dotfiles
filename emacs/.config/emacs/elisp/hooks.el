@@ -1,3 +1,6 @@
+;;; hooks.el -- automation and mode-specific hooks
+;; For external packages, see packages.el
+
 ;;; Numberline
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (add-hook 'conf-mode-hook 'display-line-numbers-mode)
