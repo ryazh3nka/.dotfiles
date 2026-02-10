@@ -13,9 +13,14 @@
 (setq use-package-always-ensure t)
 
 ;;; Package management
-(use-package gruvbox-theme :config (load-theme 'gruvbox))
-(use-package rainbow-delimiters :hook (prog-mode . rainbow-delimiters-mode))
-(use-package pdf-tools :config (pdf-loader-install))
+(use-package gruvbox-theme
+  :config (load-theme 'gruvbox))
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+(use-package pdf-tools
+  :config (pdf-loader-install))
+(use-package eshell-syntax-highlighting
+  :hook (eshell-mode . eshell-syntax-highlighting-mode))
 (use-package haskell-mode)
 (use-package tuareg)
 (use-package magit)

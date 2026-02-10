@@ -87,7 +87,7 @@ bindsym $mod+Shift+u exec swaylock -f -c 282828
 # Launchers:
 #
 bindsym $mod+bracketleft exec emacsclient -c -a ''
-bindsym $mod+bracketright exec emacsclient -c -a '' -e '(eshell t)'
+bindsym $mod+bracketright exec emacsclient -c -a '' -e '(eshell)'
 bindsym $mod+grave exec hyprpicker -a ''
 bindsym $mod+Return exec foot
 bindsym $mod+n exec mako-toggle-dnd

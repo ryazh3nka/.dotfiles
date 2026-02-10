@@ -24,7 +24,7 @@
 (setq scroll-step 1)
 
 ;;; Eshell
-(setq eshell-prefer-to-shell-process t)
+;; (setq eshell-prefer-to-shell-process t)
 (setq eshell-directory-name 
       (expand-file-name "eshell/" (or (getenv "XDG_CONFIG_HOME") "~/.config")))
 (setq eshell-history-file-name 
