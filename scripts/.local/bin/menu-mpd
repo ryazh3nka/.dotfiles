@@ -52,6 +52,7 @@ Clear queue
 Crop queue
 Update database
 Toggle repeat
+Toggle single
 Toggle playback
 '
 
@@ -76,5 +77,6 @@ case "$action" in
     'Crop queue') mpc crop ;;
     'Update database') mpc update ;;
     'Toggle repeat') mpc repeat ;;
+    'Toggle single') mpc single ;;
     'Toggle playback') mpc toggle ;;
 esac
