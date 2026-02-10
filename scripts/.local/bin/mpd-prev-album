@@ -1,0 +1,17 @@
+#!/bin/sh
+
+current_album="$(mpc current --format "%album%")"
+
+while true; do
+    mpc prev >/dev/null || exit 1
+    new_album="$(mpc current --format "%album%")"
+    [ "$new_album" != "$current_album" ] && break
+done
+
+while true; do
+    mpc prev >/dev/null || break
+    if [ "$(mpc current --format "%album%")" != "$new_album" ]; then
+        mpc next >/dev/null
+        break
+    fi
+done

@@ -99,6 +99,7 @@ bindsym $mod+Shift+c exec cliphist wipe
 bindsym $mod+v exec menu-pass --type -p 'Choose a password:'
 bindsym $mod+Shift+v exec menu-pass
 bindsym $mod+m exec menu-mpd 
+bindsym $mod+Shift+m exec mpc clear
 bindsym $mod+g exec get-default-gateway -t
 bindsym $mod+Shift+g exec get-default-gateway -c
 
@@ -213,11 +214,11 @@ bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_SINK@ 5%+
 # MPD playback controls:
 #
 bindsym --locked XF86AudioPrev exec mpc prev
-bindsym --locked $mod+XF86AudioPrev exec mpc clear
+bindsym --locked $mod+XF86AudioPrev exec mpd-prev-album
 bindsym --locked XF86AudioPlay exec mpc toggle
 bindsym --locked $mod+XF86AudioPlay exec mpc single
 bindsym --locked XF86AudioNext exec mpc next
-bindsym --locked $mod+XF86AudioNext exec mpc crop
+bindsym --locked $mod+XF86AudioNext exec mpd-next-album
 
 #
 # Brightness controls:
