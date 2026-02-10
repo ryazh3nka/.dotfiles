@@ -22,6 +22,9 @@
 
 ;;; Eshell
 (setq eshell-prefer-to-shell-process t)
+(setq eshell-directory-name 
+      (expand-file-name "eshell/" (or (getenv "XDG_CONFIG_HOME") 
+                                     "~/.config")))
 
 ;;; Greeter
 (setq inhibit-startup-screen t)
@@ -60,7 +63,7 @@
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 
 ;;; Pixel-precise scrolling
-(pixel-scroll-precision-mode 1)
+;; (pixel-scroll-precision-mode 1)
 
 ;;; Wrap indicator
 (setq-default fringe-indicator-alist
