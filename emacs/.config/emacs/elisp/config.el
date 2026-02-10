@@ -27,6 +27,8 @@
 (setq eshell-prefer-to-shell-process t)
 (setq eshell-directory-name 
       (expand-file-name "eshell/" (or (getenv "XDG_CONFIG_HOME") "~/.config")))
+(setq eshell-history-file-name 
+        (expand-file-name ".eshell_history" (or (getenv "XDG_CACHE_HOME") "~/.cache")))
 
 ;;; Greeter
 (setq inhibit-startup-screen t)
