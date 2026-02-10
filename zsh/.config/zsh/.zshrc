@@ -1,4 +1,4 @@
-HISTFILE="$XDG_CACHE_HOME/zsh/histfile"
+HISTFILE="$XDG_CACHE_HOME/.zsh_history"
 HISTSIZE=5000
 SAVEHIST=5000
 
@@ -29,7 +29,7 @@ bindkey "^[e" down-history
 bindkey "^[a" up-history
 
 autoload -Uz compinit
-compinit -C -d "$XDG_CACHE_HOME/zsh/zcompdump"
+compinit -C -d "$XDG_CACHE_HOME/.zsh_zcompdump"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
        'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
