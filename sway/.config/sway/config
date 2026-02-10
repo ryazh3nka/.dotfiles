@@ -87,6 +87,7 @@ bindsym $mod+Shift+u exec swaylock -f -c 282828
 # Launchers:
 #
 bindsym $mod+bracketleft exec emacsclient -c -a ''
+bindsym $mod+bracketright exec emacsclient -c -a '' -e '(eshell t)'
 bindsym $mod+grave exec hyprpicker -a ''
 bindsym $mod+Return exec foot
 bindsym $mod+n exec mako-toggle-dnd
@@ -198,7 +199,7 @@ mode "exec" {
      bindsym Escape mode "default"
      bindsym $mod+bracketright mode "default"
 }
-bindsym $mod+bracketright mode "exec"
+bindsym $mod+t mode "exec"
 
 #
 # Sound:
@@ -212,8 +213,11 @@ bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_SINK@ 5%+
 # MPD playback controls:
 #
 bindsym --locked XF86AudioPrev exec mpc prev
+bindsym --locked $mod+XF86AudioPrev exec mpc clear
 bindsym --locked XF86AudioPlay exec mpc toggle
+bindsym --locked $mod+XF86AudioPlay exec mpc single
 bindsym --locked XF86AudioNext exec mpc next
+bindsym --locked $mod+XF86AudioNext exec mpc crop
 
 #
 # Brightness controls:

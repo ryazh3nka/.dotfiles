@@ -20,6 +20,9 @@
 (setq scroll-margin 0)
 (setq scroll-step 1)
 
+;;; Eshell
+(setq eshell-prefer-to-shell-process t)
+
 ;;; Greeter
 (setq inhibit-startup-screen t)
 
