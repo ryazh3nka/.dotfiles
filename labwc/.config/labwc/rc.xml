@@ -44,6 +44,7 @@
     <keybind key="W-v"><action name="Execute" command="menu-pass --type -p 'Select a password:'" /></keybind>
     <keybind key="W-S-v"><action name="Execute" command="menu-pass" /></keybind>
     <keybind key="W-m"><action name="Execute" command="menu-mpd" /></keybind>
+    <keybind key="W-S-m"><action name="Execute" command="mpc clear" /></keybind>
     <keybind key="W-g"><action name="Execute" command="get-default-gateway -t" /></keybind>
     <keybind key="W-S-g"><action name="Execute" command="get-default-gateway -c" /></keybind>
 
@@ -86,6 +87,10 @@
     <keybind key="XF86AudioPlay"><action name="Execute" command="mpc toggle" /></keybind>
     <keybind key="XF86AudioNext"><action name="Execute" command="mpc next" /></keybind>
 
+    <keybind key="W-XF86AudioPrev"><action name="Execute" command="mpd-prev-album" /></keybind>
+    <keybind key="W-XF86AudioPlay"><action name="Execute" command="mpc single" /></keybind>
+    <keybind key="W-XF86AudioNext"><action name="Execute" command="mpd-next-album" /></keybind>
+    
     <repeatDelay>400</repeatDelay>
     <repeatRate>40</repeatRate>
   </keyboard>
