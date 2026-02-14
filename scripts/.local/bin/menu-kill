@@ -19,15 +19,21 @@ processes=$(ps -u "$(whoami)" -o pgid,pid,args |
                 sed 's|\([0-9]\+\) .*/|\1 |' |
                 tac)
 
-kill_command='kill'
+kill_command=''
 kill_signal=''
-while getopts "as:" opt; do
+while getopts "aks:" opt; do
     case "$opt" in
         a) kill_command='killall' ;;
+        k) kill_command='kill' ;;
         s) kill_signal="$OPTARG" ;;
         *) ;;
     esac
 done
+
+if [ -z "$kill_command" ]; then
+    options=$(printf "%s\n%s" 'kill' 'killall')
+    kill_command=$(spawn_menu "$options" 'Select a command:')
+fi
 
 if [ -z "$kill_signal" ]; then
     options=$(printf "%s -9 (SIGKILL)\n%s -15 (SIGTERM)" "$kill_command" "$kill_command")
