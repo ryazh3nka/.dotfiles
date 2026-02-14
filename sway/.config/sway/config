@@ -93,7 +93,7 @@ bindsym $mod+Return exec foot
 bindsym $mod+n exec mako-toggle-dnd
 bindsym $mod+d exec bemenu-run -p 'Run a program:'
 bindsym $mod+x exec menu-kill -a -s 15
-bindsym $mod+Shift+x exec menu-kill -a
+bindsym $mod+Shift+x exec menu-kill
 bindsym $mod+c exec menu-clip
 bindsym $mod+Shift+c exec cliphist wipe
 bindsym $mod+v exec menu-pass --type -p 'Choose a password:'
