@@ -63,7 +63,7 @@
 (set-face-attribute 'Man-underline nil :inherit font-lock-keyword-face :underline t)
 
 ;;; Whitespace-mode
-(setq whitespace-line-column 100)
+(setq whitespace-line-column 80)
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 
 ;;; Pixel-precise scrolling

@@ -14,7 +14,8 @@
 
 ;;; Package management
 (use-package gruvbox-theme
-  :config (load-theme 'gruvbox))
+ :config (load-theme 'gruvbox))
+(use-package solarized-theme)
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 (use-package pdf-tools
