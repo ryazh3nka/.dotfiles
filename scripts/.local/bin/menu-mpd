@@ -1,9 +1,9 @@
 #!/bin/sh
 set -e
 
-playlists=$(mpc lsplaylists)
-queue=$(mpc playlist)
-database=$(mpc ls)
+playlists=$(mpc -q lsplaylists)
+queue=$(mpc -q playlist)
+database=$(mpc -q ls)
 
 spawn_menu()
 {
@@ -19,7 +19,7 @@ choose_album()
 album_choose_song()
 {
     album="$1"
-    songs=$(mpc ls "$album" | sed 's|.*/||' | sort -V)
+    songs=$(mpc -q ls "$album" | sed 's|.*/||' | sort -V)
     song=$(spawn_menu "$songs" 'Choose a song:')
     echo "$album/$song"
 }
@@ -33,7 +33,7 @@ queue_choose_song()
 queue_get_song_position()
 {
     song="$1"
-    song_pos=$(mpc playlist | grep -n "$song" | sed 's|:.*||')
+    song_pos=$(echo "$queue" | grep -n "$song" | sed 's|:.*||')
     echo "$song_pos"
 }
 
@@ -61,30 +61,30 @@ action=$(spawn_menu "$options" 'Run mpc command:')
 case "$action" in
     'Add an album to the queue')
         album=$(choose_album)
-        mpc add "$album" ;;
+        mpc -q add "$album" ;;
     'Add a song to the queue')
         album=$(choose_album)
         song=$(album_choose_song "$album")
-        mpc add "$song" ;;
+        mpc -q add "$song" ;;
     'Insert a song to the queue')
         album=$(choose_album)
         song=$(album_choose_song "$album")
-        mpc insert "$song" ;;
+        mpc -q insert "$song" ;;
     'Jump to a song in the queue')
         song=$(queue_choose_song)
         song_pos=$(queue_get_song_position "$song")
-        mpc play "$song_pos" ;;
+        mpc -q play "$song_pos" ;;
     'Remove a song from the queue')
         song=$(queue_choose_song)
         song_pos=$(queue_get_song_position "$song")
-        mpc del "$song_pos" ;;
+        mpc -q del "$song_pos" ;;
     'Load a playlist')
         playlist=$(choose_playlist)
-        mpc load "$playlist" ;;
-    'Clear the queue') mpc clear ;;
-    'Crop the queue') mpc crop ;;
-    'Update the database') mpc update ;;
-    'Toggle repeat') mpc repeat ;;
-    'Toggle single') mpc single ;;
-    'Toggle playback') mpc toggle ;;
+        mpc -q load "$playlist" ;;
+    'Clear the queue') mpc -q clear ;;
+    'Crop the queue') mpc -q crop ;;
+    'Update the database') mpc -q update ;;
+    'Toggle repeat') mpc -q repeat ;;
+    'Toggle single') mpc -q single ;;
+    'Toggle playback') mpc -q toggle ;;
 esac
