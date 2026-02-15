@@ -14,7 +14,7 @@ alias ls='ls --color=auto'
 alias l='ls -lh --color=auto --sort=extension --group-directories-first'
 alias ll='ls -lAh --color=auto --sort=extension --group-directories-first'
 alias ec="emacsclient -nw -a ''"
-alias wget="wget --hsts-file $XDG_CACHE_HOME/.wget_hosts"
+alias wget="wget --hsts-file $XDG_DATA_HOME/wget_hosts"
 alias tmux='tmux -T 256'
 
 if [ "$TERM" = "linux" ]; then
@@ -24,10 +24,8 @@ else
 fi
 
 bindkey -e
-bindkey "^[p" up-history
-bindkey "^[n" down-history
-bindkey '^[a' up-line-or-search
-bindkey '^[e' down-line-or-search
+bindkey "^[p" up-line-or-search
+bindkey "^[n" down-line-or-search
 # ^N and ^P are reserved for scrollback in the term
 
 # zsh-autosuggestions
