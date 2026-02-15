@@ -26,9 +26,11 @@ fi
 bindkey -e
 bindkey "^[p" up-history
 bindkey "^[n" down-history
-bindkey '^[e' up-line-or-search
-bindkey '^[a' down-line-or-search
+bindkey '^[a' up-line-or-search
+bindkey '^[e' down-line-or-search
+# ^N and ^P are reserved for scrollback in the term
 
+# zsh-autosuggestions
 autoload -Uz compinit
 compinit -C -d "$XDG_CACHE_HOME/.zsh_zcompdump"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
