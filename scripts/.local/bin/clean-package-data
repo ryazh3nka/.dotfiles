@@ -1,0 +1,31 @@
+#!/bin/sh
+
+DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}"
+set -- \
+    "$DATA_DIR/nvim" \
+    "$DATA_DIR/emacs" \
+    "$DATA_DIR/qutebrowser" \
+    "$DATA_DIR/wget_hosts"
+for path do
+    [ -e "$path" ] || [ -L "$path" ] && rm -rf "$path"
+done
+
+STATE_DIR="${XDG_DATA_HOME:-$HOME/.local/state}"
+set -- \
+    "$STATE_DIR/nvim"
+for path do
+    [ -e "$path" ] || [ -L "$path" ] && rm -rf "$path"
+done
+
+CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}"
+set -- \
+    "$CACHE_DIR/nvim" \
+    "$CACHE_DIR/emacs" \
+    "$CACHE_DIR/qutebrowser" \
+    "$CACHE_DIR/cliphist" \
+    "$cache_dir/.eshell_history" \
+    "$cache_dir/.zsh_history" \
+    "$cache_dir/.zsh_zcompdump"
+for path do
+    [ -e "$path" ] || [ -L "$path" ] && rm -rf "$path"
+done
