@@ -5,7 +5,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_BIN_HOME="$HOME/.local/bin"
 
 export EDITOR="emacsclient -nw -a ''"
-export VISUAL="emacsclient -c -a ''"
+export VISUAL="emacsclient -nw -a ''"
 export PDFREADER="emacsclient -c -a ''"
 export BROWSER='qutebrowser'
 
@@ -21,7 +21,7 @@ export STACK_XDG=1
 
 export BEMENU_OPTS="
 --fn \"UbuntuMono Nerd Font 14\" \
---list 7 \
+--list 14 \
 --ignorecase \
 --line-height 26 \
 --ch 22 --cw 10 \
