@@ -33,6 +33,13 @@
 ;;; Greeter
 (setq inhibit-startup-screen t)
 
+;;; Neomutt
+;; Enter text-mode for Neomutt tmp files
+(add-to-list 'auto-mode-alist '("/tmp/neomutt-" . text-mode))
+
+;;; Empty lines
+;; (setq-default indicate-empty-lines t)
+
 ;;; Tabs
 ;; (setq-default tab-width 8)
 (setq-default indent-tabs-mode nil)

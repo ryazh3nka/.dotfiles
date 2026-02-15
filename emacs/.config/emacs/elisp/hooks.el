@@ -4,6 +4,7 @@
 ;;; Numberline
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (add-hook 'conf-mode-hook 'display-line-numbers-mode)
+(add-hook 'text-mode-hook 'display-line-numbers-mode)
 
 ;;; Set a font for a new frame
 ;; Had to do this because Emacs wouldn't accept `set-face-attribute` as is,
