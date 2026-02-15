@@ -34,7 +34,5 @@
 (defconst rc/emacs-config-dir (file-name-directory user-init-file))
 (add-to-list 'load-path (expand-file-name "elisp" rc/emacs-config-dir))
 
-(require 'packages)
 (require 'config)
-(require 'binds)
-(require 'hooks)
+(require 'packages)
