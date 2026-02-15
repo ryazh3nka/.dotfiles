@@ -1,11 +1,11 @@
 {
   "plugins": {
     "fzf-lua": {
-      "rev": "d2fa4fcebe47c49f0393363c7bb2968ba5516cef",
+      "rev": "5921997472574fca3880b62949eb8679dc6f5afc",
       "src": "https://github.com/ibhagwan/fzf-lua.git"
     },
     "gruvbox.nvim": {
-      "rev": "a472496e1a4465a2dd574389dcf6cdb29af9bf1b",
+      "rev": "561126520034a1dac2f78ab063db025d12555998",
       "src": "https://github.com/ellisonleao/gruvbox.nvim.git"
     },
     "guess-indent.nvim": {
@@ -13,7 +13,7 @@
       "src": "https://github.com/NMAC427/guess-indent.nvim.git"
     },
     "leap.nvim": {
-      "rev": "d7316deae68dc93d6957020cdda6d7bb399218fb",
+      "rev": "9a26da7a14c09cd84c05a4e8326890ef0f92a590",
       "src": "https://codeberg.org/andyg/leap.nvim"
     },
     "nvim-web-devicons": {
