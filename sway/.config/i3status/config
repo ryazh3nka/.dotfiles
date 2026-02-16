@@ -33,6 +33,11 @@ ethernet _first_ {
         format_down = "E: down"
 }
 
+ipv6 {
+        format_up = "%iface: %ip"
+        format_down = "IPv6: down"
+}
+
 battery all {
         format = "%status %percentage %remaining"
 }
