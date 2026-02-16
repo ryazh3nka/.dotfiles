@@ -3,8 +3,8 @@ This setup was made for my laptop over a few months. I must admit that I grew ve
 
 ## Gallery
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/283cb2fa-38a6-4ab0-8725-f727a1d286fb" alt="screenshot1" width="49%">
-    <img src="https://github.com/user-attachments/assets/81ebc36d-1aed-46f5-a100-a564d7b25195" alt="screenshot2" width="49%">
+    <img src="assets/screenshots/sway-floating.png" alt="screenshot1" width="49%">
+    <img src="assets/screenshots/sway-workflow.png" alt="screenshot2" width="49%">
 </p>
 
 *wallpaper: "The Ninth Wave" by I. K. Aivazovsky*</br>
