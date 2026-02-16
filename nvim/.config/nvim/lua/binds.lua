@@ -7,9 +7,9 @@ vim.keymap.set("i", "<C-b>", "<Left>")
 vim.keymap.set("i", "<C-d>", "<Delete>")
 vim.keymap.set("i", "<C-n>", "<Down>")
 vim.keymap.set("i", "<C-p>", "<Up>")
-vim.keymap.set("i", "<C-j>", "<C-n>")
-vim.keymap.set("i", "<C-k>", "<C-p>")
+vim.keymap.set("i", "<C-k>", "<C-o>d$")
 vim.keymap.set("i", "<A-BS>", "<C-w>")
+vim.keymap.set("i", "<A-d>", "<C-o>de")
 vim.keymap.set("i", "<C-BS>", "<C-u>")
 vim.keymap.set("i", "<C-h>", "<C-u>") -- <C-BS> is equivalent to <C-h> in tmux
 
