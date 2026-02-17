@@ -10,6 +10,9 @@ config.bind("<Ctrl-x><Ctrl-l>", "config-source")
 
 config.bind("<Ctrl-e>", "edit-text", mode="insert")
 
+# note: it's impossible to bind Alt-Shift-, and Alt-Shift-.
+# because the < and > characters are reserved for bind syntax
+# and you can't even escape them
 config.bind("<Alt-,>", "scroll-to-perc 0")
 config.bind("<Alt-.>", "scroll-to-perc")
 
@@ -43,10 +46,6 @@ config.bind("<Ctrl-b>", "move-to-prev-char", mode="caret")
 config.bind("<Ctrl-f>", "move-to-next-char", mode="caret")
 config.bind("<Alt-a>", "move-to-start-of-prev-block", mode="caret")
 config.bind("<Alt-e>", "move-to-end-of-next-block", mode="caret")
-
-# note: it's impossible to bind Alt-Shift-, and Alt-Shift-.
-# because the < and > characters are reserved for bind syntax
-# and you can't even escape them
 config.bind("<Alt-.>", "move-to-end-of-document", mode="caret")
 config.bind("<Alt-,>", "move-to-start-of-document", mode="caret")
 
