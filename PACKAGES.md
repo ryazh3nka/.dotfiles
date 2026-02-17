@@ -15,6 +15,9 @@ grim
 slurp
 hyprpicker
 qutebrowser
+python-adblock
+mpv
+yt-dlp
 xdg-desktop-portal-wlr
 zsh
 zsh-autosuggestions

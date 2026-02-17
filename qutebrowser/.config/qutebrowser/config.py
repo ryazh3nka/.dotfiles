@@ -3,6 +3,8 @@ config.load_autoconfig()
 c.fonts.default_family = "UbuntuMono Nerd Font"
 c.fonts.default_size = "18pt"
 
+c.editor.command = ["emacsclient", "-c", "-a ''", "{file}"]
+
 c.url.default_page = "~/.config/qutebrowser/startpage.html"
 c.url.start_pages = ["~/.config/qutebrowser/startpage.html"]
 c.url.searchengines = {
@@ -11,8 +13,8 @@ c.url.searchengines = {
 
 # this would disable the default QT titlebar
 # c.window.hide_decoration = True
-
 c.window.title_format = "qutebrowser"
+c.content.blocking.method = "both"
 
 config.source("qutemacs.py") # keybinds
 config.source("gruvbox.py") # colorscheme
