@@ -1,4 +1,4 @@
-;;; packages.el -- configuration for external packages from (m)elpa
+;;; packages.el -- configuration for built-in packages and those from (m)elpa
 ;; For general configuration, check config.el
 
 (require 'package)
