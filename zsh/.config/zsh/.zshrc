@@ -28,7 +28,7 @@ bindkey "^[p" up-line-or-search
 bindkey "^[n" down-line-or-search
 # ^N and ^P are reserved for scrollback in the term
 
-# zsh-autosuggestions
+# zsh autocompletion
 autoload -Uz compinit
 compinit -C -d "$XDG_CACHE_HOME/.zsh_zcompdump"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
