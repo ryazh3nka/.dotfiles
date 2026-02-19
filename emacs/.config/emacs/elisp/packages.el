@@ -29,6 +29,11 @@
 (use-package eshell-syntax-highlighting
   :hook (eshell-mode . eshell-syntax-highlighting-mode))
 
+(use-package eat
+  :hook
+  (eshell-load . eat-eshell-mode)
+  (eshell-load . eat-eshell-visual-command-mode))
+
 (use-package magit)
 (use-package solarized-theme)
 (use-package haskell-mode)
