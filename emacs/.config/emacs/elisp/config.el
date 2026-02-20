@@ -34,6 +34,7 @@
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (add-hook 'conf-mode-hook 'display-line-numbers-mode)
 (add-hook 'text-mode-hook 'display-line-numbers-mode)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'window-setup-hook 'rc/set-default-font)
 (add-hook 'after-make-frame-functions 'rc/set-default-font)
 
