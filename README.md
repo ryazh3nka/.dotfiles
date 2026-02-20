@@ -19,6 +19,7 @@ $ yay -S --needed - < PACKAGES.md
 $ mkdir -p $HOME/{.config,.cache,.local/share,.local/bin}
 $ stow package
 ```
-Also, I've included a `clean.sh` script to nuke persistent package data from your `$HOME` (useful for a full uninstallation). Usage: `./clean.sh <package-name>` (don't pass any arguments to clean all data).
-
 The GTK3 theme is [Gruvbox](https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme), and the icon pack is [Delft](https://github.com/madmaxms/iconpack-delft). Each package in this repo contains a separate readme (ignored by stow) with more thorough explanation of the install process.
+
+## Uninstallation
+Unstow every package with `stow --delete */` and optionally run `./clean.sh` to remove persistent data (I like my `$HOME` neat and tidy).
