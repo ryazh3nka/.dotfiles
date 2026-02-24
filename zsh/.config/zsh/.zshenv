@@ -4,8 +4,8 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_BIN_HOME="$HOME/.local/bin"
 
-export EDITOR="emacsclient -nw -a ''"
-export VISUAL="emacsclient -nw -a ''"
+export EDITOR="TERM=xterm-direct emacsclient -nw -a ''"
+export VISUAL="TERM=xterm-direct emacsclient -nw -a ''"
 export PDFREADER="emacsclient -c -a ''"
 export BROWSER='qutebrowser'
 
