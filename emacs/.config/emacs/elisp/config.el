@@ -9,17 +9,17 @@
 (global-font-lock-mode 1)
 (column-number-mode 1)
 
-(setq create-lockfiles nil)
-(setq scroll-conservatively 101)
-(setq scroll-margin 0)
-(setq scroll-step 1)
-(setq inhibit-startup-screen t)
-(setq display-line-numbers-type 'relative)
-(setq display-line-numbers-width-start t)
-(setq vc-follow-symlinks t)
+(setq create-lockfiles nil
+      scroll-conservatively 101
+      scroll-margin 0
+      scroll-step 1
+      inhibit-startup-screen 1
+      display-line-numbers-type 'relative
+      display-line-numbers-width-start 1
+      vc-follow-symlinks 1)
 
-(setq-default indent-tabs-mode nil)
-(setq-default fringe-indicator-alist
+(setq-default indent-tabs-mode nil
+              fringe-indicator-alist
               (assq-delete-all 'continuation
                                (assq-delete-all 'truncation fringe-indicator-alist)))
 
