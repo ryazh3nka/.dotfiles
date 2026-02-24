@@ -36,6 +36,23 @@
 
 (use-package magit)
 (use-package solarized-theme)
+
+(use-package lua-mode
+  :custom
+  (indent-tabs-mode nil)
+  (lua-indent-level 4)
+  (lua-indent-close-paren-align nil)
+  (lua-indent-nested-block-content-align nil)
+  :config
+  (defun lua-at-most-one-indent (old-function &rest arguments)
+    (let ((old-res (apply old-function arguments)))
+      (if (> old-res lua-indent-level)
+          lua-indent-level
+        old-res)))
+
+  (advice-add #'lua-calculate-indentation-block-modifier
+              :around #'lua-at-most-one-indent))
+
 (use-package haskell-mode)
 (use-package tuareg)
 
