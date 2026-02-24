@@ -23,7 +23,8 @@
               (assq-delete-all 'continuation
                                (assq-delete-all 'truncation fringe-indicator-alist)))
 
-(add-to-list 'auto-mode-alist '("/tmp/neomutt-" . text-mode)) ; force text-mode in neomutt temp buffers
+(add-to-list 'auto-mode-alist '("/tmp/neomutt-" . text-mode))
+(add-to-list 'auto-mode-alist '("/tmp/qutebrowser-" . text-mode))
 
 (require 'funcs)
 (global-set-key (kbd "C-c r") 'recompile)
