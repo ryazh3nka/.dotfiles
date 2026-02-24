@@ -24,27 +24,28 @@ vim.keymap.set("n", "<leader>o", "<CMD>vsplit<CR>", { desc = "split window horiz
 vim.keymap.set("n", "<leader>pu", "<CMD>lua vim.pack.update()<CR>", { desc = "update installed plugins" })
 
 -- quickfix binds
-vim.keymap.set('n', '<A-l>', function()
-        for _,w in ipairs(vim.fn.getwininfo()) do 
-                if w.quickfix == 1 then 
-                        return vim.cmd('cclose') 
-                end
+vim.keymap.set('n', '<A-l>',
+    function()
+        for _,w in ipairs(vim.fn.getwininfo()) do
+            if w.quickfix == 1 then
+                return vim.cmd('cclose')
+            end
         end vim.cmd('copen')
-end, { desc = 'Toggle quickfix list' })
+    end, { desc = 'Toggle quickfix list' })
 vim.keymap.set("n", "<A-j>", "<CMD>cnext<CR>", { desc = "next item in quickfix list" })
 vim.keymap.set("n", "<A-k>", "<CMD>cprev<CR>", { desc = "previous item in quickfix list" })
 
 -- terminal-related binds
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 vim.keymap.set("n", "<leader>t", "<CMD>botright split | resize 10 | terminal<CR>", { desc = "open terminal in the current directory" })
-vim.keymap.set("n", "<leader>T", function()
+vim.keymap.set("n", "<leader>T",
+    function()
         local git_dir = vim.fn.finddir(".git", ".;")
         local root = git_dir ~= "" and vim.fn.fnamemodify(git_dir, ":h") or vim.fn.getcwd()
 
         vim.cmd("botright split | resize 10 | terminal")
         vim.fn.chansend(vim.b.terminal_job_id, "cd " .. root .. " && clear\n")
-end, { desc = "open terminal in the root directory" })
-
+    end, { desc = "open terminal in the root directory" })
 
 vim.keymap.set("n", "<leader><leader>", "<CMD>buffer#<CR>", { desc = "switch to previous buffer" })
 vim.keymap.set("n", "<leader>bd", "<CMD>bdelete!<CR>", { desc = "kill focused buffer", nowait = true })
@@ -59,13 +60,17 @@ vim.keymap.set("n", "<leader>fb", "<CMD>FzfLua buffers<CR>", { desc = "buffer li
 vim.keymap.set("n", "<leader>fq", "<CMD>FzfLua quickfix<CR>", { desc = "quickfix list" })
 vim.keymap.set("n", "<leader>ft", "<CMD>FzfLua tabs<CR>", { desc = "opened tabs" })
 vim.keymap.set("n", "<leader>fo", "<CMD>FzfLua oldfiles<CR>", { desc = "recently opened files" })
-vim.keymap.set("n", "<leader>fr", function()
+
+vim.keymap.set("n", "<leader>fr",
+    function()
         local root = vim.fs.root(0, ".git") or vim.loop.cwd()
         require("fzf-lua").files({
-                cwd = root,
-                fd_opts = [[--type f --exclude .git --exclude '.*']],
+            cwd = root,
+            fd_opts = [[--type f --exclude .git --exclude '.*']],
         })
-end, { desc = "files from git root" })
+    end, { desc = "files from git root" })
 
-vim.keymap.set({'n', 'x', 'o'}, 's', '<Plug>(leap)', { desc = "launch Leap" })
-vim.keymap.set('n', 'S', '<Plug>(leap-from-window)', { desc = "launch Leap per window"})
+vim.keymap.set({ "n", "v", "i" }, "<C-x><C-f>",
+    function()
+        FzfLua.complete_path()
+    end, { desc = "fuzzy complete path" })
