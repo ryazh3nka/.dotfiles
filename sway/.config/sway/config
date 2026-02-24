@@ -14,6 +14,7 @@ output * bg $(xdg-user-dir PICTURES)/wallpapers/the-ninth-wave-gruvbox.jpg fill
 #
 smart_gaps on
 smart_borders on
+# gaps inner 8
 default_border normal 1
 font pango:"UbuntuMono Nerd Font" 10
 
