@@ -23,6 +23,7 @@ zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
 neovim-nightly-bin
+fzf
 emacs-wayland
 foot
 tmux
