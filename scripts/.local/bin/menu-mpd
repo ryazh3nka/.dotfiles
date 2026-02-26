@@ -98,6 +98,7 @@ run_player_command()
                      'Toggle repeat' \
                      'Toggle single')
 
+    # TODO: display something when nothing is playing
     # status format:
     # [playing] volume:33% repeat:on random:off single:off consume:off
     status=$(mpc status | sed -n 's|].*|]|; s| \+| |g; s|: |:|g; 2p; 3p')

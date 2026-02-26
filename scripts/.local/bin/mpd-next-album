@@ -1,4 +1,5 @@
 #!/bin/sh
+# TODO: fix bug with infinite loop when there's only one album in the queue
 
 current_album="$(mpc current --format "%album%")"
 
