@@ -13,7 +13,7 @@ setopt NO_CASE_GLOB
 alias ls='ls --color=auto'
 alias l='ls -lh --color=auto --sort=extension --group-directories-first'
 alias ll='ls -lAh --color=auto --sort=extension --group-directories-first'
-alias ec="emacsclient -nw -a ''"
+alias ec="TERM=xterm-direct emacsclient -nw -a ''"
 alias wget="wget --hsts-file $XDG_DATA_HOME/wget_hosts"
 alias tmux='tmux -T 256'
 
