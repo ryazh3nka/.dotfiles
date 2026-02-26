@@ -32,6 +32,8 @@ ttf-ubuntu-nerd
 ttf-ubuntu-mono-nerd
 noto-fonts
 mpd
+mpd-mpris
 mpc
+playerctl
 neomutt
 stow

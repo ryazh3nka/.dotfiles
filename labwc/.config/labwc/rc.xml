@@ -13,7 +13,7 @@
     <name>Gruvbox</name>
     <font name="Ubuntu Nerd Font" size="10" />
   </theme>
-  
+
   <keyboard>
     <keybind key="W-q"><action name="Close" /></keybind>
     <keybind key="W-w"><action name="ToggleMaximize" /></keybind>
@@ -21,12 +21,12 @@
 
     <keybind key="W-a"><action name="Raise" /></keybind>
     <keybind key="W-z"><action name="Lower" /></keybind>
-    
+
     <keybind key="W-Tab"><action name="NextWindow" /></keybind>
     <keybind key="W-S-Tab"><action name="PreviousWindow" /></keybind>
     <keybind key="W-n"><action name="NextWindow" /></keybind>
     <keybind key="W-p"><action name="PreviousWindow" /></keybind>
-    
+
     <keybind key="W-h"><action name="ToggleSnapToEdge" direction="left" combine="yes" /></keybind>
     <keybind key="W-l"><action name="ToggleSnapToEdge" direction="right" combine="yes" /></keybind>
     <keybind key="W-j"><action name="ToggleSnapToEdge" direction="down" combine="yes" /></keybind>
@@ -80,17 +80,16 @@
     <keybind key="XF86AudioLowerVolume"><action name="Execute" command="wpctl set-volume @DEFAULT_SINK@ 5%-" /></keybind>
     <keybind key="XF86AudioRaiseVolume"><action name="Execute" command="wpctl set-volume @DEFAULT_SINK@ 5%+" /></keybind>
 
+    <keybind key="W-XF86AudioLowerVolume"><action name="Execute" command="playerctl volume 0.05-" /></keybind>
+    <keybind key="W-XF86AudioRaiseVolume"><action name="Execute" command="playerctl volume 0.05+" /></keybind>
+
+    <keybind key="XF86AudioPrev"><action name="Execute" command="playerctl previous" /></keybind>
+    <keybind key="XF86AudioPlay"><action name="Execute" command="playerctl play-pause" /></keybind>
+    <keybind key="XF86AudioNext"><action name="Execute" command="playerctl next" /></keybind>
+
     <keybind key="XF86MonBrightnessDown"><action name="Execute" command="brightnessctl -n -e set 10%-" /></keybind>
     <keybind key="XF86MonBrightnessUp"><action name="Execute" command="brightnessctl -n -e set 10%+" /></keybind>
 
-    <keybind key="XF86AudioPrev"><action name="Execute" command="mpc prev" /></keybind>
-    <keybind key="XF86AudioPlay"><action name="Execute" command="mpc toggle" /></keybind>
-    <keybind key="XF86AudioNext"><action name="Execute" command="mpc next" /></keybind>
-
-    <keybind key="W-XF86AudioPrev"><action name="Execute" command="mpd-prev-album" /></keybind>
-    <keybind key="W-XF86AudioPlay"><action name="Execute" command="mpc single" /></keybind>
-    <keybind key="W-XF86AudioNext"><action name="Execute" command="mpd-next-album" /></keybind>
-    
     <repeatDelay>400</repeatDelay>
     <repeatRate>40</repeatRate>
   </keyboard>
