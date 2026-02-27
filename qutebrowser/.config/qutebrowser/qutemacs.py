@@ -9,6 +9,7 @@ config.unbind("<Ctrl-u>")
 config.bind("<Ctrl-x><Ctrl-l>", "config-source")
 
 config.bind("<Ctrl-e>", "edit-text", mode="insert")
+config.bind("<Ctrl-g>", "mode-leave", mode="insert")
 
 # note: it's impossible to bind Alt-Shift-, and Alt-Shift-.
 # because the < and > characters are reserved for bind syntax
