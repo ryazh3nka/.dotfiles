@@ -23,8 +23,14 @@
 
 (use-package pdf-tools
   :ensure t
-  :config (pdf-loader-install)
-  (with-eval-after-load 'pdf-cache))
+  :config
+  (pdf-loader-install)
+  ;; silence non-critical warnings
+  (with-eval-after-load 'pdf-cache
+  (advice-add 'pdf-cache--prefetch-start :around
+              (lambda (orig-fun &rest args)
+                (ignore-errors
+                  (apply orig-fun args))))))
 
 (use-package eshell-syntax-highlighting
   :hook (eshell-mode . eshell-syntax-highlighting-mode))
