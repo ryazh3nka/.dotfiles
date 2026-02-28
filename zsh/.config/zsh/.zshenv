@@ -16,6 +16,7 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export PASSWORD_STORE_CLIP_TIME=5
 export PYTHON_HISTORY="$XDG_CACHE_HOME/.python_history"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export OPAMROOT="$XDG_DATA_HOME/opam"
 export GHCUP_USE_XDG_DIRS=1
 export STACK_XDG=1
 
