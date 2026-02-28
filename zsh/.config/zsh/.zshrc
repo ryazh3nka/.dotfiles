@@ -18,9 +18,9 @@ alias wget="wget --hsts-file $XDG_DATA_HOME/wget_hosts"
 alias tmux='tmux -T 256'
 
 if [ "$TERM" = "linux" ]; then
-    PROMPT="%B%F{green}[I]%f%b %F{white}[%F{blue}%n%F{white}@%F{yellow}%m%F{white}]%F{red}[%~]%f$ "
+    PROMPT='%m%% '
 else
-    PROMPT="%B%F{10}[I]%f%b %F{15}[%F{12}%n%F{15}@%F{11}%m%F{15}]%F{9}[%~]%f$ "
+    PROMPT='%B%F{10}[I]%f%b %F{15}[%F{12}%n%F{15}@%F{11}%m%F{15}]%F{9}[%~]%f$ '
 fi
 
 bindkey -e
