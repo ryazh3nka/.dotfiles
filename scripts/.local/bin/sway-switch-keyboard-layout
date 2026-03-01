@@ -7,7 +7,7 @@ CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}"
 
 swaymsg input 'type:keyboard' xkb_switch_layout next && {
     current_layout=$(swaymsg -t get_inputs | jq 'map(select(has("xkb_active_layout_name")))[0].xkb_active_layout_name' | sed 's|"||g; s| (.*||')
-    echo "$current_layout" > "$CACHE_DIR/.sway_current_layout"
+    echo "$current_layout" > "$CACHE_DIR/.current_layout"
 }
 
 # update i3status

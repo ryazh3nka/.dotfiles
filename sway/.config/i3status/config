@@ -26,8 +26,7 @@ volume master {
 }
 
 read_file kbd_layout {
-        path = "~/.cache/.sway_current_layout"
-        format = "K: %content"
+        path = "~/.cache/.current_layout"
         color_good = "#ebdbb2"
 }
 
