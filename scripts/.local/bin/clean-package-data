@@ -24,18 +24,19 @@ fi
 for pkg in $PKGS; do
     case "$pkg" in
         emacs)
-            clean_path "$DATA/emacs"
-            clean_path "$CACHE/emacs"
-            clean_path "$CACHE/.eshell_history"
+            clean_path "$STATE/eshell_history"
             ;;
         zsh)
-            clean_path "$CACHE/.zsh_history"
-            clean_path "$CACHE/.zsh_zcompdump"
+            clean_path "$STATE/zsh_history"
+            clean_path "$CACHE/zsh_zcompdump"
             ;;
-        *)
-            clean_path "$DATA/$pkg"
-            clean_path "$STATE/$pkg"
-            clean_path "$CACHE/$pkg"
-            ;;
+        sway | labwc)
+            clean_path "$STATE/current_kbd_layout"
+        *) ;;
     esac
+
+    clean_path "$DATA/$pkg"
+    clean_path "$STATE/$pkg"
+    clean_path "$CACHE/$pkg"
 done
+
