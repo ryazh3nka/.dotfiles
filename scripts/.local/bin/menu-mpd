@@ -1,20 +1,26 @@
 #!/bin/sh
-# A simple menu frontend for mpd via playerctl and mpc
+# A simple menu-driven frontend for mpd via playerctl and mpc
 set -e
 
 playlists=$(mpc -q lsplaylists)
 queue=$(mpc -q playlist)
 database=$(mpc -q ls)
 
-playerctl_make_active()
-{
-    # change volume ever so slightly to make mpd the last active player
-    playerctl -s -p mpd volume 0.01+ && playerctl -s -p mpd volume 0.01-
-}
-
 spawn_menu()
 {
     printf '%s' "$1" | bemenu --prompt "$2" --list 20
+}
+
+playerctl_make_active()
+{
+    # change volume ever so slightly to make mpd the last active player
+    VOL=$(playerctl -p mpd volume)
+    is_max=$(echo "$VOL" | awk '{if ($1 >= 1.0) print "true"; else print "false"}')
+    if [ "$is_max" = "true" ]; then
+        playerctl -s -p mpd volume 0.01- && playerctl -s -p mpd volume 0.01+
+    else
+        playerctl -s -p mpd volume 0.01+ && playerctl -s -p mpd volume 0.01-
+    fi
 }
 
 choose_album()
