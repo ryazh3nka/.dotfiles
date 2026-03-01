@@ -10,5 +10,5 @@ swaymsg input 'type:keyboard' xkb_switch_layout next && {
     echo "$current_layout" > "$CACHE_DIR/.sway_current_layout"
 }
 
-# Update i3status
+# update i3status
 killall -USR1 i3status
