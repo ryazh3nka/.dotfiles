@@ -1,9 +1,16 @@
 #!/bin/sh
+# A simple menu frontend for mpd via playerctl and mpc
 set -e
 
 playlists=$(mpc -q lsplaylists)
 queue=$(mpc -q playlist)
 database=$(mpc -q ls)
+
+playerctl_make_active()
+{
+    # change volume ever so slightly to make mpd the last active player
+    playerctl -s -p mpd volume 0.01+ && playerctl -s -p mpd volume 0.01-
+}
 
 spawn_menu()
 {
@@ -61,26 +68,32 @@ run_queue_command()
     case "$response" in
         'Add an album to the queue')
             album=$(choose_album)
-            mpc -q add "$album" ;;
+            mpc -q add "$album"
+            playerctl_make_active ;;
         'Add a song to the queue')
             album=$(choose_album)
             song=$(album_choose_song "$album")
-            mpc -q add "$song" ;;
+            mpc -q add "$song"
+            playerctl_make_active ;;
         'Insert a song to the queue')
             album=$(choose_album)
             song=$(album_choose_song "$album")
-            mpc -q insert "$song" ;;
+            mpc -q insert "$song"
+            playerctl_make_active ;;
         'Jump to a song in the queue')
             song=$(queue_choose_song)
             song_pos=$(queue_get_song_position "$song")
-            mpc -q play "$song_pos" ;;
+            mpc -q play "$song_pos"
+            playerctl_make_active ;;
         'Remove a song from the queue')
             song=$(queue_choose_song)
             song_pos=$(queue_get_song_position "$song")
-            mpc -q del "$song_pos" ;;
+            mpc -q del "$song_pos"
+            playerctl_make_active ;;
         'Load a playlist')
             playlist=$(choose_playlist)
-            mpc -q load "$playlist" ;;
+            mpc -q load "$playlist"
+            playerctl_make_active ;;
         'Clear the queue') mpc -q clear ;;
         'Crop the queue') mpc -q crop ;;
         'Update the database') mpc -q update ;;
