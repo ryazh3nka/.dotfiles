@@ -87,7 +87,7 @@
 (use-package eshell
   :custom
   (eshell-directory-name (expand-file-name "eshell/" (or (getenv "XDG_CONFIG_HOME") "~/.config")))
-  (eshell-history-file-name (expand-file-name ".eshell_history" (or (getenv "XDG_CACHE_HOME") "~/.cache"))))
+  (eshell-history-file-name (expand-file-name "eshell_history" (or (getenv "XDG_STATE_HOME") "~/.local/state"))))
 
 (use-package whitespace
   :bind ("C-c w" . whitespace-mode)
