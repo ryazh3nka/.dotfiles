@@ -4,7 +4,6 @@ swaybg
 swayidle
 labwc
 i3status
-i3blocks
 bemenu
 mako
 wl-clipboard
