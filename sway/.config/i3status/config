@@ -26,7 +26,7 @@ volume master {
 }
 
 read_file kbd_layout {
-        path = "~/.cache/.current_layout"
+        path = "~/.local/state/current_kbd_layout"
         color_good = "#ebdbb2"
 }
 
