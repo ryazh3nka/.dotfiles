@@ -4,3 +4,4 @@
 --ignore "^#.*#$"
 --ignore "^\.#.*"
 --verbose 1
+--target "$HOME"
