@@ -1,4 +1,4 @@
-HISTFILE="$XDG_CACHE_HOME/.zsh_history"
+HISTFILE="$XDG_STATE_HOME/zsh_history"
 HISTSIZE=5000
 SAVEHIST=5000
 
@@ -14,7 +14,8 @@ alias ls='ls --color=auto'
 alias l='ls -lh --color=auto --sort=extension --group-directories-first'
 alias ll='ls -lAh --color=auto --sort=extension --group-directories-first'
 alias ec="TERM=xterm-direct emacsclient -nw -a ''"
-alias wget="wget --hsts-file $XDG_DATA_HOME/wget_hosts"
+alias wget="wget --hsts-file $XDG_STATE_HOME/wget_hosts"
+alias ghci="ghci -ghci-script $XDG_CONFIG_HOME/ghci"
 alias tmux='tmux -T 256'
 
 if [ "$TERM" = "linux" ]; then
@@ -30,7 +31,7 @@ bindkey "^[n" down-line-or-search
 
 # zsh autocompletion
 autoload -Uz compinit
-compinit -C -d "$XDG_CACHE_HOME/.zsh_zcompdump"
+compinit -C -d "$XDG_CACHE_HOME/zsh_zcompdump"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
        'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
