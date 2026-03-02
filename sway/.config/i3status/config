@@ -1,5 +1,4 @@
 general {
-        markup = pango
         colors = true
         color_good = "#b8bb26"
         color_bad = "#fb4934"
