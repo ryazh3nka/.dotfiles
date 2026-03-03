@@ -13,7 +13,7 @@ spawn_menu()
 
 playerctl_make_active()
 {
-    # change volume ever so slightly to make mpd the last active player
+    # change volume ever so slightly to focus mpd
     VOL=$(playerctl -p mpd volume)
     is_max=$(echo "$VOL" | awk '{if ($1 >= 1.0) print "true"; else print "false"}')
     if [ "$is_max" = "true" ]; then
@@ -74,32 +74,26 @@ run_queue_command()
     case "$response" in
         'Add an album to the queue')
             album=$(choose_album)
-            mpc -q add "$album"
-            playerctl_make_active ;;
+            mpc -q add "$album" ;;
         'Add a song to the queue')
             album=$(choose_album)
             song=$(album_choose_song "$album")
-            mpc -q add "$song"
-            playerctl_make_active ;;
+            mpc -q add "$song" ;;
         'Insert a song to the queue')
             album=$(choose_album)
             song=$(album_choose_song "$album")
-            mpc -q insert "$song"
-            playerctl_make_active ;;
+            mpc -q insert "$song" ;;
         'Jump to a song in the queue')
             song=$(queue_choose_song)
             song_pos=$(queue_get_song_position "$song")
-            mpc -q play "$song_pos"
-            playerctl_make_active ;;
+            mpc -q play "$song_pos" ;;
         'Remove a song from the queue')
             song=$(queue_choose_song)
             song_pos=$(queue_get_song_position "$song")
-            mpc -q del "$song_pos"
-            playerctl_make_active ;;
+            mpc -q del "$song_pos" ;;
         'Load a playlist')
             playlist=$(choose_playlist)
-            mpc -q load "$playlist"
-            playerctl_make_active ;;
+            mpc -q load "$playlist" ;;
         'Clear the queue') mpc -q clear ;;
         'Crop the queue') mpc -q crop ;;
         'Update the database') mpc -q update ;;
@@ -140,3 +134,5 @@ case "$mode_response" in
     'Queue commands') run_queue_command ;;
     'Player commands') run_player_command ;;
 esac
+
+playerctl_make_active
