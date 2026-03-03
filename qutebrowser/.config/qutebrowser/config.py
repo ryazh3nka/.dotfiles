@@ -1,5 +1,6 @@
 config.load_autoconfig()
 
+c.window.title_format = "qutebrowser"
 c.fonts.default_family = "UbuntuMono Nerd Font"
 c.fonts.default_size = "18pt"
 
@@ -11,9 +12,6 @@ c.url.searchengines = {
     "DEFAULT":  "https://google.com/search?hl=en&q={}",
 }
 
-# this would disable the default QT titlebar
-# c.window.hide_decoration = True
-c.window.title_format = "qutebrowser"
 c.content.blocking.method = "both"
 
 config.source("qutemacs.py") # keybinds
