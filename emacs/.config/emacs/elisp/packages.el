@@ -1,10 +1,9 @@
-;;; packages.el -- configuration for built-in packages and those from (m)elpa
-;; For general configuration, check config.el
+;;; packages.el -- configuration for built-in and (m)elpa packages
+;; for general configuration, check config.el
 
 (require 'package)
 (require 'use-package)
 
-;;; Add and initialize package archives
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
@@ -27,10 +26,11 @@
   (pdf-loader-install)
   ;; silence non-critical warnings
   (with-eval-after-load 'pdf-cache
-  (advice-add 'pdf-cache--prefetch-start :around
-              (lambda (orig-fun &rest args)
-                (ignore-errors
-                  (apply orig-fun args))))))
+    (advice-add 'pdf-cache--prefetch-start
+                :around
+                (lambda (old-fun &rest args)
+                  (ignore-errors
+                    (apply old-fun args))))))
 
 (use-package eshell-syntax-highlighting
   :hook (eshell-mode . eshell-syntax-highlighting-mode))
@@ -50,14 +50,13 @@
   (lua-indent-close-paren-align nil)
   (lua-indent-nested-block-content-align nil)
   :config
-  (defun lua-at-most-one-indent (old-function &rest arguments)
-    (let ((old-res (apply old-function arguments)))
-      (if (> old-res lua-indent-level)
-          lua-indent-level
-        old-res)))
-
-  (advice-add #'lua-calculate-indentation-block-modifier
-              :around #'lua-at-most-one-indent))
+  (advice-add 'lua-calculate-indentation-block-modifier
+              :around
+              (lambda (old-fun &rest args)
+              (let ((old-res (apply old-fun args)))
+                (if (> old-res lua-indent-level)
+                    lua-indent-level
+                  old-res)))))
 
 (use-package haskell-mode)
 (use-package tuareg)

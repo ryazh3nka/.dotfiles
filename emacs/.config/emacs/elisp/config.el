@@ -1,6 +1,6 @@
 ;;; config.el -- general configuration
-;; For package-specific settings, check packages.el
-;; For custom function definitions, check funcs.el
+;; for package-specific settings, check packages.el
+;; for custom function definitions, check funcs.el
 
 (tool-bar-mode -1)
 (menu-bar-mode -1)

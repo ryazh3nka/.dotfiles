@@ -1,6 +1,5 @@
 ;;; funcs.el -- custom function definitions
 
-;; Duplicate current line
 (defun rc/duplicate-line ()
   "Duplicate current line"
   (interactive)
@@ -13,7 +12,6 @@
     (move-beginning-of-line 1)
     (forward-char column)))
 
-;; Kill unused buffers
 (defun rc/close-other-buffers ()
   "Kill all buffers except the current one and the *scratch* buffer."
   (interactive)
@@ -23,16 +21,15 @@
                   (string-equal (buffer-name buf) "*scratch*"))
         (kill-buffer buf)))))
 
-;; Copy files as text/uri-list in dired
 (defun rc/copy-files-to-clipboard (&optional plain-text)
   "Copy marked/opened files to the clipboard. With a prefix arg copy plain text; otherwise copy a text/uri-list."
   (interactive "P")
   (let ((files (cond
                 ;; case 1: marked in Dired
-                ((derived-mode-p 'dired-mode) 
+                ((derived-mode-p 'dired-mode)
                  (dired-get-marked-files))
                 ;; case 2: file-visiting buffer
-                (buffer-file-name 
+                (buffer-file-name
                  (list buffer-file-name))
                 (t (user-error "No file found to copy")))))
     (unless (executable-find "wl-copy")
