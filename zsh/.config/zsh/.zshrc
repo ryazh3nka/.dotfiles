@@ -18,18 +18,14 @@ alias wget="wget --hsts-file $XDG_STATE_HOME/wget_hosts"
 alias ghci="ghci -ghci-script $XDG_CONFIG_HOME/ghci"
 alias tmux='tmux -T 256'
 
-if [ "$TERM" = "linux" ]; then
-    PROMPT='%m%% '
-else
+[ "$TERM" = "linux" ] ||
     PROMPT='%B%F{10}[I]%f%b %F{15}[%F{12}%n%F{15}@%F{11}%m%F{15}]%F{9}[%~]%f$ '
-fi
 
 bindkey -e
 bindkey "^[p" up-line-or-search
 bindkey "^[n" down-line-or-search
-# ^N and ^P are reserved for scrollback in the term
 
-# zsh autocompletion
+# autocompletion
 autoload -Uz compinit
 compinit -C -d "$XDG_CACHE_HOME/zsh_zcompdump"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
@@ -40,8 +36,8 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # ocaml package manager
 OPAM_INIT="$OPAMROOT/opam-init/init.zsh"
