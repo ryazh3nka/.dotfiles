@@ -13,8 +13,8 @@ This setup was made for my laptop over a few months. I must admit that I grew ve
 ## Installation
 Clone and cd into the repo, make sure that `.config`, `.local` and `.cache` exist in your `$HOME`, run `stow package-name` for every directory you want symlinked (or `stow */` to link every package at once), and tweak the dotfiles to your liking.
 ```zsh
-$ git clone --depth 1 https://github.com/ryazh3nka/.dotfiles.git $HOME/.dotfiles
-$ cd $HOME/.dotfiles
+$ git clone --depth 1 https://github.com/ryazh3nka/.dotfiles.git
+$ cd .dotfiles
 $ yay -S --needed - < PACKAGES.md
 $ mkdir -p $HOME/{.config,.cache,.local/share,.local/bin}
 $ stow package
