@@ -17,11 +17,9 @@
   :config (load-theme 'gruvbox))
 
 (use-package rainbow-delimiters
-  :ensure t
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package pdf-tools
-  :ensure t
   :config
   (pdf-loader-install)
   ;; silence non-critical warnings

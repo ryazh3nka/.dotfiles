@@ -1,6 +1,7 @@
 ;;; init.el -- a dirty starting point for my Emacs configuration
+;; for real configs, check elisp/
 
-;; force emacs to store its data in $XDG_DATA_HOME
+;;; Hide junk in $XDG_DATA_HOME
 (setq user-emacs-directory
       (expand-file-name "emacs/"
                         (or (getenv "XDG_DATA_HOME") "~/.local/share/")))
@@ -27,7 +28,7 @@
 (setq native-comp-eln-load-path
       (list (expand-file-name "eln-cache/" user-emacs-directory)))
 
-;; organize emacs config dir
+;; Organize config directory
 (defconst rc/emacs-config-dir (file-name-directory user-init-file))
 (add-to-list 'load-path (expand-file-name "elisp" rc/emacs-config-dir))
 
