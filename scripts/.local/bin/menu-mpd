@@ -102,7 +102,7 @@ run_queue_command()
 
 run_player_command()
 {
-    options=$(printf "%s\n" \
+    options=$(printf '%s\n' \
                      'Toggle play/pause' \
                      'Next song' \
                      'Previous song' \
@@ -127,12 +127,18 @@ run_player_command()
     esac
 }
 
-mode_choice='Queue commands
-Player commands'
-mode_response=$(spawn_menu "$mode_choice" 'Send a queue or a player command?')
-case "$mode_response" in
-    'Queue commands') run_queue_command ;;
-    'Player commands') run_player_command ;;
-esac
+main()
+{
+    options=$(printf '%s\n' \
+                     'Queue commands' \
+                     'Player commands')
+    response=$(spawn_menu "$options" 'Send a queue or a player command?')
+    case "$response" in
+        'Queue commands') run_queue_command ;;
+        'Player commands') run_player_command ;;
+    esac
 
-playerctl_make_active
+    playerctl_make_active
+}
+
+main "$@"
