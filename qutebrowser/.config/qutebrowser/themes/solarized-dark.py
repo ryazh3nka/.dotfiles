@@ -1,6 +1,9 @@
 # Solarized-dark colorscheme for qutebrowser
 # Taken from harmtemolder/qutebrowser-solarized on GitHub
 
+# Originally based on:
+# Solarized by Ethan Schoonover (https://ethanschoonover.com/solarized)
+
 # Solarized
 solarized = {
     "base03": "#002b36",
