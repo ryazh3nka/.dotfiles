@@ -10,6 +10,7 @@ export PDFREADER="emacsclient -c -a ''"
 export BROWSER='qutebrowser'
 
 export PATH="$PATH:$XDG_BIN_HOME"
+export DOTFILES="$HOME/.dotfiles"
 export WINEPREFIX="$XDG_DATA_HOME/wine"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtkrc-2.0"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
