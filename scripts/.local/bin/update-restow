@@ -16,7 +16,7 @@ while true; do
                 exit 1
             }
 
-            cd "$HOME/.dotfiles" || {
+            cd "$DOTFILES" || "$HOME/.dotfiles" || {
                 echo "Can't find the ~/.dotfiles folder."
                 exit 1 
             }
