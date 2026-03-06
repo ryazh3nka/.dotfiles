@@ -1,6 +1,7 @@
 config.load_autoconfig()
 
 c.window.title_format = "qutebrowser"
+
 c.fonts.default_family = "UbuntuMono Nerd Font"
 c.fonts.default_size = "18pt"
 
@@ -15,4 +16,4 @@ c.url.searchengines = {
 c.content.blocking.method = "both"
 
 config.source("qutemacs.py") # keybinds
-config.source("gruvbox.py") # colorscheme
+config.source("themes/gruvbox.py") # colorscheme
