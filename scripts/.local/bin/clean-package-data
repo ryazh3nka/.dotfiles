@@ -32,6 +32,7 @@ for pkg in $PKGS; do
             ;;
         sway | labwc)
             clean_path "$STATE/current_kbd_layout"
+            ;;
         *) ;;
     esac
 
@@ -39,4 +40,3 @@ for pkg in $PKGS; do
     clean_path "$STATE/$pkg"
     clean_path "$CACHE/$pkg"
 done
-
