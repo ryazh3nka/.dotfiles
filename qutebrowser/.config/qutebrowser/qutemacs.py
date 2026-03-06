@@ -1,7 +1,5 @@
-# emacs-like binds for qutebrowser by Kaligule <code@schauderbasis.de>
-#
-# Taken from https://gitlab.com/Kaligule/qutebrowser-emacs-config/blob/master/config.py
-# and slightly modified since the command naming is different now
+# Emacs-like binds for qutebrowser
+# Portions of this file are from Kaligule/qutebrowser-emacs-config on GitLab
 
 config.unbind("<Ctrl-x>")
 config.unbind("<Ctrl-u>")
