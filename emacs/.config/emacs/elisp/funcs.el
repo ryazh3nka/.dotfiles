@@ -56,4 +56,12 @@
     (set-face-attribute 'line-number nil :inherit 'default :height 1.0)
     (set-face-attribute 'line-number-current-line nil :inherit 'default :height 1.0)))
 
+(defun rc/yank-and-indent ()
+  "Yank text and indent the newly inserted region."
+  (interactive)
+  (let ((beg (point)))
+    (forward-line 0)
+    (yank)
+    (indent-region beg (point))))
+
 (provide 'funcs)

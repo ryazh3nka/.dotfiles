@@ -25,7 +25,7 @@ bindkey -e
 bindkey "^[p" up-line-or-search
 bindkey "^[n" down-line-or-search
 
-# autocompletion
+# completion
 autoload -Uz compinit
 compinit -C -d "$XDG_CACHE_HOME/zsh_zcompdump"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
@@ -46,3 +46,22 @@ OPAM_INIT="$OPAMROOT/opam-init/init.zsh"
 # haskell installer
 GHCUP_ENV="$XDG_DATA_DIR/ghcup/env"
 [[ ! -r "$GHCUP_ENV" ]] || source "$GHCUP_ENV"
+
+# vterm integration
+vterm_printf() {
+    if [ -n "$TMUX" ] \
+        && { [ "${TERM%%-*}" = "tmux" ] \
+            || [ "${TERM%%-*}" = "screen" ]; }; then
+        printf "\ePtmux;\e\e]%s\007\e\\" "$1"
+    elif [ "${TERM%%-*}" = "screen" ]; then
+        printf "\eP\e]%s\007\e\\" "$1"
+    else
+        printf "\e]%s\e\\" "$1"
+    fi
+}
+
+vterm_prompt_end() {
+    vterm_printf "51;A$(whoami)@$(cat /etc/hostname):$(pwd)"
+}
+setopt PROMPT_SUBST
+PROMPT=$PROMPT'%{$(vterm_prompt_end)%}'

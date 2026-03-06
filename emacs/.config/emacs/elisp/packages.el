@@ -38,6 +38,7 @@
   (eshell-load . eat-eshell-mode)
   (eshell-load . eat-eshell-visual-command-mode))
 
+(use-package vterm)
 (use-package magit)
 (use-package solarized-theme)
 
