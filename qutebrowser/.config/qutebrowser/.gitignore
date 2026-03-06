@@ -1,5 +1,5 @@
 *
 !.gitignore
-config.py
-qutemacs.py
-themes/
+!config.py
+!qutemacs.py
+!themes/
