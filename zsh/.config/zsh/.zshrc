@@ -11,7 +11,6 @@ setopt extendedglob
 setopt NO_CASE_GLOB
 
 alias ls='ls --color=auto'
-alias l='ls -lh --color=auto --sort=extension --group-directories-first'
 alias ll='ls -lAh --color=auto --sort=extension --group-directories-first'
 alias ec="TERM=xterm-direct emacsclient -nw -a ''"
 alias wget="wget --hsts-file $XDG_STATE_HOME/wget_hosts"
@@ -39,14 +38,6 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# ocaml package manager
-OPAM_INIT="$OPAMROOT/opam-init/init.zsh"
-[[ ! -r "$OPAM_INIT" ]] || source "$OPAM_INIT"
-
-# haskell installer
-GHCUP_ENV="$XDG_DATA_DIR/ghcup/env"
-[[ ! -r "$GHCUP_ENV" ]] || source "$GHCUP_ENV"
-
 # vterm integration
 vterm_printf() {
     if [ -n "$TMUX" ] \
@@ -65,3 +56,11 @@ vterm_prompt_end() {
 }
 setopt PROMPT_SUBST
 PROMPT=$PROMPT'%{$(vterm_prompt_end)%}'
+
+# ocaml package manager
+OPAM_INIT="$OPAMROOT/opam-init/init.zsh"
+[[ ! -r "$OPAM_INIT" ]] || source "$OPAM_INIT"
+
+# haskell installer
+GHCUP_ENV="$XDG_DATA_DIR/ghcup/env"
+[[ ! -r "$GHCUP_ENV" ]] || source "$GHCUP_ENV"
