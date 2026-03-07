@@ -14,7 +14,7 @@
 (setq use-package-always-ensure t)
 
 (use-package gruvbox-theme
-  :config (load-theme 'gruvbox))
+  :config (load-theme 'gruvbox-dark-medium))
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
